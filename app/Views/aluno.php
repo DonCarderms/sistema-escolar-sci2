@@ -50,18 +50,18 @@ if(!defined('DFFG574554FD')){
                             echo "<a href='" . DOMINIO . "/aluno/editar?id=" . $dados['id'] . "&editar=true'>Editar meus dados</a>";
 
                            
-                            // $arr_url = explode("?",$_SERVER['REQUEST_URI']);
-                            // // // var_dump($arr_url);
-                            // // echo "<hr>";
-                            // $arr_dados_prod = explode("&",$arr_url[1]);
-                            // var_dump($arr_dados_prod[1]);
+                            $arr_url = explode("?",$_SERVER['REQUEST_URI']);
+                            // // var_dump($arr_url);
+                            // echo "<hr>";
+                            $arr_dados_prod = explode("&",$arr_url[1]);
+                            var_dump($arr_dados_prod[1]);
 
-                            // if($arr_dados_prod[1] == "editar=true"){
+                            if($arr_dados_prod[1] == "editar=true"){
 
-                            //     include_once '/var/www/html/Views/editarAluno.php';                             
-                            // }
+                                include_once '/var/www/html/Views/editarAluno.php';                             
+                            }
 
-                    //   var_dump($dados);  
+                    // //   var_dump($dados);  
                  ?>    
 
                         <!-- <a href="http:">Editar</a> -->

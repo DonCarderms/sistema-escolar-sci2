@@ -25,5 +25,7 @@ class AlunoModel extends ConnectionController {
             
         }
         die();
+               
+        
     }
 }

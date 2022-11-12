@@ -22,16 +22,14 @@ class core
                                     $metodo = "sair";
                                     break;
                                 case "editar":
-                                    $metodo = "edit";
-                                    var_dump($metodo);
+                                    $metodo = "edit";       
                                     break;
-
                                     default:
                                     include_once "/var/www/html/Views/error404.php";
 
                                 }
-
-                                call_user_func_array(array(new $controllerFile, $metodo),$parametro);
+                                $teste  = call_user_func_array(array(new $controllerFile, $metodo),$parametro);
+                                var_dump($teste);
                                 include_once "/var/www/html/Views/" . $controller . ".php";
 
 

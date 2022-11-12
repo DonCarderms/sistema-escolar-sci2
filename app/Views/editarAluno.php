@@ -2,12 +2,13 @@
   session_start();
   $arr_url = explode("?",$_SERVER['REQUEST_URI']);
   $arr_dados_prod = explode("&",$arr_url[1]);
-
+  
   if($_POST)
 {
     var_dump($_POST);
     $dados_edit = new AlunoController();
     $dados_edit->edit($_POST);
+    
 }
 if($arr_dados_prod[1] == "editar=true"){
     ?>
