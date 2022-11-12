@@ -1,0 +1,39 @@
+version: '3.6'
+services:
+
+  app:
+    build:
+      context: ./app
+      dockerfile: Dockerfile
+    ports:
+      - "8001:80"
+    volumes:
+      - ./app:/var/www/html
+    links:
+      - projetos
+  adm:
+    build:
+      context: ./adm
+      dockerfile: Dockerfile
+    ports:
+      - "8000:80"
+    volumes:
+      - ./adm:/var/www/html
+    links:
+      - projetos
+  phpmyadmin:
+    image: phpmyadmin:latest
+    ports:
+      - "8081:80"
+    environment:
+      - PMA_ARBITRARY=1
+
+  projetos:
+    image: mysql:latest
+    container_name: projeto_aula
+    ports:
+      - "3306:3306"
+    volumes:
+      - /var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=root

@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+*{
+    padding: 0;
+    margin:0;
+    font-family: 'Poppins', sans-serif;
+}
+.principal{
+    background-color: #00DBDE;  
+    background-image: linear-gradient(90deg, #004f50 0%, #6702689e 100%);
+    height: 100vh;
+    display: flex;
+    /* display: block; */
+    align-content: space-around;
+    justify-content: space-around;
+    align-items: center;
+}
+.d-flex {
+    display: flex;
+}
+
+.w-250{
+    width: 250px;
+}
+.justify-content-center {
+    justify-content: center;
+}
+.align-items-center{
+    align-items: center;
+}
+.h-100{
+    height: 100vh;
+}
+.m-50{
+    margin-bottom: 50px;
+}
+.contenu{
+    width: 320px;
+}
+.width-100{
+    width: 100%;
+}
+.align_center{
+    text-align: center;
+}
+.button-submit{
+    margin-top: 10px;
+}
+.input-style{
+    height: 40px;
+    color: #fff;
+    background-color: #fffcfc2f;
+    margin-bottom: 20px;
+    outline: none;
+    border: none;
+    padding: 4px;
+    padding-left: 10px;
+}
+.button-style{
+    height: 40px;
+    color: #fff;
+    padding: 5px 20px;
+    cursor: pointer;
+    border: none;
+    border-radius: 20px;
+    margin-bottom:20px;
+    background-color: #fffcfc42;
+}
+::placeholder {
+    color: rgb(255, 255, 255);
+}
+.button-style:hover{
+    color: #673ab7;
+    background-color: rgba(255, 255, 255, 0.797);
+}
+/* pagina error */
+.bg-error{
+    background-image: ();
+}
+/* .button-cadastrar{
+    
+} */
+
+
+
+/* dashboard */
+
+
