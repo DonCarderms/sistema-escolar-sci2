@@ -7,7 +7,7 @@ $url = filter_input(INPUT_GET,'url',FILTER_DEFAULT);
 
 $arr_url = explode("/", $url);
 
-
+// include_once 'autoload.php';
 //Core
 include_once 'core/Core.php';
 

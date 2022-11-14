@@ -33,6 +33,7 @@
                     <button type="submit" class="button-style">Entrar</button>         
                 </div>
                 <div class="button-cadastrar align_center">
+                    <p>ainda não é aluno </p>
                     <button onclick="showRegister()" type="button" class="button-style" id="button-cadastrar" >cadastrar-se</button>
                 </div>
                 
