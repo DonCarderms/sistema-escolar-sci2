@@ -1,1 +1,1 @@
-## sistema-escolar-sci2
+## sistema escolar para a academia sci
