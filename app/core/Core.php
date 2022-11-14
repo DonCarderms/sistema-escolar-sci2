@@ -15,7 +15,7 @@ class core
 
 
                         if($metodo != ""){
-                            // var_dump($metodo);
+                            
                             switch($metodo){
 
                                 case "sair":
@@ -28,8 +28,8 @@ class core
                                     include_once "/var/www/html/Views/error404.php";
 
                                 }
-                                $teste  = call_user_func_array(array(new $controllerFile, $metodo),$parametro);
-                                var_dump($teste);
+                                call_user_func_array(array(new $controllerFile, $metodo),$parametro);
+                                
                                 include_once "/var/www/html/Views/" . $controller . ".php";
 
 

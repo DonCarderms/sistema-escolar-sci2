@@ -5,7 +5,6 @@
   
   if($_POST)
 {
-    var_dump($_POST);
     $dados_edit = new AlunoController();
     $dados_edit->edit($_POST);
     
@@ -25,13 +24,13 @@ if($arr_dados_prod[1] == "editar=true"){
 
             <main>
                 <div class="">
-                        <?php
-                            if(isset($_SESSION['edit'])){
-                                echo $_SESSION['edit'];
-                                unset($_SESSION['edit']);
-                            }
+                    <?php
+                        if(isset($_SESSION['dados'] )){
+                            $dados = $_SESSION['dados'];                                
+                        } 
 
-                        ?>
+                    ?>
+
                 </div>
 
                 <div class="conteudo">                
@@ -44,26 +43,21 @@ if($arr_dados_prod[1] == "editar=true"){
                      <label for="">email</label>
                      <input type="text" name="email" id="email" value="<?= $aluno[4] ?>"></br>
 
-                     <label for="">Cpf</label>
-                     <input type="text" name="cpf" id="cpf" value="<?= $aluno[5] ?>"></br>
-
-                     <label for="">Data de nascimento</label>
-                     <input type="date" name="date" id="date" value="<?= $aluno[6] ?>"></br>
-
- 
-                     
+                     <label for="">Senha</label>
+                     <input type="text" name="senha" id="senha" value=""></br>
+     
                      <p>Endereço</p>                
                      <label for="">Nome da rua</label>
                      <input type="text" name="rua" id="rua" value="<?= $aluno[7] ?>"></br>                
                      <label for="">numero da rua</label>
                      <input type="text" name="numero" id="numero" value="<?= $aluno[8] ?>"></br> 
 
-                     <button type="submit">Confirmar</button>
+                     <button class="link-button-2 link-button-geral" type="submit">Confirmar</button>
 
                      
                  </form>
 
-                 <a href="<?= DOMINIO ?>/dashboard">voltar</a>
+                 <a class="link" href="<?= DOMINIO ?>/dashboard">voltar</a>
                         
                 </div>
             

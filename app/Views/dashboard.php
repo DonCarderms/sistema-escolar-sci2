@@ -14,16 +14,61 @@ if(!defined('DFFG574554FD')){
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Eduka - Portal Aluno</title>
+        <title>Eduk - Portal Aluno</title>
         <link rel="stylesheet" href="assets/css/style.css">
+        <link rel="stylesheet" href="../assets/css/font-awesome.min.css"/>
     </head>
-    <body>
-
-            <main class="d-flex">
-                <div class="">
+    <body class="d-flex">
+            <nav class=" d-flex align-items-center flex_column nav-principal-vertical" id="nav-bar">
+                    <div class="w-100 menu-hamburger d-flex flex_column mt-10">
+                        <span class="menu-hamburger-span"></span>
+                        <span class="menu-hamburger-span"></span>
+                        <span class="menu-hamburger-span"></span>
+                    </div>
+                    <div class="w-100">
+                        <ul class="nav-ul">
+                            <li class="nav-ul-li">
+                            <a class="link nav-ul-link d-flex" href="<?= DOMINIO ?>/aluno">
+                                <span class="nav-ul-link-icon">
+                                    <img src="../assests/images/home.svg" alt="">
+                                </span>
+                                <span class="nav-text" id="nav-text">
+                                <i class="fa fa-user-circle" aria-hidden="true"></i>
+                                   mina conta
+                                </span> 
+                                </a>
+                            </li>
+                        </ul>
+                        <ul class="nav-ul">
+                            <li class="nav-ul-li">
+                            <a class="link nav-ul-link d-flex" href="../">
+                                <span class="nav-ul-link-icon">
+                                    <img src="../assests/images/sair.svg" alt="">
+                                </span>
+                                <span class="nav-text" id="nav-text">sair</span> 
+                            </a>
+                            </li>
+                        </ul>
+                                
+                    </div>
+                    <span>
+                        <a class="link nav-text link-don" target="_blank" href="https://www.linkedin.com/in/doncarderms/">Desenvolvida por Doncarderms</a>
+                    </span>
+                    
+            </nav>
+            <p class="nome_aluno">
+            <i class="fa fa-user-circle" aria-hidden="true"></i>
+                <?php
+                    if(isset($_SESSION['dados'] )){
+                        $id = $_SESSION['dados']['id'];   
                         
-                </div>
-
+                    } 
+                    $aluno = $dados->mostrarDadosAluno();
+                    echo $aluno['nome'];
+                ?>
+            </p>
+            <main class="w-100 d-flex align-items-center align-content-center justify-content-space-around">
+               
                 <div class="">
                         
                          <?php
@@ -35,9 +80,6 @@ if(!defined('DFFG574554FD')){
                                 $aluno = $dados->mostrarDadosAluno();
 
                                 $_SESSION['aluno'] = $aluno;
-
-                                // echo "ID: " . $id . "</br>";
-                                echo "Nome: " .$aluno[0]."</br>";
                                 echo "Curso: " .$aluno[1]  ."</br>";
                                 echo "Turma: " .$aluno[2]  ."</br>";
                                 echo "Código da turma:" .$aluno[3]  ."</br>";
@@ -52,8 +94,6 @@ if(!defined('DFFG574554FD')){
                                 }
                                                        //   var_dump($dados->mostrarDadosAluno());  
                         ?>
-                    <a href="<?= DOMINIO ?>/aluno">Ver meus dados</a>
-
                 </div>
             
             </main>

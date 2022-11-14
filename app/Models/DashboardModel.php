@@ -26,9 +26,4 @@ class DashboardModel extends ConnectionController
         die();
     }
 
-    // public function edit(){
-    //           echo "chegou no edit";
-    // }
-
-   
 }
