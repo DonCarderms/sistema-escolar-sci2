@@ -19,7 +19,7 @@ if(!defined('DFFG574554FD')){
         <link rel="stylesheet" href="../assets/css/font-awesome.min.css"/>
     </head>
     <body class="d-flex">
-            <nav class=" d-flex align-items-center flex_column nav-principal-vertical" id="nav-bar">
+            <nav class=" d-flex align-items-center flex_column nav-principal-vertical" id="nav-bar" onmouseover="showUlText();" onmouseout="removeULText();">
                     <div class="w-100 menu-hamburger d-flex flex_column mt-10">
                         <span class="menu-hamburger-span"></span>
                         <span class="menu-hamburger-span"></span>
@@ -29,12 +29,35 @@ if(!defined('DFFG574554FD')){
                         <ul class="nav-ul">
                             <li class="nav-ul-li">
                             <a class="link nav-ul-link d-flex" href="<?= DOMINIO ?>/aluno">
-                                <span class="nav-ul-link-icon">
-                                    <img src="../assests/images/home.svg" alt="">
+                                <span class="nav-ul-link-icon mt-10">
+                                    <i class="color_light fa fa-user-circle fa-2x" aria-hidden="true"></i>                      
                                 </span>
                                 <span class="nav-text" id="nav-text">
-                                <i class="fa fa-user-circle" aria-hidden="true"></i>
                                    mina conta
+                                </span> 
+                                </a>
+                            </li>
+                        </ul>
+                        <ul class="nav-ul">
+                            <li class="nav-ul-li">
+                            <a class="link nav-ul-link d-flex" href="#">
+                                <span class="nav-ul-link-icon mt-10">
+                                     <i class="color_light fa fa-graduation-cap fa-2x" aria-hidden="true"></i>                 
+                                </span>
+                                <span class="nav-text" id="nav-text">
+                                   Aulas
+                                </span> 
+                                </a>
+                            </li>
+                        </ul>
+                        <ul class="nav-ul">
+                            <li class="nav-ul-li">
+                            <a class="link nav-ul-link d-flex" href="#">
+                                <span class="nav-ul-link-icon mt-10">
+                                    <i class="color_light fa fa-headphones fa-2x" aria-hidden="true"></i>                                                                     
+                                </span>
+                                <span class="nav-text" id="nav-text">
+                                   Suporte
                                 </span> 
                                 </a>
                             </li>
@@ -43,7 +66,7 @@ if(!defined('DFFG574554FD')){
                             <li class="nav-ul-li">
                             <a class="link nav-ul-link d-flex" href="../">
                                 <span class="nav-ul-link-icon">
-                                    <img src="../assests/images/sair.svg" alt="">
+                                    <i class="color_light fa  fa-sign-out fa-2x" aria-hidden="true"></i>                      
                                 </span>
                                 <span class="nav-text" id="nav-text">sair</span> 
                             </a>
@@ -76,6 +99,10 @@ if(!defined('DFFG574554FD')){
                                 if(isset($_SESSION['dados'] )){
                                     $id = $_SESSION['dados']['id'];   
                                     
+                                }
+                                if($aluno == null){
+                                    header('Location: ' . DOMINIO);                    
+
                                 } 
                                 $aluno = $dados->mostrarDadosAluno();
 
@@ -97,7 +124,7 @@ if(!defined('DFFG574554FD')){
                 </div>
             
             </main>
-                
+            <script src="<?= DOMINIO ?>/assets/js/script.js"></script>
     </body>
     </html>
   <?php

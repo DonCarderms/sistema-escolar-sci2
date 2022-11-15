@@ -209,6 +209,9 @@ body{
 
 
 /* Dashboard */
+.color_light{
+    color: #fff;;
+}
 .nome_aluno{
     position: absolute;
     right: 0;
@@ -216,15 +219,15 @@ body{
 }
 .nav-principal-vertical{
     background-image: linear-gradient(90deg, #004f50 0%, #10bd979e 100%);
-    width: 80px;
+    width: 60px;
 }
 .nav-principal-vertical:hover .nav-text{
     width: 150px;
-    transition-duration: 1s;
     display: block;
 } 
+
 .nav-principal-vertical:hover{
-    width: 150px;
+    width: 180px;
     transition-duration: 1s;
     position: absolute;
     height: 100vh;
@@ -232,7 +235,8 @@ body{
 .menu-hamburger{
     padding: 10px 0;
     cursor: pointer;
-    background-color: #8044EE;
+    background-image: linear-gradient(90deg, #004f50 0%, #10bd979e 100%);
+
     
 }
 .menu-hamburger span{
