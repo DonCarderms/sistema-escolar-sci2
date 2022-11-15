@@ -3,10 +3,10 @@
 
 if(!defined('DFFG574554FD')){
     header("Location: /");
-
 }else{
     $url = explode("/",filter_input(INPUT_GET,'url',FILTER_DEFAULT));
     $dados = new AlunoController();
+        
     ?>
     <!DOCTYPE html>
     <html lang="en">
@@ -21,12 +21,11 @@ if(!defined('DFFG574554FD')){
 
             <main>
                 <div class="">
-                        
-                </div>
-
-                <div class="conteudo">                
-                    <?php
-     
+                    
+                    </div>
+                    
+                    <div class="conteudo">                
+                        <?php     
                             if(isset($_SESSION['aluno'] )){
                                 $aluno = $_SESSION['aluno'];                                
                             } 

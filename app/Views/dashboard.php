@@ -33,7 +33,7 @@ if(!defined('DFFG574554FD')){
                                     <i class="color_light fa fa-user-circle fa-2x" aria-hidden="true"></i>                      
                                 </span>
                                 <span class="nav-text" id="nav-text">
-                                   mina conta
+                                   Minha conta
                                 </span> 
                                 </a>
                             </li>
@@ -54,10 +54,10 @@ if(!defined('DFFG574554FD')){
                             <li class="nav-ul-li">
                             <a class="link nav-ul-link d-flex" href="#">
                                 <span class="nav-ul-link-icon mt-10">
-                                    <i class="color_light fa fa-headphones fa-2x" aria-hidden="true"></i>                                                                     
+                                    <i class="color_light fa fa-question-circle fa-2x" aria-hidden="true"></i>                                                                     
                                 </span>
                                 <span class="nav-text" id="nav-text">
-                                   Suporte
+                                   Ajuda
                                 </span> 
                                 </a>
                             </li>
@@ -80,7 +80,7 @@ if(!defined('DFFG574554FD')){
                     
             </nav>
             <p class="nome_aluno">
-            <i class="fa fa-user-circle" aria-hidden="true"></i>
+            <i class="fa fa-user-circle fa-2x mg-10 user-icon" aria-hidden="true"></i>
                 <?php
                     if(isset($_SESSION['dados'] )){
                         $id = $_SESSION['dados']['id'];   
@@ -90,9 +90,12 @@ if(!defined('DFFG574554FD')){
                     echo $aluno['nome'];
                 ?>
             </p>
-            <main class="w-100 d-flex align-items-center align-content-center justify-content-space-around">
+            <main class="w-100 d-flex flex_column_reverse align-items-center align-content-center justify-content-space-around">
+                <div class="p-a">
+                    <img width="400" src="<?= DOMINIO?>/assets/images/logo.svg" alt="">
+                </div>
                
-                <div class="">
+                <div class="contenu d-flex justify-content-space-around">
                         
                          <?php
                                 

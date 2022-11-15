@@ -11,7 +11,7 @@
 
 <body>
     <main class="principal">
-        <div class="contenu">
+        <div class="">
             <div class="align_center">
                  <img src="<?= DOMINIO ?>/assets/images/logo.svg" alt="">
             </div>

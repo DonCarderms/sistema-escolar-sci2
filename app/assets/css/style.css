@@ -50,6 +50,9 @@ body{
 .flex_column{
     flex-direction: column;
 }
+.flex_column_reverse{
+    flex-direction: column-reverse;
+}
 .wrap{
     flex-wrap: wrap;
 }
@@ -133,7 +136,9 @@ body{
     display: flex;
     align-content: center;
 }
-
+.p-a{
+    position: absolute;
+}
 .w-250{
     width: 250px;
 }
@@ -211,6 +216,15 @@ body{
 /* Dashboard */
 .color_light{
     color: #fff;;
+}
+.user-icon{
+    margin: 10px;
+    color: #673ab7;
+}
+
+.contenu{
+    height: 500px;
+    width: 100%;
 }
 .nome_aluno{
     position: absolute;
