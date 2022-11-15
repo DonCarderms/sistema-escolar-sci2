@@ -19,13 +19,17 @@ if(!defined('DFFG574554FD')){
         <link rel="stylesheet" href="../assets/css/font-awesome.min.css"/>
     </head>
     <body class="d-flex">
+          
             <nav class=" d-flex align-items-center flex_column nav-principal-vertical" id="nav-bar" onmouseover="showUlText();" onmouseout="removeULText();">
+                    <span class="close-menu cm-1"></span>
+                    <span class="close-menu cm-2"></span>
                     <div class="w-100 menu-hamburger d-flex flex_column mt-10">
+                        <i id="fa-mh" class="fa fa-2x fa-bars " aria-hidden="true"></i>
                         <span class="menu-hamburger-span"></span>
                         <span class="menu-hamburger-span"></span>
                         <span class="menu-hamburger-span"></span>
                     </div>
-                    <div class="w-100">
+                    <div class="w-100 div-ul">
                         <ul class="nav-ul">
                             <li class="nav-ul-li">
                             <a class="link nav-ul-link d-flex" href="<?= DOMINIO ?>/aluno">
@@ -74,11 +78,12 @@ if(!defined('DFFG574554FD')){
                         </ul>
                                 
                     </div>
-                    <span>
+                    <span class="link-lidbn">
                         <a class="link nav-text link-don" target="_blank" href="https://www.linkedin.com/in/doncarderms/">Desenvolvida por Doncarderms</a>
                     </span>
                     
             </nav>
+           
             <p class="nome_aluno">
             <i class="fa fa-user-circle fa-2x mg-10 user-icon" aria-hidden="true"></i>
                 <?php
@@ -91,39 +96,47 @@ if(!defined('DFFG574554FD')){
                 ?>
             </p>
             <main class="w-100 d-flex flex_column_reverse align-items-center align-content-center justify-content-space-around">
-                <div class="p-a">
+                <div class="logo">
                     <img width="400" src="<?= DOMINIO?>/assets/images/logo.svg" alt="">
                 </div>
                
-                <div class="contenu d-flex justify-content-space-around">
-                        
-                         <?php
-                                
-                                if(isset($_SESSION['dados'] )){
-                                    $id = $_SESSION['dados']['id'];   
+                <div class="contenu curso d-flex  justify-content-space-around">
+                        <a class="d-flex wrap link lik justify-content-space-between" href="http:#">
+                           <div class="img-curso">
+                              <img class="w-100" src="https://www.alura.com.br/artigos/assets/php-uma-introducao-linguagem/php-uma-introducao-linguagem.png" alt="">
+                           </div> 
+                           <div class="text-courso">
+                                <?php
                                     
-                                }
-                                if($aluno == null){
-                                    header('Location: ' . DOMINIO);                    
+                                    if(isset($_SESSION['dados'] )){
+                                        $id = $_SESSION['dados']['id'];   
+                                        
+                                    }
+                                    if($aluno == null){
+                                        header('Location: ' . DOMINIO);                    
 
-                                } 
-                                $aluno = $dados->mostrarDadosAluno();
+                                    } 
+                                    $aluno = $dados->mostrarDadosAluno();
 
-                                $_SESSION['aluno'] = $aluno;
-                                echo "Curso: " .$aluno[1]  ."</br>";
-                                echo "Turma: " .$aluno[2]  ."</br>";
-                                echo "Código da turma:" .$aluno[3]  ."</br>";
-                           
+                                    $_SESSION['aluno'] = $aluno;
+                                    echo "<p style='margin: 0 0 0 20px;'> " . $aluno[1] . "</p></br>";
+                                    // echo "Turma: " .$aluno[2]  ."</br>";
+                                    // echo "Código da turma:" .$aluno[3]  ."</br>";
+                            
 
-                                if($dados->mostrarDadosAluno()['situacao_id'] == "1"){
-                                    echo "</br>Usuario Ativo</br>";
-                                }
+                                    if($dados->mostrarDadosAluno()['situacao_id'] == "1"){
+                                        echo "</br>Usuario Ativo</br>";
+                                    }
 
-                                if($dados->mostrarDadosAluno()['nivelAcesso_id'] == "3"){
-                                    echo "Aluno ";
-                                }
-                                                       //   var_dump($dados->mostrarDadosAluno());  
-                        ?>
+                                    if($dados->mostrarDadosAluno()['nivelAcesso_id'] == "3"){
+                                        echo "Aluno ";
+                                    }
+                                                        //   var_dump($dados->mostrarDadosAluno());  
+                                ?>
+                           </div>
+                            
+                        </a>
+                         
                 </div>
             
             </main>

@@ -151,6 +151,9 @@ body{
 .justify-content-space-around{
     justify-content: space-around;
 }
+.justify-content-space-between{
+    justify-content: space-between;
+}
 .align-content-center{
     align-content: center;
 }
@@ -177,8 +180,8 @@ body{
 }
 .input-style{
     height: 40px;
-    color: #fff;
-    background-color: #fffcfc2f;
+    color: rgb(255, 255, 255);
+    background-image: linear-gradient(90deg, #004f50 0%, #10bd979e 100%);
     margin-bottom: 20px;
     outline: none;
     border: none;
@@ -250,7 +253,7 @@ body{
     padding: 10px 0;
     cursor: pointer;
     background-image: linear-gradient(90deg, #004f50 0%, #10bd979e 100%);
-
+    margin-bottom: 100px;
     
 }
 .menu-hamburger span{
@@ -260,6 +263,42 @@ body{
     margin-left: 10px;
     background-color: rgb(255, 255, 255);
 }
+.close-menu{
+    display: none;
+    height: 3px;
+    width: 40px;
+    background-color: #8044EE;
+    position: absolute;
+    top: 3%;
+    left: 180px;
+}
+
+.cm-1{    
+    animation: close 0.5s;
+    transform: rotate(45deg);
+}
+@keyframes close {
+    0%   {transform: rotate(0deg)}
+    25%  {transform: rotate(15deg)}
+    50%  {transform: rotate(25deg)}
+    75%  {transform: rotate(35deg)}
+    100% {transform: rotate(45deg)}
+  }
+.cm-2{
+    animation: close2 0.5s;
+    transform: rotate(-45deg)
+}
+@keyframes close2 {
+    0%   {transform: rotate(0deg)}
+    25%  {transform: rotate(-15deg)}
+    50%  {transform: rotate(-25deg)}
+    75%  {transform: rotate(-35deg)}
+    100% {transform: rotate(-45deg)}
+  }
+
+ .active{
+     background-color: #8044EE;
+ } 
 .nav-ul:hover{
     background-color: #8044EE;
     transition-duration: 1.5s;
@@ -277,5 +316,91 @@ body{
     color: #ffffff;
     display: none;
 }
+
+.curso{
+    border: solid 1px #cccc;
+    max-width: 740px;
+    min-width: 300px;
+    height: 200px;  
+    flex-direction: row;
+}
+.img-curso{
+    width: 50%;
+    min-width: 300px;
+    height: 200px;
+}
+.img-curso img{
+    height: 200px;
+}
+.text-courso{
+    padding-top: 30px;
+    color: #000000;;
+    min-width: 300px;
+    width: 50%;
+}
+#fa-mh{
+   display: none;
+}
+
+.conteudo-aluno p{
+    padding-top: 20px;
+}
+.conteudo-edit {
+    margin-top: 50px;
+    /* background-color: #cccc; */
+    padding: 20px;
+    border-radius: 10px;
+    border: solid 1px #cccc;
+}
+@media (max-width: 800px) {
+    .curso{
+        height: 400px;
+        width: 200px;
+    }
+    .logo{
+        display: none;
+    }
+    .img-curso{
+        margin-top: -125px;
+    }
+    .nome_aluno{
+        font-size: 0.7rem;
+    }
+    .nav-principal-vertical{
+        height: 0;
+        width: 0;
+    }
+    .div-ul{
+        display: none;
+    }
+    .link-lidbn{
+        display: none;
+    }
+    .nav-principal-vertical:hover .menu-hamburger{
+        opacity: 0;
+    }
+    .nav-principal-vertical:hover .div-ul, .link-lidbn{
+        display: block;
+    }
+    .nav-principal-vertical:hover .close-menu{
+        display: block;
+    }
+    .menu-hamburger{
+        margin-bottom: 50px;
+    }
+    #fa-mh{
+        display: block;
+        margin-left: 70px;
+        font-size: 2rem;
+        background-color: #722FEC;
+    }
+    .menu-hamburger span {
+        position: absolute;
+        top: 10px;
+        left:  50px;
+        margin: 10px;
+    }
+  }
+
 
 

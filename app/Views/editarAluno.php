@@ -20,9 +20,9 @@ if($arr_dados_prod[1] == "editar=true"){
         <title>Eduka</title>
         <link rel="stylesheet" href="<?= DOMINIO ?>/assets/css/style.css">
     </head>
-    <body>
+    <body class="d-flex">
 
-            <main>
+            <main class="w-100 d-flex flex_column_reverse align-items-center align-content-center justify-content-space-around">
                 <div class="">
                     <?php
                         if(isset($_SESSION['dados'] )){
@@ -33,24 +33,24 @@ if($arr_dados_prod[1] == "editar=true"){
 
                 </div>
 
-                <div class="conteudo">                
+                <div class="conteudo-edit pt-10">                
                                   
                  <form method="Post">
 
                      <label for="">Nome</label>
-                     <input type="text" name="nome" id="nome" value="<?= $aluno[0] ?>"></br>
+                     <input class="input-style" type="text" name="nome" id="nome" value="<?= $aluno[0] ?>"></br>
 
                      <label for="">email</label>
-                     <input type="text" name="email" id="email" value="<?= $aluno[4] ?>"></br>
+                     <input class="input-style" type="text" name="email" id="email" value="<?= $aluno[4] ?>"></br>
 
                      <label for="">Senha</label>
-                     <input type="text" name="senha" id="senha" value=""></br>
+                     <input class="input-style" type="text" name="senha" id="senha" value=""></br>
      
-                     <p>Endereço</p>                
+                     <p class="font-10">Endereço</p>                
                      <label for="">Nome da rua</label>
-                     <input type="text" name="rua" id="rua" value="<?= $aluno[7] ?>"></br>                
+                     <input class="input-style" type="text" name="rua" id="rua" value="<?= $aluno[7] ?>">                
                      <label for="">numero da rua</label>
-                     <input type="text" name="numero" id="numero" value="<?= $aluno[8] ?>"></br> 
+                     <input class="input-style" type="text" name="numero" id="numero" value="<?= $aluno[8] ?>"></br> 
 
                      <button class="link-button-2 link-button-geral" type="submit">Confirmar</button>
 
