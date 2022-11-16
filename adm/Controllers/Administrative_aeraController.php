@@ -2,15 +2,23 @@
 
 class  Administrative_aeraController
 {
-    function adm(){
-      echo  "chegou no adm controler";
+    function countStudent(){
       $adm = new Administrative_aeraModel();
-      $adm->adm();
+      return $adm->countStudent();
+    }
+    function countTeacher(){
+      $adm = new Administrative_aeraModel();
+      return $adm->countTeacher();
+    }
+    function countCourse(){
+      $adm = new Administrative_aeraModel();
+      return $adm->countCourse();
+    }
+    function countTeam(){
+      $adm = new Administrative_aeraModel();
+      return $adm->countTeam();
     }
 
-    function edit(){
-        echo "chamou o editar";
-    }
     function sair(){
         header('Location:' . DOMINIO .'');
     }

@@ -100,7 +100,7 @@ if(!defined('DFFG574554FD')){
                             } 
                                     
                              $arr_url = explode("?",$_SERVER['REQUEST_URI']);
-                            $arr_dados_prod = explode("&",$arr_url[1]);
+                             $arr_dados_prod = explode("&",$arr_url[1]);
 
                             ?>
                                 <p href="">Nome:   <?= $aluno[0]  ?></p>

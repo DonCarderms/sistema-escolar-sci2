@@ -9,16 +9,17 @@ class core {
                 if($controller != ""){
 
                         if($caminho){
-                            var_dump($caminho);
+                           ;
                             if(class_exists($controllerFile)){
-                                var_dump($controllerFile);
+                               
 
                                 if($metodo != ""){
                                    
 
                                     switch($metodo){
                                         case "editar":$metodo = "edit";
-                                        
+                                        break;
+                                        case "excluir":$metodo = "delete";
                                         break;
                                         case "sair":$metodo = "sair";
                                         var_dump($metodo);
