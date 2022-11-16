@@ -12,7 +12,14 @@
 // let removeULText = () => nav_text.style.display = "none";
 
 
+// let button = document.getElementById("fa-mh")
 
+// alert(button);
+// ​
+// button.addEventListener("click", function(event){
+//         console.log(event.target);
+//     alert('O elemento clicado foi o ' + e.target.innerHTML);
+// });
 
 
 

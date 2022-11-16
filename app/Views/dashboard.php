@@ -2,10 +2,9 @@
   session_start();
 
 if(!defined('DFFG574554FD')){
-    header("Location: /");
-
+    header('Location: ' . DOMINIO); 
 }else{
-    $url = explode("/",filter_input(INPUT_GET,'url',FILTER_DEFAULT));
+    // $url = explode("/",filter_input(INPUT_GET,'url',FILTER_DEFAULT));
     $dados = new DashboardController();
     ?>
     <!DOCTYPE html>

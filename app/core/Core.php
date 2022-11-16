@@ -20,10 +20,10 @@ class core
                             switch($metodo){
                                 
                                 // case "sair":
-                                    //     $metodo = "sair";
-                                    //     break;
+                                //         $metodo = "sair";
+                                //         break;
                                     case "editar":
-                                        if($controller === "dashboard"){
+                                        if($controller == "dashboard"){
                                              header('Location: ' . DOMINIO . '/error404.php');                   
                                         }
                                         $metodo = "edit";       

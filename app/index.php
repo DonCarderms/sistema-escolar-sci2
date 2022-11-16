@@ -7,27 +7,12 @@ $url = filter_input(INPUT_GET,'url',FILTER_DEFAULT);
 
 $arr_url = explode("/", $url);
 
-// include_once 'autoload.php';
-//Core
+include_once 'autoload.php';
+// //Core
 include_once 'core/Core.php';
 
 //Config
 include_once 'config/config.php';
-
-//Controllers
-include_once 'Controllers/LogoutController.php';
-include_once 'Controllers/ConnectionController.php';
-include_once 'Controllers/DashboardController.php';
-include_once 'Controllers/LoginController.php';
-include_once 'Controllers/Error404Controller.php';
-include_once 'Controllers/AlunoController.php';
-
-//Models
-include_once 'Models/LoginModel.php';
-include_once 'Models/AlunoModel.php';
-include_once 'Models/DashboardModel.php';
-
-
 
 $controller     = $arr_url[0];
 $metodo         = $arr_url[1];
