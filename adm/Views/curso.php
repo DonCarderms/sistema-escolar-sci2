@@ -15,7 +15,7 @@ if($arr_dados_cours[1] == "editar=true"){
 
         ?>
         <!DOCTYPE html>
-        <html lang="en">
+        <html lang="pt-br">
         <head>
             <meta charset="UTF-8">
             <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -30,7 +30,7 @@ if($arr_dados_cours[1] == "editar=true"){
                 <?php
                     if(isset($_SESSION['msg'])){
                         echo $_SESSION['msg'];
-                        unset($_SESSION['msg']);
+                        unset($_SESSION['msg']);                     
                     }
                 ?>
             </div>
@@ -65,6 +65,8 @@ if($arr_dados_cours[1] == "editar=true"){
         </body>
         </html>
     <?php    
+}else{
+    header('Location:' .DOMINIO.'');    
 }
 
 

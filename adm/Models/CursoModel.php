@@ -5,9 +5,7 @@ class CursoModel extends ConnectionController
 {
     public object $conn;
 
-    public function newCours(){
-        
-    }
+    
     public function showCours($id){
         $this->conn = $this->connectDb();
 

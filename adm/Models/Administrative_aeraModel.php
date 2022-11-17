@@ -26,7 +26,7 @@ class  Administrative_aeraModel extends ConnectionController {
     public function countCourse(){
         $this->conn = $this->connectDb();
 
-        $sql = "SELECT COUNT(*) FROM `curso`";
+        $sql = "SELECT COUNT(*)  FROM `curso`";
         $sql_query = $this->conn->prepare($sql);
         $sql_query->execute();
         $sql_dados = $sql_query->fetchAll();

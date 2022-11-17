@@ -20,13 +20,12 @@ if(!defined('FBHTJ5Y7FDNG')){
 </head>
 <body>
         <div class="">
-            <a href="">Novo Curso</a>
+            <a href="<?= DOMINIO ?>/curso_create">Novo Curso</a>
         </div>
         <?php
              $arr_url = explode("?",$_SERVER['REQUEST_URI']);
              $arr_dados_prod = explode("&",$arr_url[1]);
 
-                // var_dump($cours->listCours());
              foreach ($cours->listCours() as $dados) {
                 if($dados[3] == null){
                     $dados[3] = "não especificado";
@@ -37,7 +36,7 @@ if(!defined('FBHTJ5Y7FDNG')){
                     <p>Data Final: <?= $dados[3] ?> </p>
                     <div>
                         <a href="<?= DOMINIO ?>/curso?id=<?= $dados[0] ?>&editar=true">Editar</a>
-                        <a href="<?= DOMINIO ?>/curso/excluir?id=<?= $dados[0] ?>&excluir=true">Excluir</a>
+                        <a href="<?= DOMINIO ?>/curso_delete?id=<?= $dados[0] ?>&excluir=true">Excluir</a>
                     </div><br>
                 <?php
              }
