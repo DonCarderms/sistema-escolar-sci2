@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: projetos
--- Tempo de geração: 12/11/2022 às 09:25
+-- Tempo de geração: 17/11/2022 às 00:37
 -- Versão do servidor: 8.0.30
 -- Versão do PHP: 8.0.24
 
@@ -62,7 +62,8 @@ CREATE TABLE `endereco` (
 --
 
 INSERT INTO `endereco` (`id`, `logradouro`, `numero`) VALUES
-(1, 'Arthur Perguda', 800);
+(1, 'Arthur pereguda', 800),
+(3, 'Alameda Rio Branco', 378);
 
 -- --------------------------------------------------------
 
@@ -116,15 +117,17 @@ INSERT INTO `situacao` (`id`, `nome`, `dateCreate`, `dateModified`) VALUES
 CREATE TABLE `turma` (
   `id` int NOT NULL,
   `nome` varchar(60) NOT NULL,
-  `codigo` varchar(45) NOT NULL
+  `codigo` varchar(45) NOT NULL,
+  `curso_id` int NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Despejando dados para a tabela `turma`
 --
 
-INSERT INTO `turma` (`id`, `nome`, `codigo`) VALUES
-(1, 'programação web', 'MDKKVDFK');
+INSERT INTO `turma` (`id`, `nome`, `codigo`, `curso_id`) VALUES
+(1, 'programação web', 'MDKKVDFK', 1),
+(2, 'Programação Web ', 'MENRJ45M4', 1);
 
 -- --------------------------------------------------------
 
@@ -142,7 +145,7 @@ CREATE TABLE `usuario` (
   `situacao_id` int NOT NULL,
   `nivelAcesso_id` int NOT NULL,
   `turma_id` int DEFAULT NULL,
-  `endereco_id` int NOT NULL,
+  `endereco_id` int DEFAULT NULL,
   `curso_id` int DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
@@ -151,8 +154,11 @@ CREATE TABLE `usuario` (
 --
 
 INSERT INTO `usuario` (`id`, `nome`, `email`, `senha`, `cpf`, `dataNascimento`, `situacao_id`, `nivelAcesso_id`, `turma_id`, `endereco_id`, `curso_id`) VALUES
-(1, 'Don Pilocarderms Soufrant', 'derni@gmail.com', 'e10adc3949ba59abbe56e057f20f883e', '80101008970', '2003-11-26', 1, 3, 1, 1, 1),
-(3, 'derni', 'gruda@gmail.com', '4297f44b13955235245b2497399d7a93', '92846458081', '2001-11-09', 1, 3, 1, 1, 6);
+(1, 'Don pilocarderms souffrant', 'derni@gmail.com', 'e10adc3949ba59abbe56e057f20f883e', '80101008970', '2003-11-26', 1, 3, 1, 1, 1),
+(3, 'derni', 'gruda@gmail.com', '4297f44b13955235245b2497399d7a93', '92846458081', '2001-11-09', 1, 3, 1, 1, 6),
+(5, 'Don Carderms root', 'donroot@gmail.com', '9bfdd62b0c6a8c3732f3826be2b2e044', '44287299001', '2003-11-26', 1, 1, NULL, NULL, NULL),
+(8, 'Alan Renato', 'alanrenatoprof@gmail.com', '21434542', '92836458081', '1995-07-17', 1, 2, 1, 3, 1),
+(9, ' Iraneide Soares da Silva', ' Iraneidedasilva@outlook.com', '435345346', '32435345432', '1993-03-12', 1, 2, NULL, NULL, 3);
 
 --
 -- Índices para tabelas despejadas
@@ -187,7 +193,8 @@ ALTER TABLE `situacao`
 --
 ALTER TABLE `turma`
   ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `id` (`id`);
+  ADD UNIQUE KEY `id` (`id`),
+  ADD KEY `curso_id` (`curso_id`);
 
 --
 -- Índices de tabela `usuario`
@@ -197,6 +204,7 @@ ALTER TABLE `usuario`
   ADD UNIQUE KEY `id` (`id`),
   ADD UNIQUE KEY `senha` (`senha`),
   ADD UNIQUE KEY `email` (`email`),
+  ADD UNIQUE KEY `cpf` (`cpf`),
   ADD KEY `situacao_id` (`situacao_id`),
   ADD KEY `nivelAcesso_id` (`nivelAcesso_id`),
   ADD KEY `turma_id` (`turma_id`),
@@ -217,7 +225,7 @@ ALTER TABLE `curso`
 -- AUTO_INCREMENT de tabela `endereco`
 --
 ALTER TABLE `endereco`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de tabela `situacao`
@@ -229,17 +237,23 @@ ALTER TABLE `situacao`
 -- AUTO_INCREMENT de tabela `turma`
 --
 ALTER TABLE `turma`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de tabela `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- Restrições para tabelas despejadas
 --
+
+--
+-- Restrições para tabelas `turma`
+--
+ALTER TABLE `turma`
+  ADD CONSTRAINT `turma_ibfk_1` FOREIGN KEY (`curso_id`) REFERENCES `curso` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Restrições para tabelas `usuario`
