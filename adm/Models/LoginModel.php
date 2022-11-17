@@ -10,7 +10,7 @@ class LoginModel extends ConnectionController
         $sql_query = $this->conn->prepare($sql);
         $sql_query->execute();
         $sql_dados = $sql_query->fetchAll();
-        $_SESSION['dados'] = $sql_dados['0'];          
+        $_SESSION['dados'] = $sql_dados['0'];      
         $rowCount = count($sql_dados);
         if($rowCount == 0){
             $msg = '<p style="text-align:center;color:red;background-color:#fcde00;margin: 0px 0px 10px 15px;padding: 10px 0px;"> dados incorretos! </P>';

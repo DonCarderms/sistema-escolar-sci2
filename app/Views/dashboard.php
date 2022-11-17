@@ -86,11 +86,18 @@ if(!defined('DFFG574554FD')){
             <p class="nome_aluno">
             <i class="fa fa-user-circle fa-2x mg-10 user-icon" aria-hidden="true"></i>
                 <?php
+                    if(isset($_SESSION['dados'])){
+                
+                    }else{
+                        header('Location: ' . DOMINIO);
+                    }
                     if(isset($_SESSION['dados'] )){
                         $id = $_SESSION['dados']['id'];   
                         
-                    } 
+                    }
+                        
                     $aluno = $dados->mostrarDadosAluno();
+                    
                     echo $aluno['nome'];
                 ?>
             </p>
@@ -106,23 +113,10 @@ if(!defined('DFFG574554FD')){
                            </div> 
                            <div class="text-courso">
                                 <?php
-                                    
-                                    if(isset($_SESSION['dados'] )){
-                                        $id = $_SESSION['dados']['id'];   
-                                        
-                                    }
-                                    if($aluno == null){
-                                        header('Location: ' . DOMINIO);                    
-
-                                    } 
-                                    $aluno = $dados->mostrarDadosAluno();
-
+                                
                                     $_SESSION['aluno'] = $aluno;
                                     echo "<p style='margin: 0 0 0 20px;'> " . $aluno[1] . "</p></br>";
-                                    // echo "Turma: " .$aluno[2]  ."</br>";
-                                    // echo "Código da turma:" .$aluno[3]  ."</br>";
-                            
-
+                                    
                                     if($dados->mostrarDadosAluno()['situacao_id'] == "1"){
                                         echo "</br>Usuario Ativo</br>";
                                     }
@@ -130,7 +124,6 @@ if(!defined('DFFG574554FD')){
                                     if($dados->mostrarDadosAluno()['nivelAcesso_id'] == "3"){
                                         echo "Aluno ";
                                     }
-                                                        //   var_dump($dados->mostrarDadosAluno());  
                                 ?>
                            </div>
                             

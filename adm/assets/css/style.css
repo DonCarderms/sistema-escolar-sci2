@@ -187,6 +187,7 @@ body{
     border: none;
     padding: 4px;
     padding-left: 10px;
+    border: 1px solid #03a9f4;
 }
 .button-style{
     height: 40px;

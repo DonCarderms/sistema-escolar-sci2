@@ -20,7 +20,7 @@ if(!defined('FBHTJ5Y7FDNG')){
 </head>
 <body>
         <div class="">
-            <a href="#">Novo Curso</a>
+            <a href="">Novo Curso</a>
         </div>
         <?php
              $arr_url = explode("?",$_SERVER['REQUEST_URI']);
@@ -36,7 +36,7 @@ if(!defined('FBHTJ5Y7FDNG')){
                     <p>Data de início: <?= $dados[2] ?></p>
                     <p>Data Final: <?= $dados[3] ?> </p>
                     <div>
-                        <a href="<?= DOMINIO ?>/curso/editar?id=<?= $dados[0] ?>&editar=true">Editar</a>
+                        <a href="<?= DOMINIO ?>/curso?id=<?= $dados[0] ?>&editar=true">Editar</a>
                         <a href="<?= DOMINIO ?>/curso/excluir?id=<?= $dados[0] ?>&excluir=true">Excluir</a>
                     </div><br>
                 <?php

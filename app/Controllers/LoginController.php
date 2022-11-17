@@ -9,8 +9,4 @@ class LoginController
 
     }
 
-    public function cadastrarAluno($nome, $dataNascimento, $cpf, $email, $senha){
-        $newAluno  = new LoginModel();
-        return  $newAluno->cadastrarAluno($nome,$cpf ,$dataNascimento , $email, $senha);
-    }
 }

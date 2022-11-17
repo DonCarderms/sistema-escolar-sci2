@@ -6,7 +6,7 @@ class AlunoModel extends ConnectionController {
 
     public function edit($dadosedit){
         $this->conn = $this->connectDb();
-        // echo "chegou no editar aluno model </br>";
+        
         if(isset($_SESSION['dados'] )){
             $dados = $_SESSION['dados'];                                
         } 
@@ -19,7 +19,6 @@ class AlunoModel extends ConnectionController {
         $numero = $dadosedit['numero'];
 
         if($dadosedit['senha'] != ""){
-            // var_dump($dadosedit['senha']);
             $sql = "UPDATE `usuario` SET `nome` = '$nome', `email` = '$email', `senha` = '$senha'  WHERE `id` = $id";
               $sql_query = $this->conn->prepare($sql); 
               $sql_query->execute();
@@ -32,8 +31,6 @@ class AlunoModel extends ConnectionController {
         
         $sql_query = $this->conn->prepare($sql2);
         
-
-        // var_dump($sql);
     
         if($sql_query->execute()){
             echo  "<p style='text-align:center;color:red;background-color:#fcde00;margin: 0px 0px 10px 0px;padding: 10px 0px;'>Edição realizada com sucesso</p>";
