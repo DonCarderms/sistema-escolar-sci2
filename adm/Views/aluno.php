@@ -1,18 +1,13 @@
 <?php
 session_start();
 
-if(isset($_SESSION['dados'])){
-                
-}else{
-    header('Location: ' . DOMINIO);
-    $_SESSION['expire'] = "<p style='color: red;font-size: 2rem;'>Sessão expirada</p>";
-}
+
 
 $arr_url = explode("?",$_SERVER['REQUEST_URI']);
 $arr_dados_stud = explode("&",$arr_url[1]);
 
+
 if($_POST){
-    var_dump($_POST);
     $edit_stud = new AlunoController();
     $edit_stud->editStud($_POST);
 }
@@ -29,11 +24,25 @@ if($arr_dados_stud[1] == "editar=true"){
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="<?= DOMINIO ?>/assets/css/style.css">  
         <title>Admin</title>
     </head>
     <body>
 
+         <div class="">
+            <p class="t-center pt-10">
+                    <?php
+                    if(isset($_SESSION['msg'])){
+                        echo $_SESSION['msg'];
+                        unset($_SESSION['msg']);
+                    }
+                    ?>
+            </p>
+            
+         </div>
+
         <?php
+
 
             foreach($stud->showStudent($id[1])  as $dados){
                 ?>
@@ -46,10 +55,10 @@ if($arr_dados_stud[1] == "editar=true"){
                             <label for="email">Email do aluno: </label>
                             <input type="email" name="email" id="email" value="<?=$dados[5]?>">
                         </div>
-                        <!-- <div>
+                        <div>
                             <label for="senha">nova Senha do aluno: </label>
                             <input type="text" name="senha" id="senha" value="">
-                        </div> -->
+                        </div>
                         <div>
                             <label for="cpf">cpf do aluno:</label>
                             <input type="text" name="cpf" id="cpf" value="<?=$dados[6]?>">
@@ -74,10 +83,15 @@ if($arr_dados_stud[1] == "editar=true"){
             }
 
         ?>
-       <p>echo</p>
+        <div class="">
+            <a href="<?= DOMINIO ?>/alunos">Voltar</a>
+        </div>
 
     </body>
     </html>
     <?php
+}else{
+    header('Location: ' . DOMINIO);
+    
 }
 

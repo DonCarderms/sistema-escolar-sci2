@@ -1,6 +1,5 @@
 <?php
 session_start();
-
 if(!defined('FBHTJ5Y7FDNG')){
     header('Location: ' . DOMINIO);
 
@@ -20,13 +19,6 @@ $adm = new Administrative_aeraController();
 </head>
 <body>
       <?php
-            if(isset($_SESSION['dados'])){
-                
-            }else{
-                header('Location: ' . DOMINIO);
-                 $_SESSION['expire'] = "<p style='color: red;font-size: 2rem;'>Sessão expirada</p>";
-
-            }
 
             $student = $adm->countStudent();
             $prof = $adm->countTeacher();

@@ -1,13 +1,6 @@
 <?php
   session_start();
 
-  if(isset($_SESSION['dados'])){
-                
-    }else{
-        header('Location: ' . DOMINIO);
-        $_SESSION['expire'] = "<p style='color: red;font-size: 2rem;'>Sessão expirada</p>";
-    }
-
   $arr_url = explode("?",$_SERVER['REQUEST_URI']);
   $arr_dados_prod = explode("&",$arr_url[1]);
   

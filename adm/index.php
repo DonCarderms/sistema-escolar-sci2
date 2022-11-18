@@ -1,4 +1,5 @@
 <?php
+session_start();
 define('FBHTJ5Y7FDNG', true);
 
 $url = filter_input(INPUT_GET, 'url', FILTER_DEFAULT);
@@ -43,5 +44,6 @@ if(isset($_POST)){
 }else{
     header('Location: ' . DOMINIO);
 }
+
 
 

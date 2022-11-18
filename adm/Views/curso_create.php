@@ -1,17 +1,7 @@
 <?php
 session_start();
-if(isset($_SESSION['dados'])){
-                
-}else{
-    header('Location: ' . DOMINIO);
-    $_SESSION['expire'] = "<p style='color: red;font-size: 2rem;'>Sessão expirada</p>";
-}
-$arr_url = explode("?",$_SERVER['REQUEST_URI']);
-$arr_dados_cours = explode("&",$arr_url[1]);
 
 if($_POST){
-    // header('Location:' .DOMINIO.'/curso?id='.$dados[0].'&editar=true');
-    $id = explode("=", $arr_dados_cours[0]);
     $newcours = new Curso_createController();
     $newcours->newCours($_POST);
 }
@@ -22,10 +12,13 @@ if($_POST){
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="<?= DOMINIO ?>/assets/css/style.css">
     <title>Admin</title>
 </head>
 <body>
-        <form action="" method="post">
+
+        <div>
+            <p>
                 <?php
 
                 if(isset($_SESSION['msg'])){
@@ -33,7 +26,11 @@ if($_POST){
                     unset($_SESSION['msg']);
                 }
                 ?>
-
+ 
+            </p>
+        </div>
+        <form action="" method="post">
+               
                             <div>
                                 <label for="nome">Nome</label>
                                 <input type="text" name="nome" id="nome">

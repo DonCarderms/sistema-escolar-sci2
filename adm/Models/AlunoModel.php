@@ -22,8 +22,7 @@ class AlunoModel extends ConnectionController
     }
     
     public function editStud($dadosEdits){
-        $this->conn = $this->connectDb();
-        var_dump(($dadosEdits));  
+        $this->conn = $this->connectDb();;  
         if(isset($_SESSION['id'])){
             $id = $_SESSION['id'];
             unset($_SESSION['id']);
@@ -35,18 +34,37 @@ class AlunoModel extends ConnectionController
                                                          
         $nome = $dadosEdits['nome'];
         $email = $dadosEdits['email'];
+        $senha = md5($dadosEdits['senha']);
         $cpf = $dadosEdits['cpf'];
         $dataNascimento = $dadosEdits['dataNascimento'];
         $rua = $dadosEdits['rua'];
         $numero = $dadosEdits['numero'];
+
+        if($dadosEdits['senha'] == ""){
+            $sql = "UPDATE `usuario` SET `nome` = '$nome', `email` = '$email', `cpf` = '$cpf', `dataNascimento` = '$dataNascimento' WHERE `id` = '$id'";   
+            $sql_query1 = $this->conn->prepare($sql); 
+            $sql_query1->execute();
+        }else{
+            $sql = "UPDATE `usuario` SET `nome` = '$nome', `email` = '$email', `senha` = '$senha', `cpf` = '$cpf', `dataNascimento` = '$dataNascimento' WHERE `id` = '$id'";   
+            $sql_query1 = $this->conn->prepare($sql); 
+           $sql_query1->execute();
+        }
             
-                $sql = "UPDATE `usuario` SET `nome` = '$nome', `email` = '$email', `cpf` = '$cpf', `dataNascimento` = '$dataNascimento' WHERE `id` = '$id'";   
-                var_dump($sql);
-                $sql_query = $this->conn->prepare($sql); 
-                $sql_query->execute();
+        
         
         $sql2 = "UPDATE `endereco` SET `logradouro` = '$rua', `numero` = '$numero' WHERE `endereco`.`id` = '$id_endereco'";
-        var_dump($sql2);
+        $sql_query2 = $this->conn->prepare($sql2); 
+        $sql_query2->execute();
+        
+       if($sql_query1->execute() && $sql_query2->execute()){
+            $_SESSION['msg'] = "dados atualizados com sucesso";
+       }elseif($sql_query1->execute()){
+            $_SESSION['msg'] =  "Endereco não alterada";
+       }elseif($sql_query2->execute()){
+            $_SESSION['msg'] =  "dados do Aluno não alterada";
+       }
     }
+
+
    
 }

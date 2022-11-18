@@ -9,6 +9,11 @@ class core
 
         if($controller != ""){
 
+                    if(!isset($_SESSION['dados'])){
+                        header('Location: ' . DOMINIO);
+                        echo "<p style='color: red;font-size: 2rem;'>Sessão expirada</p>";
+                    }
+                    
                     if($caminho){
             
                         if(class_exists($controllerFile)){

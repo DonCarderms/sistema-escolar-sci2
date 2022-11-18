@@ -7,6 +7,11 @@ class core {
                 $caminho        = file_exists("/var/www/html/Controllers/".$controllerFile. ".php");
                     
                 if($controller != ""){
+                    
+                    // if(!isset($_SESSION['dados'])){
+                    //     header('Location: ' . DOMINIO);
+                    //     echo "<p style='color: red;font-size: 2rem;'>Sessão expirada</p>";
+                    //   }
 
                         if($caminho){
                            ;
