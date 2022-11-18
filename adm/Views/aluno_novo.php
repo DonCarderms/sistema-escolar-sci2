@@ -20,7 +20,7 @@ if($_POST){
 </head>
 <body>
 
-     <form action="" method="post">
+     <form method="post">
                         <div>      
                             <label for="nome">Nome aluno: </label>
                             <input type="text" name="nome" id="nome">
@@ -31,7 +31,7 @@ if($_POST){
                         </div>
                         <div>
                             <label for="senha">Senha do aluno: </label>
-                            <input type="password" name="senha" id="senha">
+                            <input type="text"  name="senha" id="senha">
                         </div>
                         <div>
                             <label for="cpf">cpf do aluno:</label>
@@ -43,19 +43,24 @@ if($_POST){
                         </div>
                         <div>
                             <p>Endereço do aluno</p>
-                            <label for="rua">Rua: </label>
-                            <input type="text" name="rua" id="rua" >
-                            <label for="numero">Numero: </label>
-                            <input type="number" name="numero" id="numero" >
+                            <div>
+                                <label for="rua">Rua: </label>
+                                <input type="text" name="rua" id="rua" >
+                            </div>
+                            <div>
+                                <label for="numero">Numero: </label>
+                                <input type="number" name="numero" id="numero" >
+                            </div>
                         </div>
                         <div>
-                            <label for="submit"></label>
-                            <input type="submit" name="hgg" id="ghg" value="novo aluno">
+                            <label for="newAluno"></label>
+                            <input  type="button" name="newAluno" id="newAluno" value="novo aluno">
                         </div>
 
     </form>
             <div>
                     <a href="<?php echo DOMINIO . "/alunos"?>">Voltar</a>
             </div>
+
 </body>
 </html>
