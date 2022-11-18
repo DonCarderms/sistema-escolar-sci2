@@ -1,6 +1,13 @@
 <?php
   session_start();
 
+  if(isset($_SESSION['dados'])){
+                
+    }else{
+        header('Location: ' . DOMINIO);
+        $_SESSION['expire'] = "<p style='color: red;font-size: 2rem;'>Sessão expirada</p>";
+    }
+
 if(!defined('DFFG574554FD')){
     header('Location: ' . DOMINIO); 
 }else{
@@ -86,11 +93,6 @@ if(!defined('DFFG574554FD')){
             <p class="nome_aluno">
             <i class="fa fa-user-circle fa-2x mg-10 user-icon" aria-hidden="true"></i>
                 <?php
-                    if(isset($_SESSION['dados'])){
-                
-                    }else{
-                        header('Location: ' . DOMINIO);
-                    }
                     if(isset($_SESSION['dados'] )){
                         $id = $_SESSION['dados']['id'];   
                         

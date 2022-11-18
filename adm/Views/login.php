@@ -15,7 +15,14 @@
             <div class="align_center">
                  <img src="<?= DOMINIO ?>/assets/images/logo.svg" alt="">
             </div>
-
+            <div class="expire">
+                    <?php
+                        if(isset($_SESSION['expire'] )){
+                            echo $_SESSION['expire'];
+                            unset($_SESSION['expire']);
+                        }
+                    ?>
+            </div>
             <div class="msg">
 
             </div>

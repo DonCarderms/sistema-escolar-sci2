@@ -24,6 +24,14 @@
                         }
                     ?>
             </div>
+            <div class="expire">
+                    <?php
+                        if(isset($_SESSION['expire'] )){
+                            echo $_SESSION['expire'];
+                            unset($_SESSION['expire']);
+                        }
+                    ?>
+            </div>
            
             <form action="" method="POST" class="login" id="login" >
                 <input type="email" name="email" placeholder="Email" required class="input-style width-100" ><br>
@@ -39,16 +47,6 @@
     </main>
 
     <script>
-        // mostrar o formulario de cadastro
-       let showRegister = () => {
-            document.getElementById("login") .style.display = "none";
-            document.getElementById("cadastrar") .style.display = "block";
-        }
-        // mostrar o formulario de login
-        let showLogin = () => { 
-            document.getElementById("cadastrar") .style.display = "none";
-            document.getElementById("login") .style.display = "block";         
-        }
     </script>
 </body>
 </html>

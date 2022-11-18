@@ -24,7 +24,8 @@ $adm = new Administrative_aeraController();
                 
             }else{
                 header('Location: ' . DOMINIO);
-                echo "sessão expirada";
+                 $_SESSION['expire'] = "<p style='color: red;font-size: 2rem;'>Sessão expirada</p>";
+
             }
 
             $student = $adm->countStudent();

@@ -19,8 +19,7 @@ class DashboardModel extends ConnectionController
               WHERE usuario.id  = '$id'";
               $sql_query = $this->conn->prepare($sql);
               $sql_query->execute();
-              $sql_dados = $sql_query->fetchAll();
-                                
+              $sql_dados = $sql_query->fetchAll();                
               return $sql_dados['0'];
 
         die();

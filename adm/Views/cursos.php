@@ -4,7 +4,7 @@ if(isset($_SESSION['dados'])){
                 
 }else{
     header('Location: ' . DOMINIO);
-   
+    $_SESSION['expire'] = "<p style='color: red;font-size: 2rem;'>Sessão expirada</p>";
 }
 if(!defined('FBHTJ5Y7FDNG')){
     header('Location: ' . DOMINIO);
