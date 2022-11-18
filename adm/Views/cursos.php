@@ -1,6 +1,11 @@
 <?php
 session_start();
-
+if(isset($_SESSION['dados'])){
+                
+}else{
+    header('Location: ' . DOMINIO);
+   
+}
 if(!defined('FBHTJ5Y7FDNG')){
     header('Location: ' . DOMINIO);
 

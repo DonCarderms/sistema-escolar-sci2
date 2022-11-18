@@ -117,7 +117,7 @@ if(!defined('DFFG574554FD')){
                            
                                 <p href="">Data de nascimento:   <?= $aluno[6]  ?></p>
                            
-                                <p href="">Endereço : rua    <?= $aluno[7]  ?>n °<?= $aluno[8]?></p>  
+                                <p href="">Endereço : rua    <?= $aluno[7]  ?>, n° <?= $aluno[8]?></p>  
                            
                                 <a class="link" href="<?= DOMINIO ?>/aluno/editar?id=<?= $dados['id'] ?>&editar=true">Editar meus dados</a>     
 

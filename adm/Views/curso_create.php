@@ -1,5 +1,11 @@
 <?php
 session_start();
+if(isset($_SESSION['dados'])){
+                
+}else{
+    header('Location: ' . DOMINIO);
+   
+}
 $arr_url = explode("?",$_SERVER['REQUEST_URI']);
 $arr_dados_cours = explode("&",$arr_url[1]);
 
