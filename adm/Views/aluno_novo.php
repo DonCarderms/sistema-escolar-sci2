@@ -2,6 +2,7 @@
 session_start();
 
 if($_POST){
+    var_dump($_POST);
     $newAluno = new Aluno_novoController();
     $newAluno->newAluno($_POST);
 }
@@ -20,14 +21,14 @@ if($_POST){
 </head>
 <body>
 
-     <form method="post">
+                <form method="post">
                         <div>      
                             <label for="nome">Nome aluno: </label>
                             <input type="text" name="nome" id="nome">
                         </div>
                         <div>
                             <label for="email">Email do aluno: </label>
-                            <input type="email" name="email" id="email">
+                            <input type="text" name="email" id="email">
                         </div>
                         <div>
                             <label for="senha">Senha do aluno: </label>
@@ -35,11 +36,14 @@ if($_POST){
                         </div>
                         <div>
                             <label for="cpf">cpf do aluno:</label>
-                            <input type="number" name="cpf" id="cpf">
+                            <?php
+                                if(isset($_SESSION['errorCpf'])){$rr = $_SESSION['errorCpf'];unset($_SESSION['errorCpf']);}
+                            ?>
+                            <input type="text" name="cpf" id="cpf" value="<?= $rr ?>">
                         </div>
                         <div>
                             <label for="dataNascimento">Data de nascimento do aluno: </label>
-                            <input type="date" name="dataNascimento" id="dataNascimento">
+                            <input type="text" name="dataNascimento" id="dataNascimento" value="aa-mm-dd" >
                         </div>
                         <div>
                             <p>Endereço do aluno</p>
@@ -49,15 +53,43 @@ if($_POST){
                             </div>
                             <div>
                                 <label for="numero">Numero: </label>
-                                <input type="number" name="numero" id="numero" >
+                                <input type="text" name="numero" id="numero" >
                             </div>
                         </div>
                         <div>
                             <label for="newAluno"></label>
-                            <input  type="button" name="newAluno" id="newAluno" value="novo aluno">
+                            <input  type="submit" name="newAluno" id="newAluno" value="novo aluno">
                         </div>
+                        
+                    </form>
+                  
+            <!-- <form method="post">
+                <label for="nomesobrenome">Nome e sobrenome</label>
+                <input type="text" id="nome" name="nome">
 
-    </form>
+                <label for="email">Emal</label>
+                <input type="text" id="email" name="email">
+
+                <label for="telefone"> cpf</label>
+                <input type="text" id="telefone">
+
+
+                <div>
+                    <p>Como prefere o nosso contato?</p>
+                    <label for="radio-email">Email</label>
+                    <input type="radio" name="contato" value="email" id="radio-email">
+
+                    <label for="radio-telefone">Telefone</label>
+                    <input type="radio" name="contato" value="telefone" id="radio-telefone">
+
+                    <label for="radio-whatsapp">WhatsApp</label>
+                    <input type="radio" name="contato" value="whatsapp" id="radio-whatsapp">
+                </div>
+
+                <label><input type="checkbox">Gostaria de receber nossas novidades por e-mail?</label>
+
+                <input type="submit" value="Enviar formulário">
+            </form> -->
             <div>
                     <a href="<?php echo DOMINIO . "/alunos"?>">Voltar</a>
             </div>

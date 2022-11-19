@@ -17,6 +17,9 @@ class Aluno_novoModel extends ConnectionController
         $rua = $dadosAluno['rua'];
         $numero = $dadosAluno['numero'];
         
+         if(number_format($cpf) == NULL){
+            $_SESSION['errorCpf'] = "formato errado";
+         };
         if($dadosAluno['dataNascimento'] == "" || $dadosAluno['nome'] == "" || $dadosAluno['email'] == "" || $dadosAluno['senha'] == "" || $dadosAluno['cpf'] == "" || $dadosAluno['rua'] == "" || $dadosAluno['numero'] == ""){
             echo "todos os dados tem que ser preenchidas";
         }else{        

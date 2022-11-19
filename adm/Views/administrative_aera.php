@@ -45,6 +45,7 @@ $adm = new Administrative_aeraController();
             <div class="p-10"><a href="<?= DOMINIO ?>/alunos">Alunos</a></div>
             <div class="p-10"><a href="<?= DOMINIO ?>/turmas">Turmas</a></div>
             <div class="p-10"><a href="<?= DOMINIO ?>/professores">Professores</a></div>
+            <div class="p-10"><a href="<?= DOMINIO ?>">Sair</a></div>
        </div>
         
         

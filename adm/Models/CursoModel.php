@@ -17,16 +17,15 @@ class CursoModel extends ConnectionController
     }
     public function editCours($dados_edit){
         $this->conn = $this->connectDb();
-   
+        
         $id = $dados_edit['id'];
         $nome = $dados_edit['nome'];
         $data_inicio = $dados_edit['data_inicio'];
-        $data_final = $dados_edit['data_final'];
-
-        $sql = "UPDATE `curso` SET `nome` = '$nome', `dataInicio` = '$data_inicio', `dataFinal` = '$data_final' WHERE `curso`.`id` = $id";
+        $datafinal =  $dados_edit['data_final'] == ""? 'NULL' : $dados_edit['data_final'];   
+        
+        $sql = "UPDATE `curso` SET `nome` = '$nome', `dataInicio` = '$data_inicio', `dataFinal` = $datafinal WHERE `curso`.`id` = $id";
         $sql_query = $this->conn->prepare($sql); 
         $sql_query->execute();
-
         if($sql_query->execute()){         
             $_SESSION['msg'] =  "<p style='text-align:center;color:red;background-color:#fcde00;margin: 0px 0px 10px 0px;padding: 10px 0px;'>Edição realizada com sucesso</p>";
         }else{
