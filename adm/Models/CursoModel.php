@@ -22,8 +22,13 @@ class CursoModel extends ConnectionController
         $nome = $dados_edit['nome'];
         $data_inicio = $dados_edit['data_inicio'];
         $datafinal =  $dados_edit['data_final'] == ""? 'NULL' : $dados_edit['data_final'];   
+
+        if($datafinal == 'NULL'){
+            $sql = "UPDATE `curso` SET `nome` = '$nome', `dataInicio` = '$data_inicio', `dataFinal` = $datafinal WHERE `curso`.`id` = $id";
+        }else{
+            $sql = "UPDATE `curso` SET `nome` = '$nome', `dataInicio` = '$data_inicio', `dataFinal` = '$datafinal' WHERE `curso`.`id` = $id";
+        }
         
-        $sql = "UPDATE `curso` SET `nome` = '$nome', `dataInicio` = '$data_inicio', `dataFinal` = $datafinal WHERE `curso`.`id` = $id";
         $sql_query = $this->conn->prepare($sql); 
         $sql_query->execute();
         if($sql_query->execute()){         
