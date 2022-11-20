@@ -44,13 +44,13 @@ if($_POST){
                         <div>
                             <label for="cpf">cpf do aluno:</label>
                             <?php
-                                if(isset($_SESSION['errorCpf'])){$rr = $_SESSION['errorCpf'];unset($_SESSION['errorCpf']);}
+                                if(isset($_SESSION['errorCpf'])){$errorCpf = $_SESSION['errorCpf'];unset($_SESSION['errorCpf']);}
                             ?>
-                            <input type="text" name="cpf" id="cpf" value="<?= $rr ?>">
+                            <input type="text" name="cpf" id="cpf" placeholder="<?= $errorCpf ?>">
                         </div>
                         <div>
                             <label for="dataNascimento">Data de nascimento do aluno: </label>
-                            <input type="text" name="dataNascimento" id="dataNascimento" value="aa-mm-dd" >
+                            <input type="text" name="dataNascimento" id="dataNascimento" placeholder="aa-mm-dd">
                         </div>
                         <div>
                             <p>Endereço do aluno</p>
@@ -65,15 +65,17 @@ if($_POST){
                         </div>
                         <div>
                             <label for="cursos"></label>
-                            <select name="cursos" id="cursos">   
+                            <select class="input-style bg-primary" name="cursos" id="cursos">   
                                     <option value="0">Selecione um curso</option>            
                                     <?php
                                                     $cursos = new CursosController();
                                                     $cursos->listCours();
                                                     foreach($cursos->listCours() as $dados){
+                                                        if($dados[1] !== "curso padrão"){
                                                         ?>
                                                             <option value="<?=$dados[0]?>" id="<?= $dados[0]?>"> <?=$dados[1]?> </option>
                                                         <?php
+                                                        }
                                                     }
                                     ?>               
                             </select>

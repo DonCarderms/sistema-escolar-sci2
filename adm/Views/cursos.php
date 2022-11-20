@@ -17,7 +17,7 @@ if(!defined('FBHTJ5Y7FDNG')){
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="<?= DOMINIO ?>/assets/css/style.css">
-    <title>Cursos</title>
+    <title>Admin</title>
 </head>
 <body>
         <div class="">
@@ -31,7 +31,8 @@ if(!defined('FBHTJ5Y7FDNG')){
                 if($dados[3] == null){
                     $dados[3] = "não especificado";
                 }
-                ?>           
+                if($dados[1] !== "curso padrão"){
+                    ?>           
                     <p>Curso: <?= $dados[1] ?> </p>
                     <p>Data de início: <?= $dados[2] ?></p>
                     <p>Data Final: <?= $dados[3] ?> </p>
@@ -39,7 +40,9 @@ if(!defined('FBHTJ5Y7FDNG')){
                         <a href="<?= DOMINIO ?>/curso?id=<?= $dados[0] ?>&editar=true">Editar</a>
                         <a href="<?= DOMINIO ?>/curso_delete?id=<?= $dados[0] ?>&excluir=true">Excluir</a>
                     </div><br>
-                <?php
+                    <?php
+                }
+                
              }
         ?>
         <br>
