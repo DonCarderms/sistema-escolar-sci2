@@ -13,7 +13,8 @@ class AlunosModel extends ConnectionController
         $sql_query = $this->conn->prepare($sql);
         $sql_query->execute();
         $sql_dados = $sql_query->fetchAll();
-        
+                
         return $sql_dados;
+        // return $sql_dados2;
     }
 }

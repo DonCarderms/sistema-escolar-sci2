@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 class CursosModel extends ConnectionController 
 {
     public object $conn;
@@ -10,7 +10,6 @@ class CursosModel extends ConnectionController
         $sql_query = $this->conn->prepare($sql);
         $sql_query->execute();
         $sql_dados = $sql_query->fetchAll();
-        
         return $sql_dados;
     }
 }

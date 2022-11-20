@@ -2,7 +2,6 @@
 session_start();
 
 if($_POST){
-    var_dump($_POST);
     $newAluno = new Aluno_novoController();
     $newAluno->newAluno($_POST);
 }
@@ -20,6 +19,14 @@ if($_POST){
 
 </head>
 <body>
+
+                <div>
+                    <p>
+                        <?php
+                            if(isset($_SESSION['aluno_novo'])){echo $_SESSION['aluno_novo'];unset($_SESSION['aluno_novo']);}
+                        ?>
+                    </p>
+                </div>
 
                 <form method="post">
                         <div>      
@@ -57,42 +64,31 @@ if($_POST){
                             </div>
                         </div>
                         <div>
+                            <label for="cursos"></label>
+                            <select name="cursos" id="cursos">   
+                                    <option value="0">Selecione um curso</option>            
+                                    <?php
+                                                    $cursos = new CursosController();
+                                                    $cursos->listCours();
+                                                    foreach($cursos->listCours() as $dados){
+                                                        ?>
+                                                            <option value="<?=$dados[0]?>" id="<?= $dados[0]?>"> <?=$dados[1]?> </option>
+                                                        <?php
+                                                    }
+                                    ?>               
+                            </select>
+                        </div>
+                        <div>
                             <label for="newAluno"></label>
                             <input  type="submit" name="newAluno" id="newAluno" value="novo aluno">
                         </div>
                         
                     </form>
                   
-            <!-- <form method="post">
-                <label for="nomesobrenome">Nome e sobrenome</label>
-                <input type="text" id="nome" name="nome">
-
-                <label for="email">Emal</label>
-                <input type="text" id="email" name="email">
-
-                <label for="telefone"> cpf</label>
-                <input type="text" id="telefone">
-
-
-                <div>
-                    <p>Como prefere o nosso contato?</p>
-                    <label for="radio-email">Email</label>
-                    <input type="radio" name="contato" value="email" id="radio-email">
-
-                    <label for="radio-telefone">Telefone</label>
-                    <input type="radio" name="contato" value="telefone" id="radio-telefone">
-
-                    <label for="radio-whatsapp">WhatsApp</label>
-                    <input type="radio" name="contato" value="whatsapp" id="radio-whatsapp">
-                </div>
-
-                <label><input type="checkbox">Gostaria de receber nossas novidades por e-mail?</label>
-
-                <input type="submit" value="Enviar formulário">
-            </form> -->
             <div>
                     <a href="<?php echo DOMINIO . "/alunos"?>">Voltar</a>
             </div>
+
 
 </body>
 </html>
