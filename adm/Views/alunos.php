@@ -28,10 +28,17 @@ if(!defined('FBHTJ5Y7FDNG')){
              $arr_dados_prod = explode("&",$arr_url[1]);
              
              foreach ($stud->listStudent() as $dados) {
-                 
-                 
-                 //   var_dump($dados); 
-                 ?>           
+                 if($dados[2] == 'curso padrão' && $dados[3] == 'turma padrão'){
+                     ?>
+                        <p>Nome do Aluno: <?=  $dados[1] ?></p>
+                        <p>email: <?=  $dados[5] ?></p>
+                        <p>cpf: <?=  $dados[6] ?></p>
+                        <p>data de nascimento: <?=  $dados[7] ?></p>
+                        <p>Endereço: <?=  $dados[8] ?>, <?=  $dados[9] ?></p>
+
+                     <?php
+                 }else{
+                    ?>
                         <p>Nome do Aluno: <?=  $dados[1] ?></p>
                         <p>Curso : <?=  $dados[2] ?></p>
                         <p>Turma: <?=  $dados[3] ?></p>
@@ -40,6 +47,11 @@ if(!defined('FBHTJ5Y7FDNG')){
                         <p>cpf: <?=  $dados[6] ?></p>
                         <p>data de nascimento: <?=  $dados[7] ?></p>
                         <p>Endereço: <?=  $dados[8] ?>, <?=  $dados[9] ?></p>
+                    <?php
+                 }
+         
+                 //   var_dump($dados); 
+                 ?>           
                         <div>
                             <a href="<?= DOMINIO ?>/aluno?id=<?= $dados[0] ?>&editar=true">Editar</a>
                             <a href="<?= DOMINIO ?>/aluno_delete?id=<?= $dados[0] ?>&excluir=true">Excluir</a>

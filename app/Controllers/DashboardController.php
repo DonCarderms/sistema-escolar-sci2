@@ -7,5 +7,10 @@ class DashboardController{
         $dados = new DashboardModel();
         return $dados->mostrarDadosAluno();
     }
+
+    public function exit(){
+        header('Location: ' . DOMINIO);
+        unset($_SESSION['dados']);
+    }
        
 }

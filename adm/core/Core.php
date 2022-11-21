@@ -5,7 +5,7 @@ class core {
             function index ($controller, $metodo, $parametro){
                 $controllerFile = ucfirst($controller . "Controller");
                 $caminho        = file_exists("/var/www/html/Controllers/".$controllerFile. ".php");
-                    
+              
                 if($controller != ""){
                     
                     if(!isset($_SESSION['dados'])){
@@ -26,8 +26,7 @@ class core {
                                         break;
                                         case "excluir":$metodo = "delete";
                                         break;
-                                        case "sair":$metodo = "sair";
-                                        var_dump($metodo);
+                                        case "sair":$metodo = "exit";
                                         break;
                                         default:
                                         include_once'/var/www/html/Views/error404.php';  

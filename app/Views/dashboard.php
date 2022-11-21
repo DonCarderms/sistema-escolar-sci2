@@ -6,6 +6,13 @@ if(!defined('DFFG574554FD')){
 }else{
     // $url = explode("/",filter_input(INPUT_GET,'url',FILTER_DEFAULT));
     $dados = new DashboardController();
+
+    $url = filter_input(INPUT_GET, 'url', FILTER_DEFAULT);
+            $arr_url = explode('/', $url);
+
+            if($arr_url[1] == "sair"){
+                $dados->exit();
+            }
     ?>
     <!DOCTYPE html>
     <html lang="en">
@@ -67,7 +74,7 @@ if(!defined('DFFG574554FD')){
                         </ul>
                         <ul class="nav-ul">
                             <li class="nav-ul-li">
-                            <a class="link nav-ul-link d-flex" href="../">
+                            <a class="link nav-ul-link d-flex" href="<?= DOMINIO.'/dashboard/sair'?>">
                                 <span class="nav-ul-link-icon">
                                     <i class="color_light fa  fa-sign-out fa-2x" aria-hidden="true"></i>                      
                                 </span>
@@ -86,6 +93,7 @@ if(!defined('DFFG574554FD')){
             <p class="nome_aluno">
             <i class="fa fa-user-circle fa-2x mg-10 user-icon" aria-hidden="true"></i>
                 <?php
+                    
                     if(isset($_SESSION['dados'] )){
                         $id = $_SESSION['dados']['id'];   
                         

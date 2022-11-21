@@ -17,12 +17,13 @@ class Aluno_novoModel extends ConnectionController
         $rua = $dadosAluno['rua'];
         $numero = $dadosAluno['numero'];
 
-        var_dump($dadosAluno['cursos']);
-        $id_curo = $dadosAluno['cursos'];
-    
+        $id_curso = $dadosAluno['curso'] == "0" ? 39 : $dadosAluno['curso'];
+        
+        $id_turma = $dadosAluno['turma'] == "0"? 3 : $dadosAluno['turma'];
+ 
           // endereco
         $sql_endereco = "INSERT INTO `endereco` (`id`, `logradouro`, `numero`) VALUES (NULL, '$rua', '$numero')";
-        var_dump($sql_endereco);
+
         $sql_query_endereco = $this->conn->prepare($sql_endereco);
         $sql_query_endereco->execute();
         
@@ -30,7 +31,7 @@ class Aluno_novoModel extends ConnectionController
         $sql_query3 = $this->conn->prepare($sql3);
         $sql_query3->execute();
         $id_endereco = $sql_dados3 = $sql_query3->fetchAll()[0]['id'];
-        var_dump($id_endereco);
+
 
         
 
@@ -41,8 +42,7 @@ class Aluno_novoModel extends ConnectionController
             if($dadosAluno['dataNascimento'] == "" || $dadosAluno['nome'] == "" || $dadosAluno['email'] == "" || $dadosAluno['senha'] == "" || $dadosAluno['cpf'] == "" || $dadosAluno['rua'] == "" || $dadosAluno['numero'] == ""){
                 echo "todos os dados tem que ser preenchidas";
             }else{        
-                $sql = "INSERT INTO `usuario` (`id`, `nome`, `email`, `senha`, `cpf`, `dataNascimento`, `situacao_id`, `nivelAcesso_id`, `turma_id`, `endereco_id`, `curso_id`) VALUES (NULL, '$nome', '$email', '$senha', '$cpf', '$dataNascimento', '1', '3', NULL, '$id_endereco', '$id_curo')";
-                var_dump($sql);
+                $sql = "INSERT INTO `usuario` (`id`, `nome`, `email`, `senha`, `cpf`, `dataNascimento`, `situacao_id`, `nivelAcesso_id`, `turma_id`, `endereco_id`, `curso_id`) VALUES (NULL, '$nome', '$email', '$senha', '$cpf', '$dataNascimento', '1', '3', '$id_turma', '$id_endereco', '$id_curso')";
                 $sql_query = $this->conn->prepare($sql); 
                 if($sql_query->execute()){
                      $_SESSION['aluno_novo'] = "Aluno cadastrado com sucesso";

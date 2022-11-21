@@ -6,6 +6,9 @@ $url = filter_input(INPUT_GET, 'url', FILTER_DEFAULT);
 
 $arr_url = explode('/', $url);
 
+
+
+
 //core
 include_once 'core/Core.php';
 

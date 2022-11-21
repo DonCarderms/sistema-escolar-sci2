@@ -23,18 +23,14 @@ class core
 
                             
                             switch($metodo){
-                                
-                                // case "sair":
-                                //         $metodo = "sair";
-                                //         break;
+                                    case "sair":
+                                        $metodo = "exit";
+                                        break;
                                     case "editar":
-                                        if($controller == "dashboard"){
-                                             header('Location: ' . DOMINIO . '/error404.php');                   
-                                        }
                                         $metodo = "edit";       
                                         break;
                                         default:
-                                        header('Location: ' . DOMINIO . '/error404.php');                              
+                                        include_once'/var/www/html/Views/error404.php';                               
                                     }
                                     
                                     call_user_func_array(array(new $controllerFile, $metodo),$parametro);

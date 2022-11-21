@@ -5,7 +5,6 @@ $arr_url = explode("?",$_SERVER['REQUEST_URI']);
 $arr_dados_cours = explode("&",$arr_url[1]);
 
 if($_POST){
-    // header('Location:' .DOMINIO.'/curso_delete?id='.$dados[0].'&excluir=true');
     $delete_cours = new Curso_deleteController();
     $delete_cours->delete($_POST);
 }

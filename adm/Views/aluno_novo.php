@@ -63,15 +63,33 @@ if($_POST){
                                 <input type="text" name="numero" id="numero" >
                             </div>
                         </div>
+                       
                         <div>
-                            <label for="cursos"></label>
-                            <select class="input-style bg-primary" name="cursos" id="cursos">   
+                            <label for="curso"></label>
+                            <select class="input-style bg-primary" name="curso" id="curso">   
                                     <option value="0">Selecione um curso</option>            
                                     <?php
                                                     $cursos = new CursosController();
                                                     $cursos->listCours();
                                                     foreach($cursos->listCours() as $dados){
                                                         if($dados[1] !== "curso padrão"){
+                                                        ?>
+                                                            <option value="<?=$dados[0]?>" id="<?= $dados[0]?>"> <?=$dados[1]?> </option>
+                                                        <?php
+                                                        }
+                                                    }
+                                    ?>               
+                            </select>
+                        </div>
+                        <div>
+                            <label for="turma"></label>
+                            <select class="input-style bg-primary" name="turma" id="turma">   
+                                    <option value="0">Selecione a Turma</option>            
+                                    <?php
+                                                    $teams = new TurmasController();
+                                                    $teams->listTeams();
+                                                    foreach($teams->listTeams() as $dados){
+                                                        if($dados[1] !== "turma padrão"){
                                                         ?>
                                                             <option value="<?=$dados[0]?>" id="<?= $dados[0]?>"> <?=$dados[1]?> </option>
                                                         <?php

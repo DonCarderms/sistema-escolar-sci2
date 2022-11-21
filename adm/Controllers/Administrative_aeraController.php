@@ -19,7 +19,8 @@ class  Administrative_aeraController
       return $adm->countTeam();
     }
 
-    function sair(){
-        header('Location:' . DOMINIO .'');
+    public function exit(){
+      header('Location: ' . DOMINIO);
+      unset($_SESSION['dados']);
     }
 }

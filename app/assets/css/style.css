@@ -6,6 +6,7 @@
 }
 body{
     min-height: 100vh;
+    background-color: aliceblue;
 }
 
 :root{
@@ -234,6 +235,13 @@ body{
 
 
 /* Dashboard */
+.conten{
+
+        width: 80%;
+        height: 80vh;
+
+}
+
 .color_light{
     color: #fff;;
 }

@@ -6,6 +6,18 @@ if(!defined('FBHTJ5Y7FDNG')){
 }else{
 
 $adm = new Administrative_aeraController();
+
+                $student = $adm->countStudent();
+                $prof = $adm->countTeacher();
+                $cours = $adm->countCourse();
+                $team = $adm->countTeam();
+            
+                $url = filter_input(INPUT_GET, 'url', FILTER_DEFAULT);
+                $arr_url = explode('/', $url);
+
+                if($arr_url[1] == "sair"){
+                    $adm->exit();
+                }    
 ?>
 
 <!DOCTYPE html>
@@ -16,37 +28,120 @@ $adm = new Administrative_aeraController();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Administrative area</title>
     <link rel="stylesheet" href="<?= DOMINIO ?>/assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/font-awesome.min.css"/>
+
 </head>
-<body>
-      <?php
+<body class="d-flex">
+    
+    <nav class=" d-flex align-items-center flex_column nav-principal-vertical" id="nav-bar ">
+                    <span class="close-menu cm-1"></span>
+                    <span class="close-menu cm-2"></span> 
+                    <div class="w-100 menu-hamburger d-flex flex_column mt-10">
+                        <i id="fa-mh" class="fa fa-2x fa-bars " aria-hidden="true"></i>
+                        <span class="menu-hamburger-span"></span>
+                        <span class="menu-hamburger-span"></span>
+                        <span class="menu-hamburger-span"></span>
+                    </div>      
+             <div class="w-100 div-ul">
+                    <div>
+                        <ul class="nav-ul">
+                            <li class="nav-ul-li">
+                                <a class="link nav-ul-link d-flex"  href="<?= DOMINIO ?>/cursos">
+                                    <span class="nav-ul-link-icon mt-10">
+                                         <i class="color_light fa fa-graduation-cap fa-2x" aria-hidden="true"></i>                                 
+                                    </span>
+                                     <span class="nav-text" id="nav-text">
+                                        Cursos
+                                     </span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <ul class="nav-ul">
+                            <li class="nav-ul-li">
+                                <a class="link nav-ul-link d-flex"  href="<?= DOMINIO ?>/alunos">
+                                    <span class="nav-ul-link-icon mt-10">
+                                        <i class="color_light fa fa-user-circle fa-2x" aria-hidden="true"></i>                      
+                                    </span>
+                                     <span class="nav-text" id="nav-text">
+                                        Alunos
+                                     </span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <ul class="nav-ul">
+                            <li class="nav-ul-li">        
+                                <a class="link nav-ul-link d-flex"  href="<?= DOMINIO ?>/turmas">
+                                    <span class="nav-ul-link-icon mt-10">
+                                    <i class="color_light fa  fa-users fa-2x" aria-hidden="true"></i>                      
+                                    </span>
+                                     <span class="nav-text" id="nav-text">
+                                        Turmas
+                                     </span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <ul class="nav-ul">
+                            <li class="nav-ul-li">
+                                
+                                <!-- <a class="link nav-ul-link d-flex"  href="<?= DOMINIO ?>/professores">
+                                    Professores
+                                </a> -->
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <ul class="nav-ul">
+                            <li class="nav-ul-li">
+                                <a class="link nav-ul-link d-flex" href="<?= DOMINIO . '/administrative_aera/sair' ?>">
+                                    <span class="nav-ul-link-icon mt-10">
+                                        <i class="color_light fa fa-sign-out fa-2x" aria-hidden="true"></i>                      
+                                        </span>                               
+                                    <span class="nav-text" id="nav-text"> 
+                                        Sair
+                                    </span>   
+                                </a> 
+                            </li>
+                        </ul>
+                    </div>
+                </div>
 
-            $student = $adm->countStudent();
-            $prof = $adm->countTeacher();
-            $cours = $adm->countCourse();
-            $team = $adm->countTeam();
-         
-            $url = filter_input(INPUT_GET, 'url', FILTER_DEFAULT);
-            $arr_url = explode('/', $url);
-
-            if($arr_url[1] == "sair"){
-                $adm->sair();
-            }    
-        ?>
-
-        <div>
-           <div class="p-10"> <p><?= $student[0]  ?> alunos Cadastrados</p></div>
-           <div class="p-10"><p><?= $prof[0]  ?> Professor(es) </p></div>
-           <div class="p-10"><p><?= $cours[0]  ?> Cursos Disponiveis(s)</p></div>
-           <div class="p-10"><p><?= $team[0]  ?> Turma(s)</p></div>
+    </nav>
+    <main class="w-100 h-100 d-flex  align-items-center align-content-center justify-content-center">
+      
+        <div class="d-flex justify-content-space-center wrap content">
+                <div class="p-10 w-300 content-item d-flex flex_column   pt-50"> 
+                    <span class="mt-10">
+                        <i class="color_light fa fa-user-circle fa-5x" aria-hidden="true"></i>                      
+                    </span>                   
+                    <p><?= $student[0]  ?> Alunos cadatradas</p>
+                </div>
+                <!-- <div class="p-10"><p><?= $prof[0]  ?> Professor(es) </p></div> -->
+                <div class="p-10 w-300 content-item d-flex flex_column   pt-50">
+                        <span class="mt-10">
+                                         <i class="color_light fa fa-graduation-cap fa-5x" aria-hidden="true"></i>                                 
+                        </span>
+                    <p><?= $cours[0]  ?> Cursos Disponiveis(s)</p>
+                </div>
+                <div class="p-10 w-300 content-item d-flex flex_column   pt-50">
+                <span class="nav-ul-link-icon mt-10">
+                     <i class="color_light fa  fa-users fa-5x" aria-hidden="true"></i>                      
+                 </span>
+                    <p><?= $team[0]  ?> Turma(s)</p>
+                </div>
         </div>
-        
-       <div class="p-10">
-            <div class="p-10"><a href="<?= DOMINIO ?>/cursos">Cursos</a></div>
-            <div class="p-10"><a href="<?= DOMINIO ?>/alunos">Alunos</a></div>
-            <div class="p-10"><a href="<?= DOMINIO ?>/turmas">Turmas</a></div>
-            <div class="p-10"><a href="<?= DOMINIO ?>/professores">Professores</a></div>
-            <div class="p-10"><a href="<?= DOMINIO ?>">Sair</a></div>
-       </div>
+               
+    </main>
+      
+
+       
+              
+   
         
         
         
