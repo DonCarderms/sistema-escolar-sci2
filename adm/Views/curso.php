@@ -29,12 +29,8 @@ if($arr_dados_cours[1] == "editar=true"){
                 menu
             </div>
             <div class="">
-                <?php
-                   
-                    if(isset($_SESSION['msg'])){
-                        echo $_SESSION['msg'];
-                        unset($_SESSION['msg']);                     
-                    }
+                <?php              
+                    if(isset($_SESSION['msg'])){echo $_SESSION['msg'];unset($_SESSION['msg']);}else{unset($_SESSION['msg']);}
                 ?>
             </div>
             <form action="" method="post">
