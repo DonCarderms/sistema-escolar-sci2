@@ -31,7 +31,7 @@ if($arr_dados_stud[1] == "editar=true"){
 
          <div class="">
             <p class="t-center pt-10">
-                    <?php if(isset($_SESSION['msg'])){ echo $_SESSION['msg'];unset($_SESSION['msg']);}else{unset($_SESSION['msg']);}?>
+                    <?php if(isset($_SESSION['aluno_edit'])){ echo $_SESSION['aluno_edit'];unset($_SESSION['aluno_edit']);}else{unset($_SESSION['aluno_edit']);}?>
             </p>
             
          </div>

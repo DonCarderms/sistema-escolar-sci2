@@ -30,6 +30,18 @@ if(!defined('DFFG574554FD')){
                         <span class="menu-hamburger-span"></span>
                     </div>
                     <div class="w-100 div-ul">
+                        <ul class="nav-ul">
+                            <li class="nav-ul-li">
+                            <a class="link nav-ul-link d-flex" href="<?= DOMINIO ?>/dashboard">
+                                <span class="nav-ul-link-icon mt-10">
+                                    <i class="color_light fa fa-home fa-2x" aria-hidden="true"></i>                       
+                                </span>
+                                <span class="nav-text" id="nav-text">
+                                   Inicio
+                                </span> 
+                                </a>
+                            </li>
+                        </ul>
                         <ul class="nav-ul active">
                             <li class="nav-ul-li">
                             <a class="link nav-ul-link d-flex" href="<?= DOMINIO ?>/aluno">
@@ -92,7 +104,7 @@ if(!defined('DFFG574554FD')){
                     <div class="conteudo-aluno w-100 t-center">                
                         <?php     
                             if(isset($_SESSION['aluno'] )){
-                                $aluno = $_SESSION['aluno'];                                
+                                $aluno = $_SESSION['aluno'];                              
                             } 
                             
                             if(isset($_SESSION['dados'] )){
@@ -107,17 +119,17 @@ if(!defined('DFFG574554FD')){
               
                                 <p href="">Curso:   <?= $aluno[1]  ?></p>
      
-                                <p href="">Turma:   <?= $aluno[2]  ?></p>
- 
-                                <p href="">Código da turma:   <?= $aluno[3]  ?></p>
+                                <p href="">Turma:   <?= $aluno[4]  ?></p>
+<!--  
+                                <p href="">Código da turma:   <?= $aluno[5]  ?></p> -->
                            
-                                <p href="">email:   <?= $aluno[4]  ?></p>
+                                <p href="">email:   <?= $aluno[6]  ?></p>
                            
-                                <p href="">Cpf:   <?= $aluno[5]  ?></p>
+                                <p href="">Cpf:   <?= $aluno[7]  ?></p>
                            
-                                <p href="">Data de nascimento:   <?= $aluno[6]  ?></p>
+                                <p href="">Data de nascimento:   <?= $aluno[8]  ?></p>
                            
-                                <p href="">Endereço : rua    <?= $aluno[7]  ?>, n° <?= $aluno[8]?></p>  
+                                <p href="">Endereço : rua    <?= $aluno[9]  ?>, n° <?= $aluno[10]?></p>  
                            
                                 <a class="link" href="<?= DOMINIO ?>/aluno/editar?id=<?= $dados['id'] ?>&editar=true">Editar meus dados</a>     
 

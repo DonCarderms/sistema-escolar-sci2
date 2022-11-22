@@ -135,7 +135,7 @@ $adm = new Administrative_aeraController();
                         <span class="mt-10">
                             <i class="color_light fa fa-graduation-cap fa-5x" aria-hidden="true"></i>                                 
                         </span>
-                    <p><?= $cours[0]  ?> Cursos Disponiveis(s)</p>
+                    <p><?= $cours[0]  ?> Cursos Disponivei(s)</p>
                 </div>
                 <div class="p-10 w-300 content-item d-flex flex_column   pt-50">
                 <span class="nav-ul-link-icon mt-10">

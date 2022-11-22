@@ -38,6 +38,18 @@ if(!defined('DFFG574554FD')){
                     <div class="w-100 div-ul">
                         <ul class="nav-ul">
                             <li class="nav-ul-li">
+                            <a class="link nav-ul-link d-flex" href="<?= DOMINIO ?>/dashboard">
+                                <span class="nav-ul-link-icon mt-10">
+                                    <i class="color_light fa fa-home fa-2x" aria-hidden="true"></i>                       
+                                </span>
+                                <span class="nav-text" id="nav-text">
+                                   Inicio
+                                </span> 
+                                </a>
+                            </li>
+                        </ul>
+                        <ul class="nav-ul">
+                            <li class="nav-ul-li">
                             <a class="link nav-ul-link d-flex" href="<?= DOMINIO ?>/aluno">
                                 <span class="nav-ul-link-icon mt-10">
                                     <i class="color_light fa fa-user-circle fa-2x" aria-hidden="true"></i>                      
@@ -126,7 +138,7 @@ if(!defined('DFFG574554FD')){
                                     $_SESSION['aluno'] = $aluno;
                                     echo "<p style='margin: 0 0 0 20px;'>  " . $aluno[1] . "</p></br>";
                                     echo "<p style='margin: 0 0 0 20px;font-size: 15px;'>Inicia " . $aluno[2] . "</p></br>";
-                                    echo "<p style='margin: 0 0 0 20px;font-size: 15px;'>Termina " . $aluno[3] . "</p></br>";
+                                    echo "<p style='margin: 0 0 0 20px;font-size: 15px;'>Terminara " . $aluno[3] . "</p></br>";
                                     
                                     if($dados->mostrarDadosAluno()['situacao_id'] == "1"){
                                         echo "</br>Usuario Ativo</br>";

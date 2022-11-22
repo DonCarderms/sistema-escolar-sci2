@@ -10,6 +10,7 @@ class AlunoModel extends ConnectionController {
         if(isset($_SESSION['dados'] )){
             $dados = $_SESSION['dados'];                                
         } 
+
         $id_denreco = $dados['endereco_id'];
         $id = $dados[0];
         $nome = $dadosedit['nome'];

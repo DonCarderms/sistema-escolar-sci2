@@ -9,6 +9,7 @@ class Turma_deleteModel extends ConnectionController
         function deleteTeam($id){
             $this->conn = $this->connectDb();
             $sql = "DELETE FROM turma WHERE `turma`.`id` = '$id'";   
+
             $sql_query = $this->conn->prepare($sql);
 
             if($sql_query->execute()){                   

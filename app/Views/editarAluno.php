@@ -27,7 +27,7 @@ if($arr_dados_prod[1] == "editar=true"){
                 <div class="">
                     <?php
                         if(isset($_SESSION['dados'] )){
-                            $dados = $_SESSION['dados'];                                
+                            $dados = $_SESSION['dados'];                               
                         } 
 
                     ?>
@@ -42,16 +42,16 @@ if($arr_dados_prod[1] == "editar=true"){
                      <input class="input-style" type="text" name="nome" id="nome" value="<?= $aluno[0] ?>"></br>
 
                      <label for="">email</label>
-                     <input class="input-style" type="text" name="email" id="email" value="<?= $aluno[4] ?>"></br>
+                     <input class="input-style" type="text" name="email" id="email" value="<?= $aluno[6] ?>"></br>
 
                      <label for="">Senha</label>
                      <input class="input-style" type="text" name="senha" id="senha" value=""></br>
      
                      <p class="font-10">Endereço</p>                
                      <label for="">Nome da rua</label>
-                     <input class="input-style" type="text" name="rua" id="rua" value="<?= $aluno[7] ?>">                
+                     <input class="input-style" type="text" name="rua" id="rua" value="<?= $aluno[9] ?>">                
                      <label for="">numero da rua</label>
-                     <input class="input-style" type="text" name="numero" id="numero" value="<?= $aluno[8] ?>"></br> 
+                     <input class="input-style" type="text" name="numero" id="numero" value="<?= $aluno[10] ?>"></br> 
 
                      <button class="link-button-2 link-button-geral" type="submit">Confirmar</button>
 

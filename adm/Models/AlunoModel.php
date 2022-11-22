@@ -57,11 +57,11 @@ class AlunoModel extends ConnectionController
         $sql_query2->execute();
         
        if($sql_query1->execute() && $sql_query2->execute()){
-            $_SESSION['msg'] = "dados atualizados com sucesso";
+            $_SESSION['aluno_edit'] = "dados atualizados com sucesso";
        }elseif($sql_query1->execute()){
-            $_SESSION['msg'] =  "Endereco não alterada";
+            $_SESSION['aluno_edit'] =  "Endereco não alterada";
        }elseif($sql_query2->execute()){
-            $_SESSION['msg'] =  "dados do Aluno não alterada";
+            $_SESSION['aluno_edit'] =  "dados do Aluno não alterada";
        }
     }
 

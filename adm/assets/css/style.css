@@ -180,6 +180,7 @@ body{
 .m-50{
     margin-bottom: 50px;
 }
+
 .contenu{
     width: 320px;
 }
@@ -222,6 +223,42 @@ body{
 .button-style:hover{
     color: #673ab7;
     background-color: rgba(255, 255, 255, 0.797);
+}
+table{
+    min-width: 320px;
+    overflow:auto;
+}
+table, td, th{
+    border-collapse: collapse;
+}
+table thead{
+    background: #673ab7;
+    color: white;
+    height: 60px;
+}
+table td{
+    padding: 20px;
+    font-size: 1.3rem;
+    font-weight: 300;
+}
+table tbody tr{
+    border-bottom: 1px solid #cccc;
+}
+/* alunos */
+.button-action{
+    padding-left: 10rem;
+}
+.input-filtre{
+    border: 0;
+    width: 80%;
+    padding: 10px;
+    outline: none;
+    background-color: #cccccc52;
+    font-size: 1.2rem;
+}
+::placeholder{
+    color: #000000;
+    font-size: 1.2rem;
 }
 /* pagina error */
 .bg-error{
