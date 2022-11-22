@@ -50,7 +50,7 @@ if($_POST){
                         </div>
                         <div>
                             <label for="dataNascimento">Data de nascimento do aluno: </label>
-                            <input type="text" name="dataNascimento" id="dataNascimento" placeholder="aa-mm-dd">
+                            <input type="date" name="dataNascimento" id="dataNascimento" placeholder="aa-mm-dd">
                         </div>
                         <div>
                             <p>Endereço do aluno</p>

@@ -31,7 +31,8 @@ class AlunoModel extends ConnectionController
             $id_endereco = $_SESSION['endereco_id'];
             unset($_SESSION['endereco_id']);
         } 
-                                                         
+
+                                                      
         $nome = $dadosEdits['nome'];
         $email = $dadosEdits['email'];
         $senha = md5($dadosEdits['senha']);
@@ -41,7 +42,7 @@ class AlunoModel extends ConnectionController
         $numero = $dadosEdits['numero'];
 
         if($dadosEdits['senha'] == ""){
-            $sql = "UPDATE `usuario` SET `nome` = '$nome', `email` = '$email', `cpf` = '$cpf', `dataNascimento` = '$dataNascimento' WHERE `id` = '$id'";   
+            $sql = "UPDATE `usuario` SET `nome` = '$nome', `email` = '$email', `cpf` = '$cpf', `dataNascimento` = '$dataNascimento'  WHERE `id` = '$id'";   
             $sql_query1 = $this->conn->prepare($sql); 
             $sql_query1->execute();
         }else{
@@ -59,9 +60,9 @@ class AlunoModel extends ConnectionController
        if($sql_query1->execute() && $sql_query2->execute()){
             $_SESSION['aluno_edit'] = "dados atualizados com sucesso";
        }elseif($sql_query1->execute()){
-            $_SESSION['aluno_edit'] =  "Endereco não alterada";
+            $_SESSION['aluno_edit'] =  "dados  alteradas";
        }elseif($sql_query2->execute()){
-            $_SESSION['aluno_edit'] =  "dados do Aluno não alterada";
+            $_SESSION['aluno_edit'] =  "Endereço atualizado";
        }
     }
 

@@ -19,7 +19,7 @@ if(!defined('FBHTJ5Y7FDNG')){
          <link rel="stylesheet" href="<?= DOMINIO ?>/assets/css/style.css">
         <link rel="stylesheet" href="../assets/css/font-awesome.min.css"/>
          <!-- <link rel="stylesheet" href="<?= DOMINIO ?>/assets/css/style.scss"> -->
-        <title>Alunos</title>
+        <title>Academia Sci</title>
     </head>
     <body class="d-flex">
 
@@ -106,7 +106,7 @@ if(!defined('FBHTJ5Y7FDNG')){
                                 <a class="link nav-ul-link d-flex" href="<?= DOMINIO . '/administrative_aera/sair' ?>">
                                     <span class="nav-ul-link-icon mt-10">
                                         <i class="color_light fa fa-sign-out fa-2x" aria-hidden="true"></i>                      
-                                        </span>                               
+                                    </span>                               
                                     <span class="nav-text" id="nav-text"> 
                                         Sair
                                     </span>   
@@ -115,21 +115,22 @@ if(!defined('FBHTJ5Y7FDNG')){
                         </ul>
                     </div>
                 </div>
-
-        </nav>
-        <p class="nome_aluno">
-            <img width="30" src="../assets/images/icon-admin.svg" alt="admin">
-            <span >Administrador</span>
-        </p>
-        <main class="w-100 d-flex flex_column align-items-center align-content-center justify-content-space-around">
-            <h1 class="w-100 t-center"> Alunos</h1>
-            <div class="w-100 button-action">
-                <a class="link-button-1 link-button-geral link" href="<?= DOMINIO ?>/aluno_novo">Novo Aluno</a>
-            </div>
-            <div class="w-100 button-action ">
+                
+            </nav>
+            <p class="nome_aluno">
+                <img width="30" src="../assets/images/icon-admin.svg" alt="admin">
+                <span >Administrador</span>
+            </p>
+            <main class="w-100 d-flex flex_column align-items-center align-content-center justify-content-center">
+                <h1 class="w-100 t-center"> Alunos</h1>
+                <div class="w-100 button-action">
+                    <a class="link-button-1 link-button-geral link mr-20" href="<?= DOMINIO ?>/administrative_aera">Voltar</a>
+                    <a class="link-button-1 link-button-geral link" href="<?= DOMINIO ?>/aluno_novo">Novo Aluno</a>
+                </div>
+            <div class="w-100 button-action  mt-100">
                 <input class="input-filtre" type="search" value="" placeholder="flitrar por nome do aluno">
             </div>
-            <table>
+            <table class="mt-100">
                 <thead>
                     <tr>
                         <th>Nome</th>
@@ -140,7 +141,7 @@ if(!defined('FBHTJ5Y7FDNG')){
                         <th>CPF</th>
                         <th>Data de nascimento</th>
                         <th>Endereço</th>
-                        <th colspan="2"</th>
+                        <th colspan="3"</th>
                     </tr>
                 </thead>
     
@@ -162,7 +163,7 @@ if(!defined('FBHTJ5Y7FDNG')){
                                     <td><?=  $dados[6] ?></td>             
                                     <td><?=  $dados[7] ?></td>
                                     <td><?=  $dados[8]; $dados[9] ?></td>
-                                    <td colspan="2">
+                                    <td colspan="3">
                                         <a class="link-button-1 link-button-geral link"  href="<?= DOMINIO ?>/aluno?id=<?= $dados[0] ?>&editar=true">Editar</a>
                                         <a class="link-button-1 link-button-geral link" href="<?= DOMINIO ?>/aluno_delete?id=<?= $dados[0] ?>&excluir=true">Excluir</a>
                                     </td>
@@ -201,9 +202,7 @@ if(!defined('FBHTJ5Y7FDNG')){
                 </tbody>
             </table>
             <br>
-            <div class="w-100 button-action">
-                <a class="link-button-1 link-button-geral link" href="<?= DOMINIO ?>/administrative_aera">Voltar</a>
-            </div>
+
             
         </main>
         

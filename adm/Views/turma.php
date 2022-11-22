@@ -13,8 +13,7 @@ if($arr_dados_team[1] == "editar=true"){
         $id = explode("=",$arr_dados_team[0]);
         $_SESSION['id_team'] = $id[1];
         $team = new TurmaController();
-       
-        
+             
         ?>
         <!DOCTYPE html>
         <html lang="pt-br">
@@ -59,8 +58,8 @@ if($arr_dados_team[1] == "editar=true"){
                                                         <?php
                                                         }
                                                     }
-                                                    ?>               
-                            </select>
+                                     ?>               
+                                 </select>
                             </div>
                             <div>
                                 <button type="submit">Editar</button>

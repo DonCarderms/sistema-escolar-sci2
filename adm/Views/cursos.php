@@ -17,38 +17,148 @@ if(!defined('FBHTJ5Y7FDNG')){
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="<?= DOMINIO ?>/assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/font-awesome.min.css"/>
     <title>Admin</title>
 </head>
-<body>
-        <div class="">
-            <a href="<?= DOMINIO ?>/curso_create">Novo Curso</a>
-        </div>
-        <?php
-             $arr_url = explode("?",$_SERVER['REQUEST_URI']);
-             $arr_dados_prod = explode("&",$arr_url[1]);
+<body class="d-flex">
 
-             foreach ($cours->listCours() as $dados) {
-                if($dados[3] == null){
-                    $dados[3] = "não especificado";
-                }
-                if($dados[1] !== "curso padrão"){
-                    ?>           
-                    <p>Curso: <?= $dados[1] ?> </p>
-                    <p>Data de início: <?= $dados[2] ?></p>
-                    <p>Data Final: <?= $dados[3] ?> </p>
+        <nav class=" d-flex align-items-center flex_column nav-principal-vertical" id="nav-bar ">
+                    <span class="close-menu cm-1"></span>
+                    <span class="close-menu cm-2"></span> 
+                    <div class="w-100 menu-hamburger d-flex flex_column mt-10">
+                        <i id="fa-mh" class="fa fa-2x fa-bars " aria-hidden="true"></i>
+                        <span class="menu-hamburger-span"></span>
+                        <span class="menu-hamburger-span"></span>
+                        <span class="menu-hamburger-span"></span>
+                    </div>      
+             <div class="w-100 div-ul">
                     <div>
-                        <a href="<?= DOMINIO ?>/curso?id=<?= $dados[0] ?>&editar=true">Editar</a>
-                        <a href="<?= DOMINIO ?>/curso_delete?id=<?= $dados[0] ?>&excluir=true">Excluir</a>
-                    </div><br>
-                    <?php
-                }
+                       <ul class="nav-ul">
+                            <li class="nav-ul-li">
+                            <a class="link nav-ul-link d-flex" href="<?= DOMINIO ?>/administrative_aera">
+                                <span class="nav-ul-link-icon mt-10">
+                                    <i class="color_light fa fa-home fa-2x" aria-hidden="true"></i>                       
+                                </span>
+                                <span class="nav-text" id="nav-text">
+                                   Inicio
+                                </span> 
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <ul class="nav-ul active">
+                            <li class="nav-ul-li">
+                                <a class="link nav-ul-link d-flex"  href="<?= DOMINIO ?>/cursos">
+                                    <span class="nav-ul-link-icon mt-10">
+                                         <i class="color_light fa fa-graduation-cap fa-2x" aria-hidden="true"></i>                                 
+                                    </span>
+                                     <span class="nav-text" id="nav-text">
+                                        Cursos
+                                     </span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <ul class="nav-ul">
+                            <li class="nav-ul-li">
+                                <a class="link nav-ul-link d-flex"  href="<?= DOMINIO ?>/alunos">
+                                    <span class="nav-ul-link-icon mt-10">
+                                        <i class="color_light fa fa-user-circle fa-2x" aria-hidden="true"></i>                      
+                                    </span>
+                                     <span class="nav-text" id="nav-text">
+                                        Alunos
+                                     </span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <ul class="nav-ul">
+                            <li class="nav-ul-li">        
+                                <a class="link nav-ul-link d-flex"  href="<?= DOMINIO ?>/turmas">
+                                    <span class="nav-ul-link-icon mt-10">
+                                    <i class="color_light fa  fa-users fa-2x" aria-hidden="true"></i>                      
+                                    </span>
+                                     <span class="nav-text" id="nav-text">
+                                        Turmas
+                                     </span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <ul class="nav-ul">
+                            <li class="nav-ul-li">
+                                
+                                <!-- <a class="link nav-ul-link d-flex"  href="<?= DOMINIO ?>/professores">
+                                    Professores
+                                </a> -->
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <ul class="nav-ul">
+                            <li class="nav-ul-li">
+                                <a class="link nav-ul-link d-flex" href="<?= DOMINIO . '/administrative_aera/sair' ?>">
+                                    <span class="nav-ul-link-icon mt-10">
+                                        <i class="color_light fa fa-sign-out fa-2x" aria-hidden="true"></i>                      
+                                        </span>                               
+                                        <span class="nav-text" id="nav-text"> 
+                                            Sair
+                                        </span>   
+                                    </a> 
+                                </li>
+                            </ul>
+                    </div>
+                </div>
                 
-             }
-        ?>
-        <br>
-        <div class="">
-            <a href="<?= DOMINIO ?>/administrative_aera">Voltar</a>
-        </div>
+            </nav>
+            <main class="w-100 d-flex flex_column align-items-center align-content-center justify-content-center">
+                <div class="w-100 button-action">
+                    <a class="link-button-1 link-button-geral link mr-20"  href="<?= DOMINIO ?>/administrative_aera">Voltar</a>
+                    <a class="link-button-1 link-button-geral link"  href="<?= DOMINIO ?>/curso_create">Novo Curso</a>
+                </div>
+                <table class="mt-100">
+                    <thead>
+                        <th colspan="2">Curso</th>
+                        <th>Data de início</th>
+                        <th>Data Final</th>
+                        <th colspan="2"></th>
+                    </thead>
+                    <tbody>
+                        <?php
+                            $arr_url = explode("?",$_SERVER['REQUEST_URI']);
+                            $arr_dados_prod = explode("&",$arr_url[1]);
+
+                            foreach ($cours->listCours() as $dados) {
+                                if($dados[3] == null){
+                                    $dados[3] = "não especificado";
+                                }
+                                if($dados[1] !== "curso padrão"){
+                                    ?> 
+                                    <tr>
+                                        <td><?= $dados[1] ?> </td>
+                                        <td> <?= $dados[2] ?></td>
+                                        <td> <?= $dados[3] ?> </td>
+                                        <td>
+                                            <a class="link-button-1 link-button-geral link" href="<?= DOMINIO ?>/curso?id=<?= $dados[0] ?>&editar=true">Editar</a>
+                                            <a class="link-button-1 link-button-geral link" href="<?= DOMINIO ?>/curso_delete?id=<?= $dados[0] ?>&excluir=true">Excluir</a>
+                                        </td>
+                                    </tr>          
+
+                                    <?php
+                                }
+                                
+                            }
+                        ?>
+                    </tbody>
+                </table>
+
+
+        </main>
+        
 </body>
 </html>
 <?php
