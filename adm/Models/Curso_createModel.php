@@ -8,8 +8,13 @@ class Curso_createModel extends ConnectionController
     public function newCours($nome, $dataInicio , $dataFinal){
         $this->conn = $this->connectDb();
 
-        $datafinal = $dataFinal == ""? 'NULL' : $dataFinal;   
-            $sql = "INSERT INTO `curso` (`id`, `nome`, `dataInicio`, `dataFinal`) VALUES (NULL, '$nome', '$dataInicio', $datafinal)";
+        if($dataFinal == ""){
+          $dataFinal = 'NULL';
+          $sql = "INSERT INTO `curso` (`id`, `nome`, `dataInicio`, `dataFinal`) VALUES (NULL, '$nome', '$dataInicio', $dataFinal)";
+        }else{
+            $sql = "INSERT INTO `curso` (`id`, `nome`, `dataInicio`, `dataFinal`) VALUES (NULL, '$nome', '$dataInicio', '$dataFinal')";
+        } 
+
             $sql_query = $this->conn->prepare($sql); 
 
             if($sql_query->execute()){
