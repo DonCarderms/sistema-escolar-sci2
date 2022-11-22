@@ -115,6 +115,10 @@ if(!defined('FBHTJ5Y7FDNG')){
                 </div>
                 
             </nav>
+            <p class="nome_aluno">
+                <img width="30" src="../assets/images/icon-admin.svg" alt="admin">
+                <span >Administrador</span>
+            </p>
             <main class="w-100 d-flex flex_column align-items-center align-content-center justify-content-center">
                 <div class="w-100 button-action">
                     <a class="link-button-1 link-button-geral link mr-20"  href="<?= DOMINIO ?>/administrative_aera">Voltar</a>

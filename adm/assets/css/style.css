@@ -239,12 +239,22 @@ table thead{
 }
 table td{
     padding: 20px;
-    font-size: 1.3rem;
+    font-size: 1.1rem;
     font-weight: 300;
 }
 table tbody tr{
     border-bottom: 1px solid #cccc;
 }
+form label{
+    font-size:  1.5rem;
+    font-weight: 500;
+}
+/* Cursos */
+.form-2{
+    width: 600px;
+}
+
+
 /* alunos */
 .button-action{
     padding-left: 10rem;
@@ -451,6 +461,9 @@ main span i{
     margin: 20px;
 }
 @media (max-width: 800px) {
+    .form-2{
+        width: 310px;
+    }
     .div-logo{
         display: none;
     }

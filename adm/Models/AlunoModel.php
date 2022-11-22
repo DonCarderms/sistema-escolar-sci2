@@ -58,11 +58,13 @@ class AlunoModel extends ConnectionController
         $sql_query2->execute();
         
        if($sql_query1->execute() && $sql_query2->execute()){
-            $_SESSION['aluno_edit'] = "dados atualizados com sucesso";
+                header('Location: ' . DOMINIO.'/alunos');
+           
        }elseif($sql_query1->execute()){
-            $_SESSION['aluno_edit'] =  "dados  alteradas";
+                header('Location: ' . DOMINIO.'/alunos');
+
        }elseif($sql_query2->execute()){
-            $_SESSION['aluno_edit'] =  "Endereço atualizado";
+                header('Location: ' . DOMINIO.'/alunos');
        }
     }
 

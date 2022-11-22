@@ -11,9 +11,9 @@ class Aluno_deleteModel extends ConnectionController
     $sql_query = $this->conn->prepare($sql);
 
     if($sql_query->execute()){
-        $_SESSION['aluno_delete'] = "Aluno deletado com sucesso";
+        header('Location: ' . DOMINIO.'/alunos');
     }else{
-        $_SESSION['aluno_delete'] = "Houve um erro, Aluno não foi deletado";
+        header('Location: ' . DOMINIO.'/aluno');
     }
 
 

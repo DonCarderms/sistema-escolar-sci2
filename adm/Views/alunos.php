@@ -163,7 +163,7 @@ if(!defined('FBHTJ5Y7FDNG')){
                                     <td><?=  $dados[6] ?></td>             
                                     <td><?=  $dados[7] ?></td>
                                     <td><?=  $dados[8]; $dados[9] ?></td>
-                                    <td colspan="3">
+                                    <td colspan="2">
                                         <a class="link-button-1 link-button-geral link"  href="<?= DOMINIO ?>/aluno?id=<?= $dados[0] ?>&editar=true">Editar</a>
                                         <a class="link-button-1 link-button-geral link" href="<?= DOMINIO ?>/aluno_delete?id=<?= $dados[0] ?>&excluir=true">Excluir</a>
                                     </td>

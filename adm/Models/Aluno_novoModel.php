@@ -45,9 +45,10 @@ class Aluno_novoModel extends ConnectionController
                 $sql = "INSERT INTO `usuario` (`id`, `nome`, `email`, `senha`, `cpf`, `dataNascimento`, `situacao_id`, `nivelAcesso_id`, `turma_id`, `endereco_id`, `curso_id`) VALUES (NULL, '$nome', '$email', '$senha', '$cpf', '$dataNascimento', '1', '3', '$id_turma', '$id_endereco', '$id_curso')";
                 $sql_query = $this->conn->prepare($sql); 
                 if($sql_query->execute()){
-                     $_SESSION['aluno_novo'] = "Aluno cadastrado com sucesso";
+                    header('Location: ' . DOMINIO.'/alunos');
                  }else{
-                     $_SESSION['Aluno_novo'] = "Houve um erro, Aluno não cadastrada";
+                    header('Location: ' . DOMINIO.'/aluno_novo');
+
                  }
              }
       

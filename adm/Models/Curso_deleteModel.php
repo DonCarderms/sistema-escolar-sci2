@@ -11,12 +11,11 @@ class Curso_deleteModel extends ConnectionController
             $sql_query = $this->conn->prepare($sql);
 
             if($sql_query->execute()){  
-               echo "<p style='text-align:center;color:red;background-color:#fcde00;margin: 0px 0px 10px 0px;padding: 10px 0px;'>Excluida  com sucesso</p>";      
-               echo "<a href='". DOMINIO . "/cursos' >Voltar</a>";
+                header('Location: ' . DOMINIO.'/cursos');
             }else{
-               echo "<p style='text-align:center;color:red;background-color:#fcde00;margin: 0px 0px 10px 0px;padding: 10px 0px;'>Exclusão não realizada</p>";
-                echo "<a href='". DOMINIO . "/cursos' >Voltar</a>";
-               
+                header('Location: ' . DOMINIO.'/cursos');
+                echo "<p style='width:500px;text-align:center;color:red;background-color:#fcde00;margin: 0px 0px 10px 0px;padding: 10px 0px;'>Ocorreu um errou </p>";
+                echo "<a href='". DOMINIO . "/cursos' >Voltar</a>";         
             }      
             die();
         }
