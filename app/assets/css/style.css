@@ -223,6 +223,19 @@ body{
     color: #673ab7;
     background-color: rgba(255, 255, 255, 0.797);
 }
+.div-logo{
+     background-color: #6dcbf7;
+    padding: 50px;
+    border-radius: 50%;
+}
+.logo-sci{
+    color: #673ab7;
+    font-size: 2rem;
+}
+main span i{
+    margin:0 0 0 10px;
+   color: #6207ff;
+}
 /* pagina error */
 .bg-error{
     background-image: ();
@@ -249,6 +262,7 @@ body{
     margin: 10px;
     color: #673ab7;
 }
+
 
 .contenu{
     height: 500px;
@@ -343,11 +357,15 @@ body{
 }
 
 .curso{
+    transition: transform .5s;
     border: solid 1px #cccc;
     max-width: 740px;
     min-width: 300px;
     height: 200px;  
     flex-direction: row;
+}
+.curso:hover{
+    transform: scale(1.2);
 }
 .img-curso{
     width: 50%;
@@ -357,7 +375,7 @@ body{
 .img-curso img{
     height: 200px;
 }
-.text-courso{
+.text-courso{ 
     padding-top: 30px;
     color: #000000;;
     min-width: 300px;

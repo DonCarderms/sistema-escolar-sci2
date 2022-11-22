@@ -235,6 +235,9 @@ body{
 
 
 /* Dashboard */
+.content{
+    margin-top: 50px;
+}
 .color_light{
     color: #fff;;
 }
@@ -245,9 +248,22 @@ body{
 hr{
     height: 5px;
 }
+.div-logo{
+    background-color: #6dcbf7;
+   padding: 60px;
+   border-radius: 50%;
+}
+.logo-sci{
+    color: #673ab7;
+    font-size: 5rem;
+}
+main span i{
+    margin:0 0 0 10px;
+   color: #673ab7;
+}
 .content-item{
     border-radius: 20px;
-    width: 400px;
+    width: 310px;
     color: #ffffff;
     transition: transform .5s;
     background-color: var(--segundary-color);
@@ -308,7 +324,7 @@ hr{
     background-color: #8044EE;
     position: absolute;
     top: 3%;
-    left: 180px;
+    left: 200px;
 }
 
 .cm-1{    
@@ -397,6 +413,9 @@ hr{
     margin: 20px;
 }
 @media (max-width: 800px) {
+    .div-logo{
+        display: none;
+    }
     .curso{
         height: 400px;
         width: 200px;

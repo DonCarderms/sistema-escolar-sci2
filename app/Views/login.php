@@ -7,14 +7,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Eduk </title>
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/font-awesome.min.css"/>
+
 </head>
 
 <body>
     <main class="principal">
         <div class="">
-            <div class="align_center">
-                 <img src="<?= DOMINIO ?>/assets/images/logo.svg" alt="">
+            <div class="d-flex m-50 div-logo">
+                <p class="logo-sci">Academia Sci</p>
+                <span class="mt-10">
+                    <i class="fa fa-graduation-cap fa-3x" aria-hidden="true"></i>                                 
+                </span>
             </div>
+            <!-- <div class="align_center">
+                 <img src="<?= DOMINIO ?>/assets/images/logo.svg" alt="">
+            </div> -->
 
             <div class="msg">
                     <?php

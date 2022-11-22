@@ -112,9 +112,14 @@ $adm = new Administrative_aeraController();
                 </div>
 
     </nav>
-    <main class="w-100 h-100 d-flex  align-items-center align-content-center justify-content-center">
-      
-        <div class="d-flex justify-content-space-center wrap content">
+    <main class="w-100 h-100 d-flex flex_column align-items-center align-content-center justify-content-center">
+        <div class="d-flex m-50 div-logo">
+            <p class="logo-sci">Academia Sci</p>
+            <span class="mt-10">
+                <i class="fa fa-graduation-cap fa-5x" aria-hidden="true"></i>                                 
+            </span>
+        </div>
+        <div class="d-flex justify-content-center wrap content mt-50">
                 <div class="p-10 w-300 content-item d-flex flex_column   pt-50"> 
                     <span class="mt-10">
                         <i class="color_light fa fa-user-circle fa-5x" aria-hidden="true"></i>                      
@@ -124,7 +129,7 @@ $adm = new Administrative_aeraController();
                 <!-- <div class="p-10"><p><?= $prof[0]  ?> Professor(es) </p></div> -->
                 <div class="p-10 w-300 content-item d-flex flex_column   pt-50">
                         <span class="mt-10">
-                                         <i class="color_light fa fa-graduation-cap fa-5x" aria-hidden="true"></i>                                 
+                            <i class="color_light fa fa-graduation-cap fa-5x" aria-hidden="true"></i>                                 
                         </span>
                     <p><?= $cours[0]  ?> Cursos Disponiveis(s)</p>
                 </div>

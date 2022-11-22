@@ -105,8 +105,14 @@ if(!defined('DFFG574554FD')){
                 ?>
             </p>
             <main class="w-100 d-flex flex_column_reverse align-items-center align-content-center justify-content-space-around">
-                <div class="logo">
+                <!-- <div class="logo">
                     <img width="400" src="<?= DOMINIO?>/assets/images/logo.svg" alt="">
+                </div> -->
+                <div class="d-flex m-50 div-logo">
+                    <p class="logo-sci">Academia Sci</p>
+                    <span class="mt-10">
+                        <i class="fa fa-graduation-cap fa-3x" aria-hidden="true"></i>                                 
+                    </span>
                 </div>
                
                 <div class="contenu curso d-flex  justify-content-space-around">
@@ -118,7 +124,9 @@ if(!defined('DFFG574554FD')){
                                 <?php
                                 
                                     $_SESSION['aluno'] = $aluno;
-                                    echo "<p style='margin: 0 0 0 20px;'> " . $aluno[1] . "</p></br>";
+                                    echo "<p style='margin: 0 0 0 20px;'>  " . $aluno[1] . "</p></br>";
+                                    echo "<p style='margin: 0 0 0 20px;font-size: 15px;'>Inicia " . $aluno[2] . "</p></br>";
+                                    echo "<p style='margin: 0 0 0 20px;font-size: 15px;'>Termina " . $aluno[3] . "</p></br>";
                                     
                                     if($dados->mostrarDadosAluno()['situacao_id'] == "1"){
                                         echo "</br>Usuario Ativo</br>";
@@ -133,7 +141,9 @@ if(!defined('DFFG574554FD')){
                         </a>
                          
                 </div>
-            
+            <div>
+                <p class="f">Meus Cursos</p>
+            </div>
             </main>
             <script src="<?= DOMINIO ?>/assets/js/script.js"></script>
     </body>
