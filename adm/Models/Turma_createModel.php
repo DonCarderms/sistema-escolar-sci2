@@ -13,9 +13,9 @@ class Turma_createModel extends ConnectionController
             $sql_query = $this->conn->prepare($sql);
 
                 if($sql_query->execute()){
-                    $_SESSION['newteam'] = "Turma cadastrada com sucesso";
+                    header('Location: ' . DOMINIO.'/turmas');
                 }else{
-                    $_SESSION['newteam'] = "Houve um erro, turma não cadastrada";
+                    header('Location: ' . DOMINIO.'/turmas');
                 }
 
             }else{

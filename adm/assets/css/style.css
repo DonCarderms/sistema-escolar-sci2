@@ -249,6 +249,11 @@ form label{
     font-size:  1.5rem;
     font-weight: 500;
 }
+.bt{
+    width: 50%;
+    height: 60px;
+}
+
 /* Cursos */
 .form-2{
     width: 600px;
@@ -256,6 +261,7 @@ form label{
 
 
 /* alunos */
+
 .button-action{
     padding-left: 10rem;
 }

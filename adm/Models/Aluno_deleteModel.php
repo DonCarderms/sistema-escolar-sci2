@@ -13,10 +13,8 @@ class Aluno_deleteModel extends ConnectionController
     if($sql_query->execute()){
         header('Location: ' . DOMINIO.'/alunos');
     }else{
-        header('Location: ' . DOMINIO.'/aluno');
+        header('Location: ' . DOMINIO.'/alunos');
     }
-
-
 
   }
 }

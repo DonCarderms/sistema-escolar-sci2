@@ -142,15 +142,15 @@ if($arr_dados_cours[1] == "editar=true"){
                                         <label for="data_final">DAta Final</label>
                                         <input class="input-style w-100"  type="date" name="data_final" id="data_final" value="<?= $dados[3] ?>">
                                     </div>
-                                    <div>
-                                        <button class="link-button-1 link-button-geral link" type="submit">Editar</button>
+                                    <div aria-controls="t-center">
+                                        <button class="bt link-button-1 link-button-geral link" type="submit">Editar</button>
                                     </div>
         
                                 <?php
                             }
                         ?>
                     </form>
-                    <div class="mt-100">
+                    <div class="mt-100 t-center">
                         <a class="link-button-1 link-button-geral link" href="<?php echo DOMINIO . "/cursos"; ?>">Voltar</a>
                     </div>
                 </div>

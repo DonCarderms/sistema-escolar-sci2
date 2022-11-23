@@ -30,7 +30,7 @@ class Aluno_novoModel extends ConnectionController
         $sql3 ="SELECT endereco.id FROM endereco WHERE logradouro = '$rua' AND numero = '$numero'";
         $sql_query3 = $this->conn->prepare($sql3);
         $sql_query3->execute();
-        $id_endereco = $sql_dados3 = $sql_query3->fetchAll()[0]['id'];
+        $id_endereco =  $sql_query3->fetchAll()[0]['id'];
 
 
         

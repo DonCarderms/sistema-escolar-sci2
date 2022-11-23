@@ -20,9 +20,9 @@ class TurmaModel extends ConnectionController
 
         $sql_query = $this->conn->prepare($sql);
         if($sql_query->execute()){
-            $_SESSION['edit_team'] = "Turma editado com sucesso";
+            header('Location: ' . DOMINIO.'/turmas');
         }else{
-            $_SESSION['edit_team'] = "Houve um erro, Turma não foi editado ";
+            header('Location: ' . DOMINIO.'/turma');
         }
         
     }

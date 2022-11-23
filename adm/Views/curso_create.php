@@ -133,12 +133,12 @@ if($_POST){
                                             <input class="input-style width-100"  type="date" name="dataFinal" id="dataFinal">
                                         </div>
                                         <div>          
-                                        <div>
-                                            <button class="link-button-1 link-button-geral link" type="submit">Novo curso</button>
+                                        <div class="t-center">
+                                            <button class="bt link-button-1 link-button-geral link" type="submit">Novo curso</button>
                                         </div>
                     </form>
                 </div>
-                <div class="mt-100">
+                <div class="mt-100 t-center">
                         <a class="link-button-1 link-button-geral link" href="<?php echo DOMINIO . "/cursos"; ?>">Voltar</a>
                 </div>
             </main>
