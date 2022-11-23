@@ -35,7 +35,7 @@ class Aluno_novoModel extends ConnectionController
 
         
 
-        if(number_format($cpf) == NULL && strlen($cpf) != 8){
+        if(number_format($cpf) == NULL && strlen($cpf) != 11){
             $_SESSION['errorCpf'] = "formato de cpf  errado";
         }else{
             

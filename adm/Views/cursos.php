@@ -126,7 +126,7 @@ if(!defined('FBHTJ5Y7FDNG')){
                 </div>
                 <table class="mt-100">
                     <thead>
-                        <th colspan="2">Curso</th>
+                        <th>Curso</th>
                         <th>Data de início</th>
                         <th>Data Final</th>
                         <th colspan="2"></th>
