@@ -2,17 +2,11 @@
   session_start();
 
 if(!defined('DFFG574554FD')){
-    header('Location: ' . DOMINIO); 
+    header("Location: /");
 }else{
-    // $url = explode("/",filter_input(INPUT_GET,'url',FILTER_DEFAULT));
-    $dados = new DashboardController();
-
-    $url = filter_input(INPUT_GET, 'url', FILTER_DEFAULT);
-            $arr_url = explode('/', $url);
-
-            if($arr_url[1] == "sair"){
-                $dados->exit();
-            }
+    $url = explode("/",filter_input(INPUT_GET,'url',FILTER_DEFAULT));
+    $ajuda = new AjudaController();
+    $ajuda->ajuda();  
     ?>
     <!DOCTYPE html>
     <html lang="en">
@@ -20,13 +14,13 @@ if(!defined('DFFG574554FD')){
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Eduk - Portal Aluno</title>
-        <link rel="stylesheet" href="assets/css/style.css">
-        <link rel="stylesheet" href="../assets/css/font-awesome.min.css"/>
+        <title>Academia Sci</title>
+        <link rel="stylesheet" href="<?= DOMINIO ?>/assets/css/style.css">
+        <link rel="stylesheet" href="<?= DOMINIO ?>//assets/css/font-awesome.min.css"/>
+
     </head>
     <body class="d-flex">
-          
-            <nav class=" d-flex align-items-center flex_column nav-principal-vertical" id="nav-bar" onmouseover="showUlText();" onmouseout="removeULText();">
+        <nav class=" d-flex align-items-center flex_column nav-principal-vertical" id="nav-bar" onmouseover="showUlText();" onmouseout="removeULText();">
                     <span class="close-menu cm-1"></span>
                     <span class="close-menu cm-2"></span>
                     <div class="w-100 menu-hamburger d-flex flex_column mt-10">
@@ -48,7 +42,7 @@ if(!defined('DFFG574554FD')){
                                 </a>
                             </li>
                         </ul>
-                        <ul class="nav-ul">
+                        <ul class="nav-ul ">
                             <li class="nav-ul-li">
                             <a class="link nav-ul-link d-flex" href="<?= DOMINIO ?>/aluno">
                                 <span class="nav-ul-link-icon mt-10">
@@ -72,9 +66,9 @@ if(!defined('DFFG574554FD')){
                                 </a>
                             </li>
                         </ul>
-                        <ul class="nav-ul">
+                        <ul class="nav-ul active">
                             <li class="nav-ul-li">
-                            <a class="link nav-ul-link d-flex" href="<?=DOMINIO?>/ajuda">
+                            <a class="link nav-ul-link d-flex" href="#">
                                 <span class="nav-ul-link-icon mt-10">
                                     <i class="color_light fa fa-question-circle fa-2x" aria-hidden="true"></i>                                                                     
                                 </span>
@@ -86,7 +80,7 @@ if(!defined('DFFG574554FD')){
                         </ul>
                         <ul class="nav-ul">
                             <li class="nav-ul-li">
-                            <a class="link nav-ul-link d-flex" href="<?= DOMINIO.'/dashboard/sair'?>">
+                            <a class="link nav-ul-link d-flex" href="../">
                                 <span class="nav-ul-link-icon">
                                     <i class="color_light fa  fa-sign-out fa-2x" aria-hidden="true"></i>                      
                                 </span>
@@ -101,7 +95,6 @@ if(!defined('DFFG574554FD')){
                     </span>
                     
             </nav>
-           
             <p class="nome_aluno">
             <i class="fa fa-user-circle fa-2x mg-10 user-icon" aria-hidden="true"></i>
                 <?php
@@ -110,54 +103,26 @@ if(!defined('DFFG574554FD')){
                         $id = $_SESSION['dados']['id'];   
                         
                     }
-                        
+
+                    $dados = new DashboardController();    
                     $aluno = $dados->mostrarDadosAluno();
                     
                     echo $aluno['nome'];
                 ?>
             </p>
-            <main class="w-100 d-flex flex_column_reverse align-items-center align-content-center justify-content-space-around">
-                <!-- <div class="logo">
-                    <img width="400" src="<?= DOMINIO?>/assets/images/logo.svg" alt="">
-                </div> -->
-                <div class="d-flex m-50 div-logo">
-                    <p class="logo-sci">Academia Sci</p>
-                    <span class="mt-10">
-                        <i class="fa fa-graduation-cap fa-3x" aria-hidden="true"></i>                                 
-                    </span>
-                </div>
-               
-                <div class="contenu curso d-flex  justify-content-space-around">
-                        <a class="d-flex wrap link lik justify-content-space-between" href="http:#">
-                           <div class="img-curso">
-                              <img class="w-100" src="https://www.alura.com.br/artigos/assets/php-uma-introducao-linguagem/php-uma-introducao-linguagem.png" alt="">
-                           </div> 
-                           <div class="text-courso">
-                                <?php
-                                
-                                    $_SESSION['aluno'] = $aluno;
-                                    echo "<p style='margin: 0 0 0 20px;'>  " . $aluno[1] . "</p></br>";
-                                    echo "<p style='margin: 0 0 0 20px;font-size: 15px;'>Inicia " . $aluno[2] . "</p></br>";
-                                    echo "<p style='margin: 0 0 0 20px;font-size: 15px;'>Terminara " . $aluno[3] . "</p></br>";
-                                    
-                                    if($dados->mostrarDadosAluno()['situacao_id'] == "1"){
-                                        echo "</br>Usuario Ativo</br>";
-                                    }
 
-                                    if($dados->mostrarDadosAluno()['nivelAcesso_id'] == "3"){
-                                        echo "Aluno ";
-                                    }
-                                ?>
-                           </div>
-                            
-                        </a>
-                         
-                </div>
-            <div>
-                <p class="f">Meus Cursos</p>
-            </div>
+            <main class="w-100 d-flex flex_column_reverse align-items-center align-content-center justify-content-space-around">
+                <form class="form-ajuda font-30" action="" method="post">
+                    <label for="ajuda"></label>
+                    <textarea class="w-100" id="ajuda" name="ajuda" rows="20" cols="60" placeholder="dgite a sua dúvida"></textarea>
+                    <br>
+                    <input class="link  link-button-1 link-button-geral mb-50" type="submit" value="Enviar sua duvida"><br>
+                    <a class="link-button-1 link-button-geral link" href="<?= DOMINIO . "/dashboard"?>"><i class="fa fa-arrow-left mr-20" aria-hidden="true"></i>Voltar</a>
+
+                </form>
+            
             </main>
-            <script src="<?= DOMINIO ?>/assets/js/script.js"></script>
+                
     </body>
     </html>
   <?php

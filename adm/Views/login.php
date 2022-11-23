@@ -38,11 +38,19 @@
             </div>
            
             <form action="" method="POST" class="login" id="login" >
-                <input type="email" name="email" placeholder="Email" required class="input-style width-100" ><br>
+                <div>
+                    <i class="fa fa-envelope icon fa-2x"></i>                   
+                    <label for="email"></label>
+                    <input type="email" name="email" id="email" placeholder="Email" required class="input-style width-100 input-login" ><br>
+                </div>
+                <div>
+                    <i class="fa fa-lock icon fa-2x"></i>
+                    <label for="senha"></label>
+                    <input type="password" name="senha" id="senha"  placeholder="Senha" class="input-style width-100 input-login" ><br>
+                </div>
 
-                <input type="password" name="senha"  placeholder="Senha" class="input-style width-100" ><br>
                 <div class="align_center">
-                    <button type="submit" class="button-style">Entrar</button>         
+                    <button type="submit" class="button-style"><span class="mr-20">Entrar</span> <i class="fa fa-arrow-right" aria-hidden="true"></i></button>         
                 </div>
                               
             </form>

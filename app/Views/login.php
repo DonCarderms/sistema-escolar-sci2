@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eduk </title>
+    <title>Academia Sci </title>
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="../assets/css/font-awesome.min.css"/>
 
@@ -42,9 +42,16 @@
             </div>
            
             <form action="" method="POST" class="login" id="login" >
-                <input type="email" name="email" placeholder="Email" required class="input-style width-100" ><br>
-
-                <input type="password" name="senha"  placeholder="Senha" class="input-style width-100" ><br>
+                <div>
+                    <i class="fa fa-envelope icon fa-2x"></i>
+                    <label for="email"></label>
+                    <input type="email" name="email" id="email" placeholder="Email" required class="input-style width-100" ><br>
+                </div>
+                <div>
+                    <i class="fa fa-lock icon fa-2x"></i>
+                    <label for="senha"></label>
+                    <input type="password" name="senha" id="senha"  placeholder="Senha" class="input-style width-100" ><br>
+                </div>
                 <div class="align_center">
                     <button type="submit" class="button-style">Entrar</button>         
                 </div>

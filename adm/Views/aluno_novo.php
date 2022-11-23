@@ -6,7 +6,7 @@ if($_POST){
     $newAluno->newAluno($_POST);
 }
 
-  ?>
+?>
 
 <!DOCTYPE html>
   <html lang="pt-br">
@@ -198,7 +198,7 @@ if($_POST){
                         </form>
                     
                 <div class="mt-100">
-                        <a class="link-button-1 link-button-geral link" href="<?php echo DOMINIO . "/alunos"?>">Voltar</a>
+                        <a class="link-button-1 link-button-geral link" href="<?= DOMINIO ?>/alunos"><i class="fa fa-arrow-left mr-20" aria-hidden="true"></i>Voltar</a>
                 </div>
             </main>
 

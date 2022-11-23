@@ -139,7 +139,7 @@ if($_POST){
                     </form>
                 </div>
                 <div class="mt-100 t-center">
-                        <a class="link-button-1 link-button-geral link" href="<?php echo DOMINIO . "/cursos"; ?>">Voltar</a>
+                        <a class="link-button-1 link-button-geral link" href="<?php echo DOMINIO . "/cursos"; ?>"><i class="fa fa-arrow-left mr-20" aria-hidden="true"></i>Voltar</a>
                 </div>
             </main>
 

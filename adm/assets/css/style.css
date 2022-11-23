@@ -48,6 +48,9 @@ body{
 .w-50{
     width: 50%;
 }
+.w-80{
+    width: 80%;
+}
 .justify-content-space-between{
     justify-content: space-between;
 }
@@ -343,7 +346,8 @@ main span i{
     padding:10px  20px 0 0;
 }
 .nav-principal-vertical{
-    background-image: linear-gradient(90deg, #004f50 0%, #10bd979e 100%);
+    /* background-image: linear-gradient(90deg, #004f50 0%, #10bd979e 100%); */
+    background-color: #673ab7c7;
     width: 60px;
 }
 .nav-principal-vertical:hover .nav-text{
@@ -360,7 +364,6 @@ main span i{
 .menu-hamburger{
     padding: 10px 0;
     cursor: pointer;
-    background-image: linear-gradient(90deg, #004f50 0%, #10bd979e 100%);
     margin-bottom: 100px;
     
 }
@@ -408,7 +411,7 @@ main span i{
      background-color: #8044EE;
  } 
 .nav-ul:hover{
-    background-color: #8044EE;
+    background-color: #742ff5;
     transition-duration: 1.5s;
 }
 .nav-ul-li{
@@ -520,7 +523,25 @@ main span i{
         left:  50px;
         margin: 10px;
     }
+    
   }
 
+  .input-login::placeholder{
+    color: #fff !important;
+  }
+  .icon{
+    position: relative;
+    top: 41px;
+    right: -363px;
+    color: var(--segundary-color);
+}
+.form-ajuda{
+    height: 700px;
+}
+.icon-action{
+    color: #fffe;
+}
 
-
+.link-button-1:hover .icon-action{
+    color: #000;
+}

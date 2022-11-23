@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 class core {
 
             function index ($controller, $metodo, $parametro){
@@ -10,11 +10,10 @@ class core {
                     
                     if(!isset($_SESSION['dados'])){
                         header('Location: ' . DOMINIO);
-                        echo "<p style='color: red;font-size: 2rem;'>Sessão expirada</p>";
                       }
 
                         if($caminho){
-                           ;
+                           
                             if(class_exists($controllerFile)){
                                
 
@@ -59,15 +58,3 @@ class core {
             }
 }
 
-if($methodo != ""){
-    echo 'e tem methodo ';
-
-    if($methodo != "adm"){
-        header('Location:' . DOMINIO .'/Views/error404.php');
-    }
-
-    if($parametro){
-    echo 'com parametros';
-    }
-
-} 

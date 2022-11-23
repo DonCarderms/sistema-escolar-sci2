@@ -173,7 +173,10 @@ if($arr_dados_stud[1] == "editar=true"){
 
             ?>
             <div class="mt-100">
-                <a class="link-button-1 link-button-geral link"  href="<?= DOMINIO ?>/alunos">Voltar</a>
+                <a class="link-button-1 link-button-geral link"  href="<?= DOMINIO ?>/alunos">
+                     <i class="fa fa-arrow-left mr-20" aria-hidden="true"></i>
+                    Voltar
+                </a>
             </div>
         </main>
     </body>

@@ -43,23 +43,21 @@ if($arr_dados_prod[1] == "editar=true"){
 
                      <label for="">email</label>
                      <input class="input-style" type="text" name="email" id="email" value="<?= $aluno[6] ?>"></br>
-
+<!-- 
                      <label for="">Senha</label>
-                     <input class="input-style" type="text" name="senha" id="senha" value=""></br>
+                     <input class="input-style" type="text" name="senha" id="senha" value=""></br> -->
      
-                     <p class="font-10">Endereço</p>                
+                     <p class="font-30">Endereço</p>                
                      <label for="">Nome da rua</label>
                      <input class="input-style" type="text" name="rua" id="rua" value="<?= $aluno[9] ?>">                
                      <label for="">numero da rua</label>
                      <input class="input-style" type="text" name="numero" id="numero" value="<?= $aluno[10] ?>"></br> 
 
-                     <button class="link-button-2 link-button-geral" type="submit">Confirmar</button>
+                     <button class="link-button-1 link-button-geral" type="submit"><i class="fa fa-check mr-20" aria-hidden="true"></i>Confirmar</button>
 
                      
                  </form>
-
-                 <a class="link" href="<?= DOMINIO ?>/dashboard">voltar</a>
-                        
+                      
                 </div>
             
             </main>

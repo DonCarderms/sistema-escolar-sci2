@@ -120,8 +120,8 @@ if(!defined('FBHTJ5Y7FDNG')){
             </p>
             <main class="w-100 d-flex flex_column align-items-center align-content-center justify-content-center">
                 <div class="w-100 button-action">
-                    <a class="link-button-1 link-button-geral link mr-20" href="<?= DOMINIO ?>/administrative_aera">Voltar</a>
-                    <a class="link-button-1 link-button-geral link" href="<?= DOMINIO ?>/turma_create">Nova Turma</a>
+                    <a class="link-button-1 link-button-geral link mr-20" href="<?= DOMINIO ?>/administrative_aera"><i class="fa fa-arrow-left mr-20" aria-hidden="true"></i>Voltar</a>
+                    <a class="link-button-1 link-button-geral link" href="<?= DOMINIO ?>/turma_create"><i class="fa fa-plus mr-20" aria-hidden="true"></i>Nova Turma</a>
                 </div>
                 <table class="mt-100">
                     <thead>
@@ -145,8 +145,16 @@ if(!defined('FBHTJ5Y7FDNG')){
                                     <td><?= $dados[2] ?></td>
                                     <td> <?= $dados[3] ?> </td>
                                     <td colspan="2">
-                                        <a class="link-button-1 link-button-geral link" href="<?= DOMINIO ?>/turma?id=<?= $dados[0] ?>&editar=true">Editar</a>
-                                        <a class="link-button-1 link-button-geral link" href="<?= DOMINIO ?>/turma_delete?id=<?= $dados[0] ?>&excluir=true">Excluir</a>
+                                        <div class="d-flex">
+                                            <a class="link-button-1 link-button-geral link mr-20" href="<?= DOMINIO ?>/turma?id=<?= $dados[0] ?>&editar=true">
+                                                     <i class="fa fa-cog icon-action" aria-hidden="true"></i>  
+                                                     Editar
+                                            </a>
+                                            <a class="link-button-1 link-button-geral link" href="<?= DOMINIO ?>/turma_delete?id=<?= $dados[0] ?>&excluir=true">
+                                                     <i class="fa fa-trash icon-action" aria-hidden="true"></i>  
+                                                     Excluir
+                                            </a>
+                                        </div>
                                     </td>
                                 </tr>         
 

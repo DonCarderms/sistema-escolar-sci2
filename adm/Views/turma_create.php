@@ -157,7 +157,7 @@ if($_POST){
                      
     
             <div class="mt-100 t-center">
-                    <a class="link-button-1 link-button-geral link" href="<?php echo DOMINIO . "/turmas"; ?>">Voltar</a>
+                    <a class="link-button-1 link-button-geral link" href="<?php echo DOMINIO . "/turmas"; ?>"><i class="fa fa-arrow-left mr-20" aria-hidden="true"></i>Voltar</a>
             </div>
         </main>
 </body>

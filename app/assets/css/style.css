@@ -32,7 +32,9 @@ body{
     align-items: center;
 }
 
-
+.font-size-2{
+    font-size: 1.5rem;
+}
 .t-center{
     text-align: center;
 }
@@ -451,5 +453,24 @@ main span i{
     }
   }
 
+.icon{
+    position: relative;
+    top: 41px;
+    right: -363px;
+    color: var(--segundary-color);
+}
+
+form textarea{
+    outline: 0;
+    width: 100%;
+    padding: 20px;
+    font-size:1.3rem
+}
+textarea{
+    padding: 20px;
+}
+textarea::placeholder{
+    color: #000000;
+}
 
 
