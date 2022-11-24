@@ -137,8 +137,8 @@ if(!defined('DFFG574554FD')){
                                 
                                     $_SESSION['aluno'] = $aluno;
                                     echo "<p style='margin: 0 0 0 20px;'>  " . $aluno[1] . "</p></br>";
-                                    echo "<p style='margin: 0 0 0 20px;font-size: 15px;'>Inicia " . $aluno[2] . "</p></br>";
-                                    echo "<p style='margin: 0 0 0 20px;font-size: 15px;'>Terminara " . $aluno[3] . "</p></br>";
+                                    echo "<p style='margin: 0 0 0 20px;font-size: 15px;'>Inicia " . date('d / m / Y', strtotime($aluno[2])) . "</p></br>";
+                                    echo "<p style='margin: 0 0 0 20px;font-size: 15px;'>Terminara " . date('d / m / Y', strtotime($aluno[3])) . "</p></br>";
                                     
                                     if($dados->mostrarDadosAluno()['situacao_id'] == "1"){
                                         echo "</br>Usuario Ativo</br>";

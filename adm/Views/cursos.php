@@ -137,6 +137,8 @@ if(!defined('FBHTJ5Y7FDNG')){
                             $arr_dados_prod = explode("&",$arr_url[1]);
 
                             foreach ($cours->listCours() as $dados) {
+                                $dataInicio = date( 'd / m / Y' , strtotime($dados[2]) );
+                                $dataFinal = date( 'd / m / Y' , strtotime($dados[3]) );
                                 if($dados[3] == null){
                                     $dados[3] = "não especificado";
                                 }
@@ -144,8 +146,18 @@ if(!defined('FBHTJ5Y7FDNG')){
                                     ?> 
                                     <tr>
                                         <td><?= $dados[1] ?> </td>
-                                        <td> <?= $dados[2] ?></td>
-                                        <td> <?= $dados[3] ?> </td>
+                                        <td> <?= $dataInicio ?></td>
+                                        <?php
+                                            if($dados[3] == "não especificado"){
+                                                ?>
+                                                <td> <?= $dados[3] ?> </td>
+                                                <?php
+                                            }else{
+                                                    ?>
+                                                <td> <?= $dataFinal ?> </td>
+                                                <?php
+                                            }
+                                            ?>
                                         <td>
                                             <div class="d-flex">
                                                

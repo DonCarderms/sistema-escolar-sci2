@@ -140,7 +140,7 @@ if(!defined('DFFG574554FD')){
                                
                                     <p >Cpf:   <?= $aluno[7]  ?></p>
                                
-                                    <p >Data de nascimento:   <?= $aluno[8]  ?></p>
+                                    <p >Data de nascimento:   <?= date('d / m / Y', strtotime($aluno[8]))  ?></p>
                                
                                     <p class=" mb-50">Endereço : rua    <?= $aluno[9]  ?>, numero <?= $aluno[10]?></p>  
                                

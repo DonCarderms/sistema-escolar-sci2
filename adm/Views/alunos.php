@@ -161,7 +161,7 @@ if(!defined('FBHTJ5Y7FDNG')){
                                     <td></td>
                                     <td><?=  $dados[5] ?></td>
                                     <td><?=  $dados[6] ?></td>             
-                                    <td><?=  $dados[7] ?></td>
+                                    <td><?=  date('d / m / Y', strtotime($dados[7])) ?></td>
                                     <td><?=  $dados[8]; $dados[9] ?></td>
                                     <td colspan="2">
                                        <div class="d-flex">
@@ -187,7 +187,7 @@ if(!defined('FBHTJ5Y7FDNG')){
                                         <td><?=  $dados[4] ?></td>
                                         <td><?=  $dados[5] ?></td>
                                         <td><?=  $dados[6] ?></td>
-                                        <td><?=  $dados[7] ?></td>
+                                        <td><?=  date( 'd / m / Y' , strtotime($dados[7]))?></td>
                                         <td> <?=  $dados[8] ?>, <?=  $dados[9] ?></td>
                                         <td colspan="2">
                                             <div class="d-flex">
