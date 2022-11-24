@@ -150,7 +150,7 @@ if(!defined('FBHTJ5Y7FDNG')){
                                             <div class="d-flex">
                                                
                                                     <a class="link-button-1 link-button-geral link mr-20" href="<?= DOMINIO ?>/curso?id=<?= $dados[0] ?>&editar=true">
-                                                        <i class="fa fa-cog icon-action" aria-hidden="true"></i>
+                                                        <i class="fa fa-pencil-square-o icon-action mr-20" aria-hidden="true"></i>
                                                         Editar
                                                     </a>
                                              

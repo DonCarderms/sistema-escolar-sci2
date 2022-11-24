@@ -119,6 +119,9 @@ body{
 .font-30{
     font-size: 30px;
 }
+.font-size-1{
+    font-size: 1.5rem;
+}
 .p-auto{
     padding: 0 auto;
 }
@@ -197,7 +200,8 @@ body{
     margin-top: 10px;
 }
 .input-style{
-    height: 40px;
+    font-size: 1.2rem;
+    height: 50px;
     color: rgb(255, 255, 255);
     background-image: linear-gradient(90deg, #004f50 0%, #10bd979e 100%);
     margin-bottom: 20px;

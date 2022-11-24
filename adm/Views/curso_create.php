@@ -134,12 +134,12 @@ if($_POST){
                                         </div>
                                         <div>          
                                         <div class="t-center">
-                                            <button class="bt link-button-1 link-button-geral link" type="submit">Novo curso</button>
+                                            <button class="bt link-button-1 link-button-geral link font-size-1" type="submit">Novo curso</button>
                                         </div>
                     </form>
                 </div>
                 <div class="mt-100 t-center">
-                        <a class="link-button-1 link-button-geral link" href="<?php echo DOMINIO . "/cursos"; ?>"><i class="fa fa-arrow-left mr-20" aria-hidden="true"></i>Voltar</a>
+                        <a class="link-button-1 link-button-geral link" href="<?= DOMINIO ?>/cursos"><i class="fa fa-arrow-left mr-20" aria-hidden="true"></i>Voltar</a>
                 </div>
             </main>
 

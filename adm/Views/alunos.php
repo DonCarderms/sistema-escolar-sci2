@@ -164,8 +164,10 @@ if(!defined('FBHTJ5Y7FDNG')){
                                     <td><?=  $dados[7] ?></td>
                                     <td><?=  $dados[8]; $dados[9] ?></td>
                                     <td colspan="2">
-                                        <a class="link-button-1 link-button-geral link"  href="<?= DOMINIO ?>/aluno?id=<?= $dados[0] ?>&editar=true">Editar</a>
-                                        <a class="link-button-1 link-button-geral link" href="<?= DOMINIO ?>/aluno_delete?id=<?= $dados[0] ?>&excluir=true">Excluir</a>
+                                       <div class="d-flex">
+                                           <a class="link-button-1 link-button-geral link mr-20"  href="<?= DOMINIO ?>/aluno?id=<?= $dados[0] ?>&editar=true"> <i class="fa fa-pencil-square-o icon-action mr-20" aria-hidden="true"></i>Editar</a>                        
+                                           <a class="link-button-1 link-button-geral link" href="<?= DOMINIO ?>/aluno_delete?id=<?= $dados[0] ?>&excluir=true"><i class="fa fa-trash icon-action mr-20" aria-hidden="true"></i>  Excluir</a>
+                                       </div>
                                     </td>
                                     
                                 </tr>
@@ -190,11 +192,11 @@ if(!defined('FBHTJ5Y7FDNG')){
                                         <td colspan="2">
                                             <div class="d-flex">
                                                 <a class="link-button-1 link-button-geral link mr-20" href="<?= DOMINIO ?>/aluno?id=<?= $dados[0] ?>&editar=true">
-                                                    <i class="fa fa-cog icon-action" aria-hidden="true"></i>
-                                                    Edita
+                                                    <i class="fa fa-pencil-square-o icon-action mr-20" aria-hidden="true"></i>
+                                                    Editar
                                                 </a>
                                                 <a class="link-button-1 link-button-geral link" href="<?= DOMINIO ?>/aluno_delete?id=<?= $dados[0] ?>&excluir=true">
-                                                    <i class="fa fa-trash icon-action" aria-hidden="true"></i>  
+                                                    <i class="fa fa-trash icon-action mr-20" aria-hidden="true"></i>  
                                                     Excluir
                                                 </a>
                                             </div>

@@ -192,13 +192,13 @@ if($_POST){
                             </div>
                             <div class="t-center">
                                 <label for="newAluno"></label>
-                                <button class="bt link-button-1 link-button-geral link" type="submit" name="newAluno" id="newAluno">novo aluno</button>
+                                <button class="bt link-button-1 link-button-geral link font-size-1" type="submit" name="newAluno" id="newAluno">novo aluno</button>
                             </div>
                             
                         </form>
                     
-                <div class="mt-100">
-                        <a class="link-button-1 link-button-geral link" href="<?= DOMINIO ?>/alunos"><i class="fa fa-arrow-left mr-20" aria-hidden="true"></i>Voltar</a>
+                <div class="mt-50">
+                        <a class="link-button-1 link-button-geral link font-size-1" href="<?= DOMINIO ?>/alunos"><i class="fa fa-arrow-left mr-20" aria-hidden="true"></i>Voltar</a>
                 </div>
             </main>
 
