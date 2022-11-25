@@ -23,7 +23,9 @@ if($arr_dados_cours[1] == "editar=true"){
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <link rel="stylesheet" href="<?= DOMINIO ?>/assets/css/style.css">
             <link rel="stylesheet" href="../assets/css/font-awesome.min.css"/>
-            <title>Editar curso</title>
+             <link rel="shortcut icon" href="../assets/images/logo-sci.png" type="image/x-icon">
+
+            <title>Admin</title>
         </head>
         <body class="d-flex">
         <nav class=" d-flex align-items-center flex_column nav-principal-vertical" id="nav-bar ">

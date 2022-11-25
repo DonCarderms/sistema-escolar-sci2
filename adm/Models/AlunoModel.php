@@ -41,6 +41,7 @@ class AlunoModel extends ConnectionController
         $rua = $dadosEdits['rua'];
         $numero = $dadosEdits['numero'];
 
+        
         if($dadosEdits['senha'] == ""){
             $sql = "UPDATE `usuario` SET `nome` = '$nome', `email` = '$email', `cpf` = '$cpf', `dataNascimento` = '$dataNascimento'  WHERE `id` = '$id'";   
             $sql_query1 = $this->conn->prepare($sql); 

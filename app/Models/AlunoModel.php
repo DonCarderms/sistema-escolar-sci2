@@ -28,6 +28,7 @@ class AlunoModel extends ConnectionController {
                 $sql_query = $this->conn->prepare($sql); 
                 $sql_query->execute();
         }
+
         $sql2 = "UPDATE `endereco` SET `logradouro` = '$rua', `numero` = '$numero' WHERE `endereco`.`id` = $id_denreco";
         
         $sql_query = $this->conn->prepare($sql2);

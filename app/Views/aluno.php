@@ -17,7 +17,7 @@ if(!defined('DFFG574554FD')){
         <title>Academia Sci</title>
         <link rel="stylesheet" href="<?= DOMINIO ?>/assets/css/style.css">
         <link rel="stylesheet" href="<?= DOMINIO ?>//assets/css/font-awesome.min.css"/>
-
+        <link rel="shortcut icon" href="../assets/images/logo-sci.png" type="image/x-icon">
     </head>
     <body class="d-flex">
     <nav class=" d-flex align-items-center flex_column nav-principal-vertical" id="nav-bar" onmouseover="showUlText();" onmouseout="removeULText();">
@@ -144,7 +144,7 @@ if(!defined('DFFG574554FD')){
                                
                                     <p class=" mb-50">Endereço : rua    <?= $aluno[9]  ?>, numero <?= $aluno[10]?></p>  
                                
-                                    <a class="link  link-button-1 link-button-geral" href="<?= DOMINIO ?>/aluno/editar?id=<?= $dados['id'] ?>&editar=true">Editar meus dados</a>     
+                                    <a class="link  link-button-1 link-button-geral" href="<?= DOMINIO ?>/aluno/editar?id=<?= $dados['id'] ?>&editar=true"><i class="fa fa-pencil-square-o icon-action mr-20" aria-hidden="true"></i> Editar meus dados</a>     
                                     <a class="link-button-1 link-button-geral link" href="<?= DOMINIO . "/dashboard"?>"><i class="fa fa-arrow-left mr-20" aria-hidden="true"></i>Voltar</a>
                         </div>             
 

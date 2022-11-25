@@ -12,6 +12,7 @@ body{
 :root{
     --primary-color: #004f50;
     --segundary-color: #722FEC;
+    --color-error:#ff0000;
   }
 
 .bg-primary{
@@ -32,6 +33,9 @@ body{
     align-items: center;
 }
 
+.bg-error{
+    color: var(--color-error);
+}
 
 .t-center{
     text-align: center;

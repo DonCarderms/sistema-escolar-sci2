@@ -16,8 +16,9 @@ if($_POST){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="<?= DOMINIO ?>/assets/css/style.css">  
     <link rel="stylesheet" href="../assets/css/font-awesome.min.css"/>
+    <link rel="shortcut icon" href="../assets/images/logo-sci.png" type="image/x-icon">
+    <!-- <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"> -->
     <title>Admin</title>
-
 </head>
 <body class="d-flex">
 
@@ -121,13 +122,21 @@ if($_POST){
             <main class="w-100 d-flex flex_column align-items-center align-content-center justify-content-center">
 
                     <form method="post">
+                            <p class=" font-size-1 bg-error">
+                                <?php
+                                    if(isset($_SESSION['errorData'])){echo $_SESSION['errorData'];unset($_SESSION['errorData']);}else{unset($_SESSION['errorData']);}
+                                ?>
+                                <?php
+                                    if(isset($_SESSION['executeFalse'])){echo $_SESSION['executeFalse'];unset($_SESSION['executeFalse']);}else{unset($_SESSION['executeFalse']);}
+                                ?>
+                            </p>
                             <div>      
                                 <label for="nome">Nome aluno: </label>
                                 <input class="input-style w-100"  type="text" name="nome" id="nome">
                             </div>
                             <div>
                                 <label for="email">Email do aluno: </label>
-                                <input class="input-style w-100"  type="text" name="email" id="email">
+                                <input class="input-style w-100"  type="email" name="email" id="email">
                             </div>
                             <div>
                                 <label for="senha">Senha do aluno: </label>
@@ -136,9 +145,9 @@ if($_POST){
                             <div>
                                 <label for="cpf">cpf do aluno:</label>
                                 <?php
-                                    if(isset($_SESSION['errorCpf'])){$errorCpf = $_SESSION['errorCpf'];unset($_SESSION['errorCpf']);}
+                                    if(isset($_SESSION['errorCpf'])){$errorCpf = $_SESSION['errorCpf'];unset($_SESSION['errorCpf']);}else{unset($_SESSION['errorCpf']);}
                                 ?>
-                                <input class="input-style w-100"  type="text" name="cpf" id="cpf" placeholder="<?= $errorCpf ?>">
+                                <input class="input-style w-100"  type="number" name="cpf" id="cpf" placeholder="<?= $errorCpf ?>">
                             </div>
                             <div>
                                 <label for="dataNascimento">Data de nascimento do aluno: </label>
@@ -202,6 +211,14 @@ if($_POST){
                 </div>
             </main>
 
-
+            <!-- <script src="https://code.jquery.com/jquery-1.12.4.js">
+                
+            </script>
+            <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+            <script>
+                $( function() {
+                    $( ".datepicker" ).datepicker();
+                });
+            </script> -->
 </body>
 </html>

@@ -29,7 +29,8 @@ $adm = new Administrative_aeraController();
     <title>Administrative area</title>
     <link rel="stylesheet" href="<?= DOMINIO ?>/assets/css/style.css">
     <link rel="stylesheet" href="../assets/css/font-awesome.min.css"/>
-
+    <link rel="shortcut icon" href="../assets/images/logo-sci.png" type="image/x-icon">
+    
 </head>
 <body class="d-flex">
     

@@ -23,6 +23,7 @@ if($arr_dados_team[1] == "editar=true"){
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <link rel="stylesheet" href="<?= DOMINIO ?>/assets/css/style.css">
             <link rel="stylesheet" href="../assets/css/font-awesome.min.css"/>
+            <link rel="shortcut icon" href="../assets/images/logo-sci.png" type="image/x-icon">
 
             <title>Admin</title>
         </head>

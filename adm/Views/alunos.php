@@ -19,6 +19,7 @@ if(!defined('FBHTJ5Y7FDNG')){
          <link rel="stylesheet" href="<?= DOMINIO ?>/assets/css/style.css">
         <link rel="stylesheet" href="../assets/css/font-awesome.min.css"/>
          <!-- <link rel="stylesheet" href="<?= DOMINIO ?>/assets/css/style.scss"> -->
+        <link rel="shortcut icon" href="../assets/images/logo-sci.png" type="image/x-icon">
         <title>Academia Sci</title>
     </head>
     <body class="d-flex">

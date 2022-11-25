@@ -31,16 +31,17 @@ class Aluno_novoModel extends ConnectionController
         $sql_query3 = $this->conn->prepare($sql3);
         $sql_query3->execute();
         $id_endereco =  $sql_query3->fetchAll()[0]['id'];
+      
 
-
-        
 
         if(number_format($cpf) == NULL && strlen($cpf) != 11){
-            $_SESSION['errorCpf'] = "formato de cpf  errado";
+            header('Location: ' . DOMINIO.'/aluno_novo');
+            $_SESSION['errorCpf'] = "* formato de cpf  errado";
         }else{
-            
+       
             if($dadosAluno['dataNascimento'] == "" || $dadosAluno['nome'] == "" || $dadosAluno['email'] == "" || $dadosAluno['senha'] == "" || $dadosAluno['cpf'] == "" || $dadosAluno['rua'] == "" || $dadosAluno['numero'] == ""){
-                echo "todos os dados tem que ser preenchidas";
+                header('Location: ' . DOMINIO.'/aluno_novo');
+                $_SESSION['errorData'] = "* todos os dados tem que ser preenchidas";
             }else{        
                 $sql = "INSERT INTO `usuario` (`id`, `nome`, `email`, `senha`, `cpf`, `dataNascimento`, `situacao_id`, `nivelAcesso_id`, `turma_id`, `endereco_id`, `curso_id`) VALUES (NULL, '$nome', '$email', '$senha', '$cpf', '$dataNascimento', '1', '3', '$id_turma', '$id_endereco', '$id_curso')";
                 $sql_query = $this->conn->prepare($sql); 
@@ -48,10 +49,17 @@ class Aluno_novoModel extends ConnectionController
                     header('Location: ' . DOMINIO.'/alunos');
                  }else{
                     header('Location: ' . DOMINIO.'/aluno_novo');
-
+                    $_SESSION['executeFalse'] = "* Houve um erro";
                  }
              }
       
         }
+
+        die();
     }
+
+
+
+
+
 }
