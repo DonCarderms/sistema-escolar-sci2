@@ -19,7 +19,6 @@ class core {
 
                                 if($metodo != ""){
                                    
-
                                     switch($metodo){
                                         case "editar":$metodo = "edit";
                                         break;

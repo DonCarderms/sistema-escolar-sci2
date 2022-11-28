@@ -21,7 +21,7 @@ if(!defined('FBHTJ5Y7FDNG')){
     <link rel="shortcut icon" href="../assets/images/logo-sci.png" type="image/x-icon">
     <title>Admin</title>
 </head>
-<body class="d-flex">
+<body class="d-flex overflow-x">
     <nav class=" d-flex align-items-center flex_column nav-principal-vertical" id="nav-bar ">
                     <span class="close-menu cm-1"></span>
                     <span class="close-menu cm-2"></span> 
@@ -124,12 +124,13 @@ if(!defined('FBHTJ5Y7FDNG')){
                     <a class="link-button-1 link-button-geral link mr-20" href="<?= DOMINIO ?>/administrative_aera"><i class="fa fa-arrow-left mr-20" aria-hidden="true"></i>Voltar</a>
                     <a class="link-button-1 link-button-geral link" href="<?= DOMINIO ?>/turma_create"><i class="fa fa-plus mr-20" aria-hidden="true"></i>Nova Turma</a>
                 </div>
+                <div class="div-table">
                 <table class="mt-100">
                     <thead>
                         <tr>
-                            <th>Turma</th>
-                            <th>Curso</th>
-                            <th>Código da turma</th>
+                            <th class="turmas-th">Turma</th>
+                            <th class="turmas-th">Curso</th>
+                            <th class="turmas-th">Código da turma</th>
                             <th colspan="2"></th>
                         </tr>
                     </thead>
@@ -167,6 +168,7 @@ if(!defined('FBHTJ5Y7FDNG')){
                         
                     </tbody>
                 </table>
+             </div>
         </main>
         
 </body>

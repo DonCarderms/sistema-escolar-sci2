@@ -67,8 +67,10 @@ class AlunoModel extends ConnectionController
        }elseif($sql_query2->execute()){
                 header('Location: ' . DOMINIO.'/alunos');
        }
+
+       die();
     }
 
-
+    
    
 }

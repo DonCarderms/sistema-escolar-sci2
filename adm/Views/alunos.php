@@ -22,7 +22,7 @@ if(!defined('FBHTJ5Y7FDNG')){
         <link rel="shortcut icon" href="../assets/images/logo-sci.png" type="image/x-icon">
         <title>Academia Sci</title>
     </head>
-    <body class="d-flex">
+    <body class="d-flex overflow-x">
 
 
         <nav class=" d-flex align-items-center flex_column nav-principal-vertical" id="nav-bar ">
@@ -122,97 +122,99 @@ if(!defined('FBHTJ5Y7FDNG')){
                 <img width="30" src="../assets/images/icon-admin.svg" alt="admin">
                 <span >Administrador</span>
             </p>
-            <main class="w-100 d-flex flex_column align-items-center align-content-center justify-content-center">
-                <h1 class="w-100 t-center"> Alunos</h1>
+            <main class="w-100 d-flex flex_column align-items-center align-content-center justify-content-center mt-100">
+
                 <div class="w-100 button-action">
                     <a class="link-button-1 link-button-geral link mr-20" href="<?= DOMINIO ?>/administrative_aera"><i class="fa fa-arrow-left mr-20" aria-hidden="true"></i>Voltar</a>
                     <a class="link-button-1 link-button-geral link" href="<?= DOMINIO ?>/aluno_novo"><i class="fa fa-plus mr-20" aria-hidden="true"></i>Novo Aluno</a>
                 </div>
-            <div class="w-100 button-action  mt-100">
+            <div class="w-100 button-action  mt-100 mb-50">
                 <input class="input-filtre" type="search" value="" placeholder="flitrar por nome do aluno">
             </div>
-            <table class="mt-100">
-                <thead>
-                    <tr>
-                        <th>Nome</th>
-                        <th>Curso</th>
-                        <th>Turma</th>
-                        <th>Código da Turma</th>
-                        <th>Email</th>
-                        <th>CPF</th>
-                        <th>Data de nascimento</th>
-                        <th>Endereço</th>
-                        <th colspan="3"</th>
-                    </tr>
-                </thead>
-    
-                <tbody>
-    
-                    <?php
-                        $arr_url = explode("?",$_SERVER['REQUEST_URI']);
-                        $arr_dados_prod = explode("&",$arr_url[1]);
-                        
-                        foreach ($stud->listStudent() as $dados) {
-                            if($dados[2] == 'curso padrão' && $dados[3] == 'turma padrão'){
-                                ?>
-                                <tr>
-                                    <td><?=  $dados[1] ?></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td><?=  $dados[5] ?></td>
-                                    <td><?=  $dados[6] ?></td>             
-                                    <td><?=  date('d / m / Y', strtotime($dados[7])) ?></td>
-                                    <td><?=  $dados[8]; $dados[9] ?></td>
-                                    <td colspan="2">
-                                       <div class="d-flex">
-                                           <a class="link-button-1 link-button-geral link mr-20"  href="<?= DOMINIO ?>/aluno?id=<?= $dados[0] ?>&editar=true"> <i class="fa fa-pencil-square-o icon-action mr-20" aria-hidden="true"></i>Editar</a>                        
-                                           <a class="link-button-1 link-button-geral link" href="<?= DOMINIO ?>/aluno_delete?id=<?= $dados[0] ?>&excluir=true"><i class="fa fa-trash icon-action mr-20" aria-hidden="true"></i>  Excluir</a>
-                                       </div>
-                                    </td>
-                                    
-                                </tr>
-                                <!-- <p>Nome do Aluno: </p>
-                                <p>email: <?=  $dados[5] ?></p>
-                                <p>cpf: <?=  $dados[6] ?></p>
-                                <p>data de nascimento: <?=  $dados[7] ?></p>
-                                <p>Endereço: <?=  $dados[8] ?>, <?=  $dados[9] ?></p> -->
-                                
-                                <?php
-                            }else{
-                                ?>
+            <div class="div-table">
+                <table class="mt-100">
+                    <thead class="thead-aluno">
+                        <tr>
+                            <th class="alunos-th">Nome</th>
+                            <th class="alunos-th">Curso</th>
+                            <th class="alunos-th">Turma</th>
+                            <th class="alunos-th">Código da Turma</th>
+                            <th class="alunos-th">Email</th>
+                            <th class="alunos-th">CPF</th>
+                            <th class="alunos-th">Data de nascimento</th>
+                            <th class="alunos-th">Endereço</th>
+                            <th colspan="3"</th>
+                        </tr>
+                    </thead>
+        
+                    <tbody>
+        
+                        <?php
+                            $arr_url = explode("?",$_SERVER['REQUEST_URI']);
+                            $arr_dados_prod = explode("&",$arr_url[1]);
+                            
+                            foreach ($stud->listStudent() as $dados) {
+                                if($dados[2] == 'curso padrão' && $dados[3] == 'turma padrão'){
+                                    ?>
                                     <tr>
                                         <td><?=  $dados[1] ?></td>
-                                        <td><?=  $dados[2] ?></td>
-                                        <td><?=  $dados[3] ?></td>
-                                        <td><?=  $dados[4] ?></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
                                         <td><?=  $dados[5] ?></td>
-                                        <td><?=  $dados[6] ?></td>
-                                        <td><?=  date( 'd / m / Y' , strtotime($dados[7]))?></td>
-                                        <td> <?=  $dados[8] ?>, <?=  $dados[9] ?></td>
+                                        <td><?=  $dados[6] ?></td>             
+                                        <td><?=  date('d / m / Y', strtotime($dados[7])) ?></td>
+                                        <td><?=  $dados[8]; $dados[9] ?></td>
                                         <td colspan="2">
-                                            <div class="d-flex">
-                                                <a class="link-button-1 link-button-geral link mr-20" href="<?= DOMINIO ?>/aluno?id=<?= $dados[0] ?>&editar=true">
-                                                    <i class="fa fa-pencil-square-o icon-action mr-20" aria-hidden="true"></i>
-                                                    Editar
-                                                </a>
-                                                <a class="link-button-1 link-button-geral link" href="<?= DOMINIO ?>/aluno_delete?id=<?= $dados[0] ?>&excluir=true">
-                                                    <i class="fa fa-trash icon-action mr-20" aria-hidden="true"></i>  
-                                                    Excluir
-                                                </a>
-                                            </div>
+                                           <div class="d-flex">
+                                               <a class="link-button-1 link-button-geral link mr-20"  href="<?= DOMINIO ?>/aluno?id=<?= $dados[0] ?>&editar=true"> <i class="fa fa-pencil-square-o icon-action mr-20" aria-hidden="true"></i>Editar</a>                        
+                                               <a class="link-button-1 link-button-geral link" href="<?= DOMINIO ?>/aluno_delete?id=<?= $dados[0] ?>&excluir=true"><i class="fa fa-trash icon-action mr-20" aria-hidden="true"></i>  Excluir</a>
+                                           </div>
                                         </td>
                                         
                                     </tr>
+                                    <!-- <p>Nome do Aluno: </p>
+                                    <p>email: <?=  $dados[5] ?></p>
+                                    <p>cpf: <?=  $dados[6] ?></p>
+                                    <p>data de nascimento: <?=  $dados[7] ?></p>
+                                    <p>Endereço: <?=  $dados[8] ?>, <?=  $dados[9] ?></p> -->
+                                    
                                     <?php
+                                }else{
+                                    ?>
+                                        <tr>
+                                            <td><?=  $dados[1] ?></td>
+                                            <td><?=  $dados[2] ?></td>
+                                            <td><?=  $dados[3] ?></td>
+                                            <td><?=  $dados[4] ?></td>
+                                            <td><?=  $dados[5] ?></td>
+                                            <td><?=  $dados[6] ?></td>
+                                            <td><?=  date( 'd / m / Y' , strtotime($dados[7]))?></td>
+                                            <td> <?=  $dados[8] ?>, <?=  $dados[9] ?></td>
+                                            <td colspan="2">
+                                                <div class="d-flex">
+                                                    <a class="link-button-1 link-button-geral link mr-20" href="<?= DOMINIO ?>/aluno?id=<?= $dados[0] ?>&editar=true">
+                                                        <i class="fa fa-pencil-square-o icon-action mr-20" aria-hidden="true"></i>
+                                                        Editar
+                                                    </a>
+                                                    <a class="link-button-1 link-button-geral link" href="<?= DOMINIO ?>/aluno_delete?id=<?= $dados[0] ?>&excluir=true">
+                                                        <i class="fa fa-trash icon-action mr-20" aria-hidden="true"></i>  
+                                                        Excluir
+                                                    </a>
+                                                </div>
+                                            </td>
+                                            
+                                        </tr>
+                                        <?php
+                                }
+                                
+                                //   var_dump($dados); 
                             }
-                            
-                            //   var_dump($dados); 
-                        }
-                        ?>
-                </tbody>
-            </table>
-            <br>
+                            ?>
+                    </tbody>
+                </table>
+            </div>
+
 
             
         </main>

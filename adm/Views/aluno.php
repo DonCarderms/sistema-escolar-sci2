@@ -132,6 +132,7 @@ if($arr_dados_stud[1] == "editar=true"){
 
 
                 foreach($stud->showStudent($id[1])  as $dados){
+                    var_dump($dados);
                     ?>
                     <div>
 

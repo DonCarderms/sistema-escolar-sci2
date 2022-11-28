@@ -9,6 +9,11 @@ body{
     background-color: aliceblue;
 }
 
+main{
+    height: 80%;
+    margin-top: 200px
+}
+
 :root{
     --primary-color: #004f50;
     --segundary-color: #722FEC;
@@ -22,6 +27,12 @@ body{
     background-color: var(--segundary-color);
 }
 
+.overflow-x{
+    overflow-x: hidden;
+}
+.overflow-y{
+    overflow-y: hidden;
+}
 .principal{
     background-color: #00DBDE;  
     background-image: linear-gradient(90deg, #004f50 0%, #6702689e 100%);
@@ -248,6 +259,25 @@ table thead{
     color: white;
     height: 60px;
 }
+/* .thead-alunos */
+/* table thead th{
+    width: 300px;
+    padding: 20px;
+    font-size: 1.1rem;
+    font-weight: 300;
+}
+.alunos-th{
+    width: 250px !important;
+}
+.cursos-th{
+    width: 493px !important;
+}
+.turmas-th{
+    width: 416px !important;
+}
+.thead-aluno{
+    top: 540px !important;
+} */
 table td{
     padding: 20px;
     font-size: 1.1rem;
@@ -300,6 +330,21 @@ form label{
 
 
 /* Dashboard */
+.div-table{
+    max-width: 90%;
+    width: 100%;
+    height: 50%;
+}
+::-webkit-scrollbar{
+    background-color: var(--primary-color);
+    width: 15px;
+}
+
+::-webkit-scrollbar-thumb{
+    background: var(--segundary-color);
+    border-radius: 12px;
+}
+
 .content{
     margin-top: 250px;
 }
@@ -349,11 +394,13 @@ main span i{
     width: 100%;
 }
 .nome_aluno{
+    margin: 40px;
     position: absolute;
     right: 0;
     padding:10px  20px 0 0;
 }
 .nav-principal-vertical{
+    transition-duration: 1s;
     /* background-image: linear-gradient(90deg, #004f50 0%, #10bd979e 100%); */
     background-color: #673ab7c7;
     width: 60px;
@@ -366,8 +413,6 @@ main span i{
 .nav-principal-vertical:hover{
     width: 180px;
     transition-duration: 1s;
-    position: absolute;
-    height: 100vh;
 } 
 .menu-hamburger{
     padding: 10px 0;
@@ -553,3 +598,4 @@ main span i{
 .link-button-1:hover .icon-action{
     color: #000;
 }
+
