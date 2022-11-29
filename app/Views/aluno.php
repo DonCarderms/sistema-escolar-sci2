@@ -138,7 +138,7 @@ if(!defined('DFFG574554FD')){
                                
                                     <p >email:   <?= $aluno[6]  ?></p>
                                
-                                    <p >Cpf:   <?= $aluno[7]  ?></p>
+                                    <p id="cpf-aluno">CPF:   <?= $aluno[7]  ?></p>
                                
                                     <p >Data de nascimento:   <?= date('d / m / Y', strtotime($aluno[8]))  ?></p>
                                
@@ -157,7 +157,7 @@ if(!defined('DFFG574554FD')){
                  ?>    
                                           
             </main>
-                
+            <script src="<?= DOMINIO ?>/assets/js/script.js"></script>  
     </body>
     </html>
   <?php

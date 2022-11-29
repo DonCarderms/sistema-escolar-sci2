@@ -130,8 +130,8 @@ if($_POST){
                                     <input class="input-style width-100"  type="text" name="nome" id="nome">
                                 </div>
                                 <div>
-                                    <label for="codigo">Código da turma</label>
-                                    <input class="input-style width-100"  type="text" name="codigo" id="codigo">
+                                    <label for="codigo"></label>
+                                    <input class="input-style width-100"  type="hidden" name="codigo" id="codigo">
                                 </div>
                                 <div>
                                     <label for="cursos"></label>
@@ -160,6 +160,8 @@ if($_POST){
                     <a class="link-button-1 link-button-geral link" href="<?= DOMINIO ?>/turmas"><i class="fa fa-arrow-left mr-20" aria-hidden="true"></i>Voltar</a>
             </div>
         </main>
+
+        <script src="<?= DOMINIO ?>/assets/js/script.js"></script>
 </body>
 </html>
  

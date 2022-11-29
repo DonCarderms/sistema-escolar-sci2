@@ -1,10 +1,9 @@
 <?php
   session_start();
-  session_regenerate_id();
+//   session_regenerate_id();
 if(!defined('DFFG574554FD')){
     header('Location: ' . DOMINIO); 
 }else{
-    // $url = explode("/",filter_input(INPUT_GET,'url',FILTER_DEFAULT));
     $dados = new DashboardController();
 
     $url = filter_input(INPUT_GET, 'url', FILTER_DEFAULT);
@@ -140,8 +139,8 @@ if(!defined('DFFG574554FD')){
                            <div class="text-courso">
                                 <?php                    
 
-                                    echo session_id();
-                                    echo session_save_path();
+                                    // echo session_id();
+                                    // echo session_save_path();
                                 
                                     $_SESSION['aluno'] = $aluno;
                                     echo "<p style='margin: 0 0 0 20px;'>  " . $aluno[1] . "</p></br>";

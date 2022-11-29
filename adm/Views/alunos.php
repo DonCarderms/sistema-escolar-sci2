@@ -162,7 +162,7 @@ if(!defined('FBHTJ5Y7FDNG')){
                                         <td></td>
                                         <td></td>
                                         <td><?=  $dados[5] ?></td>
-                                        <td><?=  $dados[6] ?></td>             
+                                        <td class="cpf-aluno"><?=  $dados[6] ?></td>             
                                         <td><?=  date('d / m / Y', strtotime($dados[7])) ?></td>
                                         <td><?=  $dados[8]; $dados[9] ?></td>
                                         <td colspan="2">
@@ -188,7 +188,7 @@ if(!defined('FBHTJ5Y7FDNG')){
                                             <td><?=  $dados[3] ?></td>
                                             <td><?=  $dados[4] ?></td>
                                             <td><?=  $dados[5] ?></td>
-                                            <td><?=  $dados[6] ?></td>
+                                            <td class="cpf-aluno"><?=  $dados[6] ?></td>
                                             <td><?=  date( 'd / m / Y' , strtotime($dados[7]))?></td>
                                             <td> <?=  $dados[8] ?>, <?=  $dados[9] ?></td>
                                             <td colspan="2">
@@ -219,7 +219,7 @@ if(!defined('FBHTJ5Y7FDNG')){
             
         </main>
         
-        
+        <script src="<?= DOMINIO ?>/assets/js/script.js"></script>
     </body>
     </html>
     <?php
