@@ -10,7 +10,7 @@ class AlunoModel extends ConnectionController
     public function showStudent($id){
         $this->conn = $this->connectDb();
         
-        $sql = "SELECT usuario.id, usuario.nome, curso.nome as 'Curso', turma.nome as 'Turma', turma.codigo as 'Código da turma', usuario.email, usuario.cpf, usuario.dataNascimento 'data de nascimento', endereco.logradouro as 'rua', endereco.numero as 'numero', usuario.senha as 'senha', endereco.id as 'endereco_id' FROM `usuario` INNER join curso on curso.id = usuario.curso_id
+        $sql = "SELECT usuario.id, usuario.nome, curso.nome as 'Curso', turma.nome as 'Turma', turma.codigo as 'Código da turma', usuario.email, usuario.cpf, usuario.dataNascimento 'data de nascimento', endereco.logradouro as 'rua', endereco.numero as 'numero', usuario.senha as 'senha', endereco.id as 'endereco_id', curso.id, turma.id FROM `usuario` INNER join curso on curso.id = usuario.curso_id
         INNER join turma on turma.id = usuario.turma_id
         INNER join endereco on endereco.id = usuario.endereco_id
         WHERE usuario.id = '$id'";
@@ -22,6 +22,8 @@ class AlunoModel extends ConnectionController
     }
     
     public function editStud($dadosEdits){
+
+
         $this->conn = $this->connectDb();;  
         if(isset($_SESSION['id'])){
             $id = $_SESSION['id'];
@@ -40,14 +42,16 @@ class AlunoModel extends ConnectionController
         $dataNascimento = $dadosEdits['dataNascimento'];
         $rua = $dadosEdits['rua'];
         $numero = $dadosEdits['numero'];
+        $newCour_id = $dadosEdits['curso'];
+        $newTeam_id = $dadosEdits['turma'];
 
         
         if($dadosEdits['senha'] == ""){
-            $sql = "UPDATE `usuario` SET `nome` = '$nome', `email` = '$email', `cpf` = '$cpf', `dataNascimento` = '$dataNascimento'  WHERE `id` = '$id'";   
+            $sql = "UPDATE `usuario` SET `nome` = '$nome', `email` = '$email', `cpf` = '$cpf', `dataNascimento` = '$dataNascimento', `curso_id` = '$newCour_id', `turma_id` = '$newTeam_id' WHERE `id` = '$id'";   
             $sql_query1 = $this->conn->prepare($sql); 
             $sql_query1->execute();
         }else{
-            $sql = "UPDATE `usuario` SET `nome` = '$nome', `email` = '$email', `senha` = '$senha', `cpf` = '$cpf', `dataNascimento` = '$dataNascimento' WHERE `id` = '$id'";   
+            $sql = "UPDATE `usuario` SET `nome` = '$nome', `email` = '$email', `senha` = '$senha', `cpf` = '$cpf', `dataNascimento` = '$dataNascimento', `curso_id` = '$newCour_id', `turma_id` = '$newTeam_id' WHERE `id` = '$id'";   
             $sql_query1 = $this->conn->prepare($sql); 
            $sql_query1->execute();
         }
@@ -69,6 +73,7 @@ class AlunoModel extends ConnectionController
        }
 
        die();
+
     }
 
     

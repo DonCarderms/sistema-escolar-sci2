@@ -1,6 +1,6 @@
 <?php
   session_start();
-
+  session_regenerate_id();
 if(!defined('DFFG574554FD')){
     header('Location: ' . DOMINIO); 
 }else{
@@ -12,7 +12,9 @@ if(!defined('DFFG574554FD')){
 
             if($arr_url[1] == "sair"){
                 $dados->exit();
-            }
+            }                                    
+         
+           
     ?>
     <!DOCTYPE html>
     <html lang="en">
@@ -106,6 +108,8 @@ if(!defined('DFFG574554FD')){
             <p class="nome_aluno">
             <i class="fa fa-user-circle fa-2x mg-10 user-icon" aria-hidden="true"></i>
                 <?php
+
+
                     
                     if(isset($_SESSION['dados'] )){
                         $id = $_SESSION['dados']['id'];   
@@ -134,7 +138,10 @@ if(!defined('DFFG574554FD')){
                               <img class="w-100" src="https://www.alura.com.br/artigos/assets/php-uma-introducao-linguagem/php-uma-introducao-linguagem.png" alt="">
                            </div> 
                            <div class="text-courso">
-                                <?php
+                                <?php                    
+
+                                    echo session_id();
+                                    echo session_save_path();
                                 
                                     $_SESSION['aluno'] = $aluno;
                                     echo "<p style='margin: 0 0 0 20px;'>  " . $aluno[1] . "</p></br>";

@@ -277,7 +277,8 @@ main span i{
 }
 .nav-principal-vertical{
    background-color: #673ab7c7;
-    width: 60px;
+   width: 60px;
+   transition-duration: 1s;
 }
 .nav-principal-vertical:hover .nav-text{
     width: 150px;

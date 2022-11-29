@@ -6,6 +6,7 @@ $arr_dados_stud = explode("&",$arr_url[1]);
 
 
 if($_POST){
+    var_dump($_POST);
     $edit_stud = new AlunoController();
     $edit_stud->editStud($_POST);
 }
@@ -132,7 +133,6 @@ if($arr_dados_stud[1] == "editar=true"){
 
 
                 foreach($stud->showStudent($id[1])  as $dados){
-                    var_dump($dados);
                     ?>
                     <div>
 
@@ -164,6 +164,61 @@ if($arr_dados_stud[1] == "editar=true"){
                                 <label for="numero">Numero: </label>
                                 <input class="input-style w-100"  type="number" name="numero" id="numero" value="<?=$dados[9]?>">
                             </div>
+                            <div>
+                                <label for="curso">Mudar curso</label>
+                                <select class="input-style bg-primary" name="curso" id="curso">   
+                                        <?php                             
+                                                $courStud = new AlunoController();
+                                            foreach($courStud->showStudent($id[1]) as $dadoStud){
+                                                    
+                                                    ?>
+                                                        <option value="<?=$dadoStud[12]?>" id="<?=$dadoStud[12]?>"><?=$dadoStud[2]?></option>         
+                                                    <?php
+                                            }
+                                                
+                                        ?>
+                                       
+                                        <?php
+                                                        $cursos = new CursosController();
+                                                        $cursos->listCours();
+                                                        foreach($cursos->listCours() as $dados){
+                                                            if($dados[1] !== "curso padrão" && $dados[1] !==$dadoStud[2]){
+                                                            ?>
+                                                                <option value="<?=$dados[0]?>" id="<?= $dados[0]?>"> <?=$dados[1]?> </option>
+                                                            <?php
+                                                            }
+                                                        }
+                                        ?>               
+                                </select>
+                            </div>
+                            <div>
+                                <label for="turma">Mudar de turma</label>
+                                <select class="input-style bg-primary" name="turma" id="turma">   
+                                        <?php                             
+                                                $courStud = new AlunoController();
+                                            foreach($courStud->showStudent($id[1]) as $dadoStud){
+                                                    
+                                                    ?>
+                                                        <option value="<?=$dadoStud[13]?>" id="<?=$dadoStud[13]?>"><?=$dadoStud[3]?></option>         
+                                                    <?php
+                                            }
+                                                
+                                        ?>           
+                                        <?php
+                                                        $teams = new TurmasController();
+                                                        $teams->listTeams();
+                                                        foreach($teams->listTeams() as $dados){
+                                                            if($dados[1] !== "turma padrão" && $dados[1] !==$dadoStud[3]){
+                                                                    ?>
+                                                                        <option value="<?=$dados[0]?>" id="<?= $dados[0]?>"> <?=$dados[1]?> </option>
+                                                                    <?php
+                                                                
+                                                            }
+                                                        }
+                                        ?>               
+                                </select>
+                            </div>
+
                             <div class="t-center ">
                                 <label for="submit"></label>
                                 <input class="bt link-button-1 link-button-geral link"     type="submit" name="editar" id="editar" value="Editar">

@@ -15,7 +15,7 @@
 </head>
 
 <body>
-    <main class="principal">
+    <main class="principal login">
         <div class="">
             <div class="d-flex m-50 div-logo">
                 <p style="font-size: 2rem;" class="logo-sci">Academia Sci</p>
