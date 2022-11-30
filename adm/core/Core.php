@@ -9,7 +9,8 @@ class core {
                 if($controller != ""){
                     
                     if(!isset($_SESSION['dados'])){
-                        header('Location: ' . DOMINIO);
+                        $_SESSION['expire'] = 'Sessão expirada, por favor fazer o login novamente';
+                        header('Location: ' . DOMINIO);                     
                       }
 
                         if($caminho){

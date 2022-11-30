@@ -1,8 +1,11 @@
 <?php
+
+
+
 session_start();
+
 if(!defined('FBHTJ5Y7FDNG')){
     header('Location: ' . DOMINIO);
-
 }else{
 
 $adm = new Administrative_aeraController();

@@ -481,4 +481,14 @@ textarea::placeholder{
     color: #000000;
 }
 
-
+/* expire session */
+.expire{
+    padding: 10px;
+    color: #af0000;
+    font-size: 1.5rem;
+    text-align: center;
+    background-color: #ffa4a4;
+}
+.expire p{
+    margin-top: 6px;
+}

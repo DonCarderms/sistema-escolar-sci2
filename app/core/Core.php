@@ -11,8 +11,8 @@ class core
 
             
             if(!isset($_SESSION['dados'])){
+                $_SESSION['expire'] = 'Sessão expirada, por favor fazer o login novamente';
                 header('Location: ' . DOMINIO);
-                echo "<p style='color: red;font-size: 2rem;'>Sessão expirada</p>";
             }
                     if($caminho){
             

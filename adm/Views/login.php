@@ -15,8 +15,20 @@
 </head>
 
 <body>
-    <main class="principal login">
+                    <?php
+                        if(isset($_SESSION['expire'] )){
+                            ?>
+                            <div class="expire d-flex justify-content-center">
+                                <i class="fa fa-times fa-2x mr-20" aria-hidden="true"></i>
+                                <p class=" mt-10"><?=$_SESSION['expire']?></p>
+                            </div>
+                            <?php
+                            unset($_SESSION['expire']);
+                        }
+                    ?>
+    <main class="principal login">            
         <div class="">
+
             <div class="d-flex m-50 div-logo">
                 <p style="font-size: 2rem;" class="logo-sci">Academia Sci</p>
                 <span class="mt-10">
@@ -26,14 +38,8 @@
             <!-- <div class="align_center">
                  <img src="<?= DOMINIO ?>/assets/images/logo.svg" alt="">
             </div> -->
-            <div class="expire">
-                    <?php
-                        if(isset($_SESSION['expire'] )){
-                            echo $_SESSION['expire'];
-                            unset($_SESSION['expire']);
-                        }
-                    ?>
-            </div>
+
+            
             <div class="msg">
 
             </div>
