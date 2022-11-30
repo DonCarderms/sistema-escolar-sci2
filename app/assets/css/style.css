@@ -203,7 +203,13 @@ body{
     border: none;
     padding: 4px;
     padding-left: 10px;
-    border: 1px solid #03a9f4;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    border: 1px solid var(--segundary-color);
+}
+.input-style:focus{
+    
+    box-shadow: 0px 0px 11px 2px #2196f3;
 }
 .button-style{
     font-size: 1rem;
@@ -296,7 +302,7 @@ main span i{
     cursor: pointer;
     background-color: #673ab7c7;
     margin-bottom: 100px;
-    
+    display: none;
 }
 .menu-hamburger span{
     height: 3px;
@@ -439,6 +445,7 @@ main span i{
     }
     .menu-hamburger{
         margin-bottom: 50px;
+        display: block;
     }
     #fa-mh{
         display: block;

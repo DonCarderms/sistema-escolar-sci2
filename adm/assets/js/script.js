@@ -17,7 +17,6 @@ gerarCodigo();
 
 let cpf_aluno = document.getElementsByClassName("cpf-aluno")
 
-
 let cont = 0, caracteres = 0
 let cpf = []
 for (const index in cpf_aluno.innerHTML) {       
@@ -41,10 +40,7 @@ function formataCPF(cpf_formated){
 
 cpf_aluno.innerHTML = "CPF: " + formataCPF(cpf_formated);
 
-
-
-
-
+alert('kdkd')
 
 
 

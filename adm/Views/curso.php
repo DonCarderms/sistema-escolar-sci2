@@ -133,16 +133,16 @@ if($arr_dados_cours[1] == "editar=true"){
                                 ?>
                                     <input type="hidden" name="id" value="<?= $dados[0] ?>">
                                     <div>
-                                        <label for="nome">Nome do curso</label>
-                                        <input class="input-style w-100"  type="text" name="nome" id="nome" value="<?= $dados[1] ?>">
+                                        <label for="nome"></label>
+                                        <input class="input-style w-100"  type="text" name="nome" id="nome" value="<?= $dados[1] ?>" placeholder="Nome do curso">
                                     </div>
                                     <div>
                                         <label for="data_inicio">Data de início</label>
-                                        <input class="input-style w-100"  type="date" name="data_inicio" id="data_inicio" value="<?= $dados[2] ?>">
+                                        <input class="input-style w-100"  type="date" name="data_inicio" id="data_inicio" value="<?= $dados[2] ?>" placeholder="Data de início">
                                     </div>
                                     <div>
-                                        <label for="data_final">DAta Final</label>
-                                        <input class="input-style w-100"  type="date" name="data_final" id="data_final" value="<?= $dados[3] ?>">
+                                        <label for="data_final">Data Final</label>
+                                        <input class="input-style w-100"  type="date" name="data_final" id="data_final" value="<?= $dados[3] ?>" placeholder="Data Final">
                                     </div>
                                     <div aria-controls="t-center">
                                         <button class="bt link-button-1 link-button-geral link" type="submit">Editar</button>

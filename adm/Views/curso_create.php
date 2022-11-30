@@ -123,15 +123,15 @@ if($_POST){
                     <form class="" action="" method="post">
                            
                                         <div>
-                                            <label for="nome">Nome</label>
-                                            <input class="input-style w-100"  type="text" name="nome" id="nome">
+                                            <label for="nome"></label>
+                                            <input class="input-style w-100"  type="text" name="nome" id="nome" placeholder="Nome do curso">
                                         </div>
                                         <div>
                                             <label for="dataInicio">Data de início</label>
                                             <input class="input-style width-100"  type="date" name="dataInicio" id="dataInicio">
                                         </div>
                                         <div>
-                                            <label for="dataFinal">DAta Final</label>
+                                            <label for="dataFinal">Data Final</label>
                                             <input class="input-style width-100"  type="date" name="dataFinal" id="dataFinal">
                                         </div>
                                         <div>          

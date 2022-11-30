@@ -126,8 +126,8 @@ if($_POST){
             <form action="" method="post">
                    
                                 <div>
-                                    <label for="nome">Nome</label>
-                                    <input class="input-style width-100"  type="text" name="nome" id="nome">
+                                    <label for="nome"></label>
+                                    <input class="input-style width-100"  type="text" name="nome" id="nome" placeholder="nome da turma">
                                 </div>
                                 <div>
                                     <label for="codigo"></label>

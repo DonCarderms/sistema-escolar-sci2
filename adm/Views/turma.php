@@ -134,8 +134,8 @@ if($arr_dados_team[1] == "editar=true"){
                                             }
                                         ?>
                                 <div>
-                                    <label for="nome">Nome da Turma</label>
-                                    <input class="input-style width-100"  type="text" name="nome" id="nome" value="<?=$dado[0]?>">
+                                    <label for="nome"></label>
+                                    <input class="input-style width-100"  type="text" name="nome" id="nome" value="<?=$dado[0]?>" placeholder="Nome da Turma">
                                 </div>
     
                                 <div>

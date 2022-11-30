@@ -138,34 +138,33 @@ if($arr_dados_stud[1] == "editar=true"){
 
                         <form action="" method="post">
                             <div>      
-                                <label for="nome">Nome aluno: </label>
-                                <input class="input-style w-100"  type="text" name="nome" id="nome" value="<?=$dados[1]?>">
+                                <label for="nome"></label>
+                                <input class="input-style w-100"  type="text" name="nome" id="nome" value="<?=$dados[1]?>" placeholder="Nome aluno">
                             </div>
                             <div>
-                                <label for="email">Email do aluno: </label>
-                                <input class="input-style w-100"  type="email" name="email" id="email" value="<?=$dados[5]?>">
+                                <label for="email"></label>
+                                <input class="input-style w-100"  type="email" name="email" id="email" value="<?=$dados[5]?>" placeholder="Email do aluno">
                             </div>
                             <div>
-                                <label for="senha">nova Senha do aluno: </label>
-                                <input class="input-style w-100"  type="text" name="senha" id="senha" value="">
+                                <label for="senha"></label>
+                                <input class="input-style w-100"  type="text" name="senha" id="senha" value="" placeholder="nova Senha do aluno">
                             </div>
                             <div>
-                                <label for="cpf">cpf do aluno:</label>
-                                <input class="input-style w-100"  type="text" name="cpf" id="cpf" value="<?=$dados[6]?>">
+                                <label for="cpf"></label>
+                                <input class="input-style w-100"  type="text" name="cpf" id="cpf" value="<?=$dados[6]?>" placeholder="cpf do aluno">
                             </div>
                             <div>
-                                <label for="dataNascimento">Data de nascimento do aluno: </label>
+                                <label for="dataNascimento">Data de nascimento do aluno</label>
                                 <input class="input-style w-100"  type="date" name="dataNascimento" id="dataNascimento" value="<?=$dados[7]?>">
                             </div>
                             <div>
-                                <p>Endereço do aluno</p>
-                                <label for="rua">Rua: </label>
-                                <input class="input-style w-100"  type="text" name="rua" id="rua" value="<?=$dados[8]?>">
-                                <label for="numero">Numero: </label>
-                                <input class="input-style w-100"  type="number" name="numero" id="numero" value="<?=$dados[9]?>">
+                                <label for="rua"></label>
+                                <input class="input-style w-100"  type="text" name="rua" id="rua" value="<?=$dados[8]?>" placeholder="Endereço">
+                                <label for="numero"></label>
+                                <input class="input-style w-100"  type="number" name="numero" id="numero" value="<?=$dados[9]?>" placeholder="Numero">
                             </div>
                             <div>
-                                <label for="curso">Mudar curso</label>
+                                <label for="curso">Mudar de curso</label>
                                 <select class="input-style bg-primary" name="curso" id="curso">   
                                         <?php                             
                                                 $courStud = new AlunoController();

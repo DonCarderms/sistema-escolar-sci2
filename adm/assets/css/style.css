@@ -223,8 +223,12 @@ main{
     outline: none;
     border: none;
     padding: 4px;
-    padding-left: 10px;
-    border: 1px solid #03a9f4;
+    padding-left: 10px; 
+    border-radius: 10px;
+    border: 1px solid var(--segundary-color);
+}
+.input-style:focus{
+    box-shadow: 0px 0px 11px 2px #2196f3;
 }
 .button-style{
     font-size: 1rem;
@@ -314,8 +318,11 @@ form label{
     background-color: #cccccc52;
     font-size: 1.2rem;
 }
+.input-filtre::placeholder{
+    color: #000;
+}
 ::placeholder{
-    color: #000000;
+    color: #ffffff;
     font-size: 1.2rem;
 }
 /* pagina error */
@@ -418,6 +425,7 @@ main span i{
     padding: 10px 0;
     cursor: pointer;
     margin-bottom: 100px;
+    display: none;
     
 }
 .menu-hamburger span{
@@ -563,6 +571,7 @@ main span i{
     }
     .menu-hamburger{
         margin-bottom: 50px;
+        display:block;
     }
     #fa-mh{
         display: block;

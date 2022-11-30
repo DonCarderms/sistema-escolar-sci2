@@ -131,37 +131,36 @@ if($_POST){
                                 ?>
                             </p>
                             <div>      
-                                <label for="nome">Nome aluno: </label>
-                                <input class="input-style w-100"  type="text" name="nome" id="nome">
+                                <label for="nome"></label>
+                                <input class="input-style w-100"  type="text" name="nome" id="nome" placeholder="Nome aluno">
                             </div>
                             <div>
-                                <label for="email">Email do aluno: </label>
-                                <input class="input-style w-100"  type="email" name="email" id="email">
+                                <label for="email"></label>
+                                <input class="input-style w-100"  type="email" name="email" id="email" placeholder="Email do aluno">
                             </div>
                             <div>
-                                <label for="senha">Senha do aluno: </label>
-                                <input class="input-style w-100"  type="text"  name="senha" id="senha">
+                                <label for="senha"></label>
+                                <input class="input-style w-100"  type="text"  name="senha" id="senha" placeholder="Senha de acesso do aluno">
                             </div>
                             <div>
-                                <label for="cpf">cpf do aluno:</label>
                                 <?php
                                     if(isset($_SESSION['errorCpf'])){$errorCpf = $_SESSION['errorCpf'];unset($_SESSION['errorCpf']);}else{unset($_SESSION['errorCpf']);}
                                 ?>
-                                <input class="input-style w-100"  type="number" name="cpf" id="cpf" placeholder="<?= $errorCpf ?>">
+                                <label for="cpf"><?= $errorCpf ?></label>
+                                <input class="input-style w-100"  type="number" name="cpf" id="cpf" placeholder="CPF do aluno">
                             </div>
                             <div>
-                                <label for="dataNascimento">Data de nascimento do aluno: </label>
-                                <input class="input-style w-100" type="date" name="dataNascimento" id="dataNascimento" placeholder="aa-mm-dd">
+                                <label for="dataNascimento">Data de nascimento do aluno </label>
+                                <input class="input-style w-100" type="date" name="dataNascimento" id="dataNascimento" placeholder="aa-mm-dd mm">
                             </div>
                             <div>
-                                <p>Endereço do aluno</p>
                                 <div>
-                                    <label for="rua">Rua: </label>
-                                    <input class="input-style w-100" type="text" name="rua" id="rua" >
+                                    <label for="rua"></label>
+                                    <input class="input-style w-100" type="text" name="rua" id="rua"  placeholder="Endereço">
                                 </div>
                                 <div>
-                                    <label for="numero">Numero: </label>
-                                    <input class="input-style w-100"  type="text" name="numero" id="numero" >
+                                    <label for="numero"></label>
+                                    <input class="input-style w-100"  type="number" name="numero" id="numero" placeholder="Numero">
                                 </div>
                             </div>
                         
