@@ -21,7 +21,7 @@ if(!defined('FBHTJ5Y7FDNG')){
     <link rel="shortcut icon" href="../assets/images/logo-sci.png" type="image/x-icon">
     <title>Admin</title>
 </head>
-<body class="d-flex overflow-x">
+<body class="d-flex overflow-x" onmousemove="reset_interval()" onclick="reset_interval()" onkeypress="reset_interval()" onscroll="reset_interval()">
     <nav class=" d-flex align-items-center flex_column nav-principal-vertical" id="nav-bar ">
                     <span class="close-menu cm-1"></span>
                     <span class="close-menu cm-2"></span> 
@@ -170,7 +170,7 @@ if(!defined('FBHTJ5Y7FDNG')){
                 </table>
              </div>
         </main>
-        
+        <script src="<?= DOMINIO ?>/assets/js/session-logout.js"></script>
 </body>
 </html>
 <?php

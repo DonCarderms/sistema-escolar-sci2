@@ -22,9 +22,9 @@ if($arr_dados_prod[1] == "editar=true"){
         <link rel="stylesheet" href="<?= DOMINIO ?>/assets/css/style.css">
         <link rel="shortcut icon" href="../assets/images/logo-sci.png" type="image/x-icon">
     </head>
-    <body class="d-flex">
+    <body class="d-flex" onmousemove="reset_interval()" onclick="reset_interval()" onkeypress="reset_interval()" onscroll="reset_interval()">
 
-            <main class="w-100 d-flex flex_column_reverse align-items-center align-content-center justify-content-space-around">
+            <main class="w-1onmousemove="reset_interval()" onclick="reset_interval()" onkeypress="reset_interval()" onscroll="reset_interval()"00 d-flex flex_column_reverse align-items-center align-content-center justify-content-space-around">
                 <div class="">
                     <?php
                         if(isset($_SESSION['dados'] )){
@@ -62,6 +62,7 @@ if($arr_dados_prod[1] == "editar=true"){
                 </div>
             
             </main>
+            <script src="<?= DOMINIO ?>/assets/js/session-logout.js"></script>
                 
     </body>
     </html>

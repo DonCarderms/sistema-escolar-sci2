@@ -44,30 +44,6 @@ cpf_aluno.innerHTML = "CPF: " + formataCPF(cpf_formated);
 
 
 
-
-
-// detectar inatividade
-
-
-let timer = setInterval(function(){ auto_logout() }, 20000); 
-function reset_interval(){
-  
-    clearInterval(timer);
-          
-    timer = setInterval(function(){ auto_logout() }, 5000);
-        
-}
-
-function auto_logout(){
-
-        window.location="http://localhost:8000/administrative_aera/sair";
-                
-}
-
-
-
-
-
 // let nav_text = document.getElementById("nav-text");
 // let showUlText = (navbar)  =>{ 
 //     setInterval(function(){

@@ -122,6 +122,7 @@ if(!defined('DFFG574554FD')){
                 </form>
             
             </main>
+           <script src="<?= DOMINIO ?>/assets/js/session-logout.js"></script>
                 
     </body>
     </html>

@@ -20,7 +20,7 @@ if(!defined('DFFG574554FD')){
         <link rel="shortcut icon" href="../assets/images/logo-sci.png" type="image/x-icon">
     </head>
     <body class="d-flex">
-    <nav class=" d-flex align-items-center flex_column nav-principal-vertical" id="nav-bar" onmouseover="showUlText();" onmouseout="removeULText();">
+    <nav class=" d-flex align-items-center flex_column nav-principal-vertical" id="nav-bar" onmouseover="showUlText();" onmouseout="removeULText();" onmousemove="reset_interval()" onclick="reset_interval()" onkeypress="reset_interval()" onscroll="reset_interval()">
                     <span class="close-menu cm-1"></span>
                     <span class="close-menu cm-2"></span>
                     <div class="w-100 menu-hamburger d-flex flex_column mt-10">
@@ -158,6 +158,8 @@ if(!defined('DFFG574554FD')){
                                           
             </main>
             <script src="<?= DOMINIO ?>/assets/js/script.js"></script>  
+            <script src="<?= DOMINIO ?>/assets/js/session-logout.js"></script>
+
     </body>
     </html>
   <?php

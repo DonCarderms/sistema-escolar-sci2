@@ -148,31 +148,7 @@ $adm = new Administrative_aeraController();
         </div>
                
     </main>
-      
-
-       
-              
-   
-        
-     <script> 
-        let timer = setInterval(function(){ auto_logout() }, 20000); 
-        function reset_interval(){
-          
-            clearInterval(timer);
-                  
-            timer = setInterval(function(){ auto_logout() }, 5000);
-                
-        }
-        
-        function auto_logout(){
-
-                window.location="http://localhost:8000/administrative_aera/sair";
-                        
-        }
-
-     </script>   
-        
-
+        <script src="<?= DOMINIO ?>/assets/js/session-logout.js"></script>
 </body>
 </html>
 <?php

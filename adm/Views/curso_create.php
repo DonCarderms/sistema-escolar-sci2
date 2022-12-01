@@ -18,7 +18,7 @@ if($_POST){
 
     <title>Admin</title>
 </head>
-<body class="d-flex">
+<body class="d-flex" onmousemove="reset_interval()" onclick="reset_interval()" onkeypress="reset_interval()" onscroll="reset_interval()">
         <nav class=" d-flex align-items-center flex_column nav-principal-vertical" id="nav-bar ">
                     <span class="close-menu cm-1"></span>
                     <span class="close-menu cm-2"></span> 
@@ -144,6 +144,6 @@ if($_POST){
                         <a class="link-button-1 link-button-geral link" href="<?= DOMINIO ?>/cursos"><i class="fa fa-arrow-left mr-20" aria-hidden="true"></i>Voltar</a>
                 </div>
             </main>
-
+            <script src="<?= DOMINIO ?>/assets/js/session-logout.js"></script>
 </body>
 </html>

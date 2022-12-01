@@ -21,7 +21,7 @@ if($_POST){
     <link rel="shortcut icon" href="../assets/images/logo-sci.png" type="image/x-icon">
     <title>Admin</title>
 </head>
-<body class="d-flex">
+<body class="d-flex" onmousemove="reset_interval()" onclick="reset_interval()" onkeypress="reset_interval()" onscroll="reset_interval()">
     <nav class=" d-flex align-items-center flex_column nav-principal-vertical" id="nav-bar ">
                     <span class="close-menu cm-1"></span>
                     <span class="close-menu cm-2"></span> 
@@ -162,6 +162,7 @@ if($_POST){
         </main>
 
         <script src="<?= DOMINIO ?>/assets/js/script.js"></script>
+        <script src="<?= DOMINIO ?>/assets/js/session-logout.js"></script>
 </body>
 </html>
  
