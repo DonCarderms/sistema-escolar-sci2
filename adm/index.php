@@ -34,7 +34,6 @@ if(isset($_POST)){
         $index = new LoginController();
 
         if($index->loginAdm($email, $senha) == 1){
-            echo "cheguei aqui";
             header('Location:' . DOMINIO .'/administrative_aera');
         }else{
             header('Location: ' . DOMINIO);
@@ -47,6 +46,5 @@ if(isset($_POST)){
 }else{
     header('Location: ' . DOMINIO);
 }
-
 
 

@@ -22,7 +22,7 @@ if(!defined('FBHTJ5Y7FDNG')){
         <link rel="shortcut icon" href="../assets/images/logo-sci.png" type="image/x-icon">
         <title>Academia Sci</title>
     </head>
-    <body class="d-flex overflow-x">
+    <body class="d-flex overflow-x" onmousemove="reset_interval()" onclick="reset_interval()" onkeypress="reset_interval()" onscroll="reset_interval()">
 
 
         <nav class=" d-flex align-items-center flex_column nav-principal-vertical" id="nav-bar ">
@@ -218,8 +218,25 @@ if(!defined('FBHTJ5Y7FDNG')){
 
             
         </main>
-        
-        <script src="<?= DOMINIO ?>/assets/js/script.js"></script>
+   
+                            <script>
+
+                                        let timer = setInterval(function(){ auto_logout() }, 20000); 
+                                        function reset_interval(){
+                                        
+                                            clearInterval(timer);
+                                                
+                                            timer = setInterval(function(){ auto_logout() }, 5000);
+                                                
+                                        }
+
+                                        function auto_logout(){
+
+                                                window.location="http://localhost:8000/administrative_aera/sair";
+                                                        
+                                        }
+                                                                    
+                            </script>
     </body>
     </html>
     <?php

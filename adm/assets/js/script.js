@@ -40,7 +40,31 @@ function formataCPF(cpf_formated){
 
 cpf_aluno.innerHTML = "CPF: " + formataCPF(cpf_formated);
 
-alert('kdkd')
+
+
+
+
+
+
+// detectar inatividade
+
+
+let timer = setInterval(function(){ auto_logout() }, 20000); 
+function reset_interval(){
+  
+    clearInterval(timer);
+          
+    timer = setInterval(function(){ auto_logout() }, 5000);
+        
+}
+
+function auto_logout(){
+
+        window.location="http://localhost:8000/administrative_aera/sair";
+                
+}
+
+
 
 
 

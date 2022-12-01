@@ -1,7 +1,5 @@
 <?php
 
-
-
 session_start();
 
 if(!defined('FBHTJ5Y7FDNG')){
@@ -35,7 +33,7 @@ $adm = new Administrative_aeraController();
     <link rel="shortcut icon" href="../assets/images/logo-sci.png" type="image/x-icon">
     
 </head>
-<body class="d-flex">
+<body class="d-flex" onmousemove="reset_interval()" onclick="reset_interval()" onkeypress="reset_interval()" onscroll="reset_interval()">
     
     <nav class=" d-flex align-items-center flex_column nav-principal-vertical" id="nav-bar ">
                     <span class="close-menu cm-1"></span>
@@ -156,7 +154,23 @@ $adm = new Administrative_aeraController();
               
    
         
+     <script> 
+        let timer = setInterval(function(){ auto_logout() }, 20000); 
+        function reset_interval(){
+          
+            clearInterval(timer);
+                  
+            timer = setInterval(function(){ auto_logout() }, 5000);
+                
+        }
         
+        function auto_logout(){
+
+                window.location="http://localhost:8000/administrative_aera/sair";
+                        
+        }
+
+     </script>   
         
 
 </body>
