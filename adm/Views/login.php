@@ -27,8 +27,8 @@
                         }
                     ?>
     <main class="principal login">            
-        <div class="">
-
+        <div class=" card-login">
+        <p class="t-center mb-50 pt-adm-card">Portal do Administrador</p>
             <div class="d-flex m-50 div-logo">
                 <p style="font-size: 2rem;" class="logo-sci">Academia Sci</p>
                 <span class="mt-10">

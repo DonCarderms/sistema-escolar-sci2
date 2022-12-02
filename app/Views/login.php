@@ -24,7 +24,8 @@
                         }
                     ?>
     <main class="principal">
-        <div class="">
+        <div class="card-login">
+            <p class="t-center mb-50 pt-aluno-card">Portal do Aluno</p>
             <div class="d-flex m-50 div-logo">
                 <p class="logo-sci">Academia Sci</p>
                 <span class="mt-10">
@@ -56,7 +57,7 @@
                     <input type="password" name="senha" id="senha"  placeholder="Senha" class="input-style width-100" ><br>
                 </div>
                 <div class="align_center">
-                    <button type="submit" class="button-style">Entrar</button>         
+                    <button type="submit" class="button-style"><span class=" mr-20">Entrar</span> <i class="fa fa-arrow-right" aria-hidden="true"></i></button>         
                 </div>
                 
             </form>

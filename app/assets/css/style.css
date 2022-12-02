@@ -194,6 +194,18 @@ body{
 .button-submit{
     margin-top: 10px;
 }
+
+.card-login{
+    background-color: #ffffff;
+    padding: 70px;
+    border-radius: 50px;
+    box-shadow: 1px 1px 20px 8px #673ab7
+}
+.pt-aluno-card{
+    font-size: 2rem;
+    color: var(--segundary-color);
+    font-weight: 600;
+}
 .input-style{
     height: 40px;
     color: rgb(255, 255, 255);
@@ -213,23 +225,24 @@ body{
 }
 .button-style{
     font-size: 1rem;
-    height: 50px;
+    height: 60px;
     color: #fff;
     padding: 5px 20px;
     cursor: pointer;
     border: none;
-    border-radius: 30px;
+    border-radius: 20px;
     margin-bottom:20px;
-    background-color: #fffcfc42;
+    background-color: var(--primary-color);
+    transition-duration: 1s;
     margin-left: 12px;
-    width: 310px;
+    width: 100%;
 }
+
 ::placeholder {
     color: rgb(255, 255, 255);
 }
 .button-style:hover{
-    color: #673ab7;
-    background-color: rgba(255, 255, 255, 0.797);
+    background-color: var(--segundary-color);
 }
 .div-logo{
      background-color: #6dcbf7;
@@ -492,3 +505,4 @@ textarea::placeholder{
 .expire p{
     margin-top: 6px;
 }
+
