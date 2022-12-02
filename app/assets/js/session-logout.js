@@ -1,12 +1,12 @@
 // detectar inatividade
 
 
-let timer = setInterval(function(){ auto_logout() }, 5000); 
+let timer = setInterval(function(){ auto_logout() }, 60000); 
 function reset_interval(){
   
     clearInterval(timer);
           
-    timer = setInterval(function(){ auto_logout() }, 5000);
+    timer = setInterval(function(){ auto_logout() }, 60000);
         
 }
 
