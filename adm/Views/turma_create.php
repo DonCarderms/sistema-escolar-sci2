@@ -7,6 +7,7 @@ if($_POST){
     $id_curso =  $_POST['cursos'];
     $newteam = new Turma_createController();
     $newteam->newTeam($nome, $codigo, $id_curso) ;
+    var_dump($codigo);
     
 }
 ?>
@@ -137,7 +138,7 @@ if($_POST){
                                     <label for="cursos"></label>
                                     <select class="input-style bg-primary" name="cursos" id="cursos">   
                                         <option value="0">Selecione um curso</option>            
-                                        <?php
+                                        <?php                                                        
                                                         $cursos = new CursosController();
                                                         $cursos->listCours();
                                                         foreach($cursos->listCours() as $dados){

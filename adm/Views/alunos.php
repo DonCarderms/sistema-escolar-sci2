@@ -128,9 +128,9 @@ if(!defined('FBHTJ5Y7FDNG')){
                     <a class="link-button-1 link-button-geral link mr-20" href="<?= DOMINIO ?>/administrative_aera"><i class="fa fa-arrow-left mr-20" aria-hidden="true"></i>Voltar</a>
                     <a class="link-button-1 link-button-geral link" href="<?= DOMINIO ?>/aluno_novo"><i class="fa fa-plus mr-20" aria-hidden="true"></i>Novo Aluno</a>
                 </div>
-            <div class="w-100 button-action  mt-100 mb-50">
+            <!-- <div class="w-100 button-action  mt-100 mb-50">
                 <input class="input-filtre" type="search" value="" placeholder="flitrar por nome do aluno">
-            </div>
+            </div> -->
             <div class="div-table">
                 <table class="mt-100">
                     <thead class="thead-aluno">
